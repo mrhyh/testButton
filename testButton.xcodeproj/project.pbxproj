@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		18403DE91E7BB595007ECADC /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */; };
 		184840131E77BF6B00380983 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 184840121E77BF6B00380983 /* 5.jpg */; };
+		185C56061E8E52FC001E5B6C /* 弹幕头背景-.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C55FD1E8E52FC001E5B6C /* 弹幕头背景-.png */; };
+		185C56071E8E52FC001E5B6C /* 弹幕头背景-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C55FE1E8E52FC001E5B6C /* 弹幕头背景-@2x.png */; };
+		185C56081E8E52FC001E5B6C /* 弹幕头背景-@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C55FF1E8E52FC001E5B6C /* 弹幕头背景-@3x.png */; };
+		185C56091E8E52FC001E5B6C /* 弹按钮灰-.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C56001E8E52FC001E5B6C /* 弹按钮灰-.png */; };
+		185C560A1E8E52FC001E5B6C /* 弹按钮灰-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C56011E8E52FC001E5B6C /* 弹按钮灰-@2x.png */; };
+		185C560B1E8E52FC001E5B6C /* 弹按钮灰-@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C56021E8E52FC001E5B6C /* 弹按钮灰-@3x.png */; };
+		185C560C1E8E52FC001E5B6C /* 弹按钮蓝-.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C56031E8E52FC001E5B6C /* 弹按钮蓝-.png */; };
+		185C560D1E8E52FC001E5B6C /* 弹按钮蓝-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C56041E8E52FC001E5B6C /* 弹按钮蓝-@2x.png */; };
+		185C560E1E8E52FC001E5B6C /* 弹按钮蓝-@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C56051E8E52FC001E5B6C /* 弹按钮蓝-@3x.png */; };
 		188F4FDF1E7650A5005738D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F4FDE1E7650A5005738D0 /* main.m */; };
 		188F4FE21E7650A5005738D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F4FE11E7650A5005738D0 /* AppDelegate.m */; };
 		188F4FE51E7650A5005738D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 188F4FE41E7650A5005738D0 /* ViewController.m */; };
@@ -19,12 +28,22 @@
 		188F4FF91E766F00005738D0 /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 188F4FF51E766F00005738D0 /* 2.jpeg */; };
 		188F4FFA1E766F00005738D0 /* 3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 188F4FF61E766F00005738D0 /* 3.jpeg */; };
 		188F4FFB1E766F00005738D0 /* 4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 188F4FF71E766F00005738D0 /* 4.jpeg */; };
+		18CD0B011E88E200003DE5BC /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CD0B001E88E200003DE5BC /* ReplayKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		18403DE71E7BB595007ECADC /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		184840121E77BF6B00380983 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		185C55FD1E8E52FC001E5B6C /* 弹幕头背景-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹幕头背景-.png"; sourceTree = "<group>"; };
+		185C55FE1E8E52FC001E5B6C /* 弹幕头背景-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹幕头背景-@2x.png"; sourceTree = "<group>"; };
+		185C55FF1E8E52FC001E5B6C /* 弹幕头背景-@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹幕头背景-@3x.png"; sourceTree = "<group>"; };
+		185C56001E8E52FC001E5B6C /* 弹按钮灰-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹按钮灰-.png"; sourceTree = "<group>"; };
+		185C56011E8E52FC001E5B6C /* 弹按钮灰-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹按钮灰-@2x.png"; sourceTree = "<group>"; };
+		185C56021E8E52FC001E5B6C /* 弹按钮灰-@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹按钮灰-@3x.png"; sourceTree = "<group>"; };
+		185C56031E8E52FC001E5B6C /* 弹按钮蓝-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹按钮蓝-.png"; sourceTree = "<group>"; };
+		185C56041E8E52FC001E5B6C /* 弹按钮蓝-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹按钮蓝-@2x.png"; sourceTree = "<group>"; };
+		185C56051E8E52FC001E5B6C /* 弹按钮蓝-@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹按钮蓝-@3x.png"; sourceTree = "<group>"; };
 		188F4FDA1E7650A5005738D0 /* testButton.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testButton.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188F4FDE1E7650A5005738D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		188F4FE01E7650A5005738D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -39,6 +58,7 @@
 		188F4FF51E766F00005738D0 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
 		188F4FF61E766F00005738D0 /* 3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpeg; sourceTree = "<group>"; };
 		188F4FF71E766F00005738D0 /* 4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpeg; sourceTree = "<group>"; };
+		18CD0B001E88E200003DE5BC /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,17 +66,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18CD0B011E88E200003DE5BC /* ReplayKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		185C55FC1E8E52FC001E5B6C /* 切图 */ = {
+			isa = PBXGroup;
+			children = (
+				185C55FD1E8E52FC001E5B6C /* 弹幕头背景-.png */,
+				185C55FE1E8E52FC001E5B6C /* 弹幕头背景-@2x.png */,
+				185C55FF1E8E52FC001E5B6C /* 弹幕头背景-@3x.png */,
+				185C56001E8E52FC001E5B6C /* 弹按钮灰-.png */,
+				185C56011E8E52FC001E5B6C /* 弹按钮灰-@2x.png */,
+				185C56021E8E52FC001E5B6C /* 弹按钮灰-@3x.png */,
+				185C56031E8E52FC001E5B6C /* 弹按钮蓝-.png */,
+				185C56041E8E52FC001E5B6C /* 弹按钮蓝-@2x.png */,
+				185C56051E8E52FC001E5B6C /* 弹按钮蓝-@3x.png */,
+			);
+			path = "切图";
+			sourceTree = "<group>";
+		};
 		188F4FD11E7650A5005738D0 = {
 			isa = PBXGroup;
 			children = (
 				188F4FDC1E7650A5005738D0 /* testButton */,
 				188F4FDB1E7650A5005738D0 /* Products */,
+				18CD0AFF1E88E200003DE5BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +127,7 @@
 		188F4FDD1E7650A5005738D0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				185C55FC1E8E52FC001E5B6C /* 切图 */,
 				188F4FF41E766F00005738D0 /* 1.jpeg */,
 				188F4FF51E766F00005738D0 /* 2.jpeg */,
 				188F4FF61E766F00005738D0 /* 3.jpeg */,
@@ -97,6 +136,14 @@
 				188F4FDE1E7650A5005738D0 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18CD0AFF1E88E200003DE5BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18CD0B001E88E200003DE5BC /* ReplayKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,6 +177,7 @@
 				TargetAttributes = {
 					188F4FD91E7650A5005738D0 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = VD58PNDPW6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -157,13 +205,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				185C560E1E8E52FC001E5B6C /* 弹按钮蓝-@3x.png in Resources */,
 				188F4FF91E766F00005738D0 /* 2.jpeg in Resources */,
 				184840131E77BF6B00380983 /* 5.jpg in Resources */,
 				188F4FED1E7650A5005738D0 /* LaunchScreen.storyboard in Resources */,
+				185C560D1E8E52FC001E5B6C /* 弹按钮蓝-@2x.png in Resources */,
+				185C56061E8E52FC001E5B6C /* 弹幕头背景-.png in Resources */,
 				188F4FEA1E7650A5005738D0 /* Assets.xcassets in Resources */,
+				185C56091E8E52FC001E5B6C /* 弹按钮灰-.png in Resources */,
 				188F4FFA1E766F00005738D0 /* 3.jpeg in Resources */,
+				185C56081E8E52FC001E5B6C /* 弹幕头背景-@3x.png in Resources */,
 				188F4FFB1E766F00005738D0 /* 4.jpeg in Resources */,
+				185C560A1E8E52FC001E5B6C /* 弹按钮灰-@2x.png in Resources */,
 				188F4FE81E7650A5005738D0 /* Main.storyboard in Resources */,
+				185C560C1E8E52FC001E5B6C /* 弹按钮蓝-.png in Resources */,
+				185C560B1E8E52FC001E5B6C /* 弹按钮灰-@3x.png in Resources */,
+				185C56071E8E52FC001E5B6C /* 弹幕头背景-@2x.png in Resources */,
 				188F4FF81E766F00005738D0 /* 1.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,10 +353,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VD58PNDPW6;
 				INFOPLIST_FILE = testButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyh.testButton.testButton;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -308,10 +365,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = VD58PNDPW6;
 				INFOPLIST_FILE = testButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hyh.testButton.testButton;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
