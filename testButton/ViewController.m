@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import <UIKit/UIKit.h>
 #import <ReplayKit/ReplayKit.h>
+#import <ifaddrs.h>
+#import <arpa/inet.h>
 
 static NSString *StartRecord = @"开始";
 static NSString *StopRecord = @"结束";
@@ -21,7 +23,7 @@ static NSString *StopRecord = @"结束";
 
 #define AnimationDuration (0.3)
 
-@interface ViewController () <UIGestureRecognizerDelegate,RPBroadcastActivityViewControllerDelegate,RPPreviewViewControllerDelegate>
+@interface ViewController () <RPBroadcastActivityViewControllerDelegate,RPPreviewViewControllerDelegate>
 
 @property (nonatomic, strong)UIButton *btnStart;
 @property (nonatomic, strong)UIButton *btnStop;
@@ -39,14 +41,58 @@ static NSString *StopRecord = @"结束";
 @property (nonatomic, strong) UIButton *switchButton;
 @property (nonatomic, assign) BOOL isSwitchOn;
 
+@property (nonatomic, strong) UIView *oneView;
+
 @end
 
+
+
 @implementation ViewController
+
+- (UIView *)createViewWithColor:(UIColor *)color rect:(CGRect)frame {
+    UIView *view = [[UIView alloc] initWithFrame:frame];
+    view.backgroundColor = color;
+    
+    return view;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    NSString *ipString = [self getIPAddress];
+    
+    //方法二：个人推荐用这个请求，速度比较快
+    /*
+     http://ipof.in/json
+     http://ipof.in/xml
+     http://ipof.in/txt
+     If you want HTTPS you can use the same URLs with https prefix. The advantage being that even if you are on a Wifi you will get the public address.
+     */
+    NSError *error;
+    NSURL *ipURL = [NSURL URLWithString:@"https://ipof.in/txt"];
+    NSString *ip = [NSString stringWithContentsOfURL:ipURL encoding:NSUTF8StringEncoding error:&error];
+    
+    NSLog(@"1");
+    dispatch_queue_t main = dispatch_get_main_queue();
+    
+    if ( dispatch_get_current_queue() != main ) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"2");
+        });
+    }
+    
+    NSLog(@"3");
+    
+    NSString *a = @"Ab的...";
+    NSLog(@"%lu",(unsigned long)a.length);
+    NSString *b = @"Ab的..";
+    NSLog(@"%lu",(unsigned long)b.length);
+    NSString *c = @"中国..";
+    NSLog(@"%lu",(unsigned long)c.length);
+    NSString *d = @"中国";
+    NSLog(@"%lu",(unsigned long)d.length);
+    
     UIView *view2 = [[UIView alloc] initWithFrame:CGRectMake(120, 200, 80, 80)];
     view2.backgroundColor = [UIColor redColor];
     [self.view addSubview:view2];
@@ -60,6 +106,9 @@ static NSString *StopRecord = @"结束";
     
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-80, 0, 80, 40)];
+    //imageView.alpha = 0.0;
+    imageView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0];
+    
     imageView.userInteractionEnabled = YES;
     [self.view addSubview:imageView];
 
@@ -72,10 +121,14 @@ static NSString *StopRecord = @"结束";
     [imageView sizeToFit];
     //[imageView sizeThatFits:CGSizeMake(80, 40)];
     
+    UIView *onImageView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 80, 300)];
+    onImageView.backgroundColor = [UIColor redColor];
+    onImageView.userInteractionEnabled = YES;
+    [imageView addSubview:onImageView];
     
     UITapGestureRecognizer *generalizeViewTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(generalizeViewAction)];
-    generalizeViewTapGesture.numberOfTapsRequired = 1;
-    generalizeViewTapGesture.numberOfTouchesRequired = 1;
+//    generalizeViewTapGesture.numberOfTapsRequired = 1;
+//    generalizeViewTapGesture.numberOfTouchesRequired = 1;
     [imageView addGestureRecognizer:generalizeViewTapGesture];
     
     
@@ -94,6 +147,34 @@ static NSString *StopRecord = @"结束";
     
     [self testSwitchButton];
 }
+
+
+- (NSString *)getIPAddress {
+    NSString *address = @"error";
+    struct ifaddrs *interfaces = NULL;
+    struct ifaddrs *temp_addr = NULL;
+    int success = 0;
+    // retrieve the current interfaces - returns 0 on success
+    success = getifaddrs(&interfaces);
+    if (success == 0) {
+        // Loop through linked list of interfaces
+        temp_addr = interfaces;
+        while(temp_addr != NULL) {
+            if(temp_addr->ifa_addr->sa_family == AF_INET) {
+                // Check if interface is en0 which is the wifi connection on the iPhone
+                if([[NSString stringWithUTF8String:temp_addr->ifa_name] isEqualToString:@"en0"]) {
+                    // Get NSString from C String
+                    address = [NSString stringWithUTF8String:inet_ntoa(((struct sockaddr_in *)temp_addr->ifa_addr)->sin_addr)];
+                }
+            }
+            temp_addr = temp_addr->ifa_next;
+        }
+    }
+    // Free memory
+    freeifaddrs(interfaces);
+    return address;
+}
+
 
 - (void)testSwitchButton {
     _switchBGView = [[UIView alloc] initWithFrame:CGRectMake(100, 100, 100, 40)];
