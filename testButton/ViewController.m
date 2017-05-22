@@ -40,8 +40,14 @@ static NSString *StopRecord = @"结束";
 @property (nonatomic, strong) UIView *switchBGView;
 @property (nonatomic, strong) UIButton *switchButton;
 @property (nonatomic, assign) BOOL isSwitchOn;
-
 @property (nonatomic, strong) UIView *oneView;
+
+
+@property (nonatomic, strong) UIButton *testButton;
+
+@property (strong, nonatomic) IBOutlet UIButton *testButton11;
+
+@property (strong, nonatomic) IBOutlet UIView *testView;
 
 @end
 
@@ -146,6 +152,37 @@ static NSString *StopRecord = @"结束";
     
     
     [self testSwitchButton];
+    
+    
+    
+    
+    
+    _testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 250, 50, 50)];
+    _testButton.backgroundColor = [UIColor blueColor];
+    [_testButton addTarget:self action:@selector(testButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIView *view33 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    view33.backgroundColor = [UIColor redColor];
+    [_testButton addSubview:view33];
+    
+    [self.view addSubview:_testButton];
+    
+    
+    _testView = [[UIView alloc] initWithFrame:CGRectMake(200, 200, 50, 50)];
+    _testView.backgroundColor = [UIColor redColor];
+    
+    [self.view addSubview:_testView];
+    
+}
+
+- (void)testButtonAction {
+    _testButton.frame = CGRectMake(250, 400, 100, 100);
+}
+
+
+- (IBAction)testButton11Action:(UIButton *)sender {
+    _testView.frame = CGRectMake(250, 400, 100, 100);
 }
 
 
