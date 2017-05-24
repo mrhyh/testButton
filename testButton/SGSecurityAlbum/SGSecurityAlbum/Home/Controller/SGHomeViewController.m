@@ -26,7 +26,7 @@
 }
 
 - (void)setupView {
-    self.title = @"Agony";
+    self.title = @"密码锁";
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
     SGHomeView *view = [[SGHomeView alloc] initWithFrame:(CGRect){0, 0, [UIScreen mainScreen].bounds.size} collectionViewLayout:layout];

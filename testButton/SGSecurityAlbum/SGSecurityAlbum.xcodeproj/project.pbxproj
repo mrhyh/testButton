@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		185B28C61ED537C30093546C /* Artboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 185B28C51ED537C30093546C /* Artboard2.png */; };
 		6806EABB1D30D28A0044ED1E /* SGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6806EABA1D30D28A0044ED1E /* SGFileUtil.m */; };
 		6806EABF1D30DEFA0044ED1E /* SGAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 6806EABE1D30DEFA0044ED1E /* SGAlbum.m */; };
 		6806EB871D30F9F20044ED1E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 6806EB4F1D30F9F20044ED1E /* .gitkeep */; };
@@ -118,6 +119,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		185B28C51ED537C30093546C /* Artboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artboard2.png; sourceTree = "<group>"; };
 		6806EAB91D30D28A0044ED1E /* SGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFileUtil.h; sourceTree = "<group>"; };
 		6806EABA1D30D28A0044ED1E /* SGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFileUtil.m; sourceTree = "<group>"; };
 		6806EABD1D30DEFA0044ED1E /* SGAlbum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAlbum.h; sourceTree = "<group>"; };
@@ -738,6 +740,7 @@
 		6857E9E21D2F94310013E1DC /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				185B28C51ED537C30093546C /* Artboard2.png */,
 				6857E9EB1D2FA3010013E1DC /* pch */,
 			);
 			path = Resources;
@@ -905,7 +908,7 @@
 				TargetAttributes = {
 					6857E9AB1D2F909D0013E1DC = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = VD58PNDPW6;
+						DevelopmentTeam = EQHJZ8ZG26;
 						DevelopmentTeamName = "Yutong Xiu";
 						ProvisioningStyle = Automatic;
 					};
@@ -956,6 +959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				681EBF811D2FADAB00AA2B83 /* Launch Screen.storyboard in Resources */,
+				185B28C61ED537C30093546C /* Artboard2.png in Resources */,
 				6857E9BC1D2F909D0013E1DC /* Assets.xcassets in Resources */,
 				6806EB871D30F9F20044ED1E /* .gitkeep in Resources */,
 				68128B781D2FEA5C0070BE88 /* MBProgressHUD.bundle in Resources */,
@@ -1206,12 +1210,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VD58PNDPW6;
+				DEVELOPMENT_TEAM = EQHJZ8ZG26;
 				GCC_PREFIX_HEADER = SGSecurityAlbum/Resources/pch/prefix.pch;
 				INFOPLIST_FILE = SGSecurityAlbum/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.mimasuo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1221,12 +1225,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = VD58PNDPW6;
+				DEVELOPMENT_TEAM = EQHJZ8ZG26;
 				GCC_PREFIX_HEADER = SGSecurityAlbum/Resources/pch/prefix.pch;
 				INFOPLIST_FILE = SGSecurityAlbum/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.mimasuo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

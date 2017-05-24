@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		18403DE91E7BB595007ECADC /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */; };
 		184840131E77BF6B00380983 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 184840121E77BF6B00380983 /* 5.jpg */; };
+		1849A0441ED2ED7B0024AD33 /* testView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1849A0431ED2ED7B0024AD33 /* testView.xib */; };
+		1849A0471ED2ED9E0024AD33 /* TestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1849A0461ED2ED9E0024AD33 /* TestView.m */; };
 		185C56061E8E52FC001E5B6C /* 弹幕头背景-.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C55FD1E8E52FC001E5B6C /* 弹幕头背景-.png */; };
 		185C56071E8E52FC001E5B6C /* 弹幕头背景-@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C55FE1E8E52FC001E5B6C /* 弹幕头背景-@2x.png */; };
 		185C56081E8E52FC001E5B6C /* 弹幕头背景-@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 185C55FF1E8E52FC001E5B6C /* 弹幕头背景-@3x.png */; };
@@ -35,6 +37,9 @@
 		18403DE71E7BB595007ECADC /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		184840121E77BF6B00380983 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
+		1849A0431ED2ED7B0024AD33 /* testView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = testView.xib; sourceTree = "<group>"; };
+		1849A0451ED2ED9E0024AD33 /* TestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestView.h; sourceTree = "<group>"; };
+		1849A0461ED2ED9E0024AD33 /* TestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestView.m; sourceTree = "<group>"; };
 		185C55FD1E8E52FC001E5B6C /* 弹幕头背景-.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹幕头背景-.png"; sourceTree = "<group>"; };
 		185C55FE1E8E52FC001E5B6C /* 弹幕头背景-@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹幕头背景-@2x.png"; sourceTree = "<group>"; };
 		185C55FF1E8E52FC001E5B6C /* 弹幕头背景-@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "弹幕头背景-@3x.png"; sourceTree = "<group>"; };
@@ -115,6 +120,9 @@
 				188F4FE41E7650A5005738D0 /* ViewController.m */,
 				18403DE71E7BB595007ECADC /* UncaughtExceptionHandler.h */,
 				18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */,
+				1849A0451ED2ED9E0024AD33 /* TestView.h */,
+				1849A0461ED2ED9E0024AD33 /* TestView.m */,
+				1849A0431ED2ED7B0024AD33 /* testView.xib */,
 				188F4FE61E7650A5005738D0 /* Main.storyboard */,
 				188F4FE91E7650A5005738D0 /* Assets.xcassets */,
 				188F4FEB1E7650A5005738D0 /* LaunchScreen.storyboard */,
@@ -215,6 +223,7 @@
 				185C56091E8E52FC001E5B6C /* 弹按钮灰-.png in Resources */,
 				188F4FFA1E766F00005738D0 /* 3.jpeg in Resources */,
 				185C56081E8E52FC001E5B6C /* 弹幕头背景-@3x.png in Resources */,
+				1849A0441ED2ED7B0024AD33 /* testView.xib in Resources */,
 				188F4FFB1E766F00005738D0 /* 4.jpeg in Resources */,
 				185C560A1E8E52FC001E5B6C /* 弹按钮灰-@2x.png in Resources */,
 				188F4FE81E7650A5005738D0 /* Main.storyboard in Resources */,
@@ -234,6 +243,7 @@
 			files = (
 				188F4FE51E7650A5005738D0 /* ViewController.m in Sources */,
 				18403DE91E7BB595007ECADC /* UncaughtExceptionHandler.m in Sources */,
+				1849A0471ED2ED9E0024AD33 /* TestView.m in Sources */,
 				188F4FE21E7650A5005738D0 /* AppDelegate.m in Sources */,
 				188F4FDF1E7650A5005738D0 /* main.m in Sources */,
 			);

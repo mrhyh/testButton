@@ -11,6 +11,8 @@
 #import <ReplayKit/ReplayKit.h>
 #import <ifaddrs.h>
 #import <arpa/inet.h>
+#import "TestView.h"
+
 
 static NSString *StartRecord = @"开始";
 static NSString *StopRecord = @"结束";
@@ -33,6 +35,7 @@ static NSString *StopRecord = @"结束";
 @property (nonatomic, strong)UIView *tipView;
 @property (nonatomic, strong)UILabel *lbTip;
 @property (nonatomic, strong)UILabel *lbTime;
+@property (nonatomic, strong)TestView *testView;
 
 
 //test Switch效果
@@ -47,7 +50,6 @@ static NSString *StopRecord = @"结束";
 
 @property (strong, nonatomic) IBOutlet UIButton *testButton11;
 
-@property (strong, nonatomic) IBOutlet UIView *testView;
 
 @end
 
@@ -66,6 +68,29 @@ static NSString *StopRecord = @"结束";
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    [self addobserver];
+    
+    
+    
+    _testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 250, 50, 50)];
+    _testButton.backgroundColor = [UIColor blueColor];
+    [_testButton addTarget:self action:@selector(testButtonAction) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIView *view33 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    view33.backgroundColor = [UIColor redColor];
+    [_testButton addSubview:view33];
+    
+    [self.view addSubview:_testButton];
+    
+    _testView = [[TestView alloc] initWithFrame:CGRectMake(0, 0, 200, 100)];
+    _testView.backgroundColor = [UIColor blueColor];
+    
+    [self.view addSubview:_testView];
+    
+    
+    return;
+    
     NSString *ipString = [self getIPAddress];
     
     //方法二：个人推荐用这个请求，速度比较快
@@ -153,36 +178,77 @@ static NSString *StopRecord = @"结束";
     
     [self testSwitchButton];
     
-    
-    
-    
-    
-    _testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 250, 50, 50)];
-    _testButton.backgroundColor = [UIColor blueColor];
-    [_testButton addTarget:self action:@selector(testButtonAction) forControlEvents:UIControlEventTouchUpInside];
-    
-    
-    UIView *view33 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    view33.backgroundColor = [UIColor redColor];
-    [_testButton addSubview:view33];
-    
-    [self.view addSubview:_testButton];
-    
-    
-    _testView = [[UIView alloc] initWithFrame:CGRectMake(200, 200, 50, 50)];
-    _testView.backgroundColor = [UIColor redColor];
-    
-    [self.view addSubview:_testView];
-    
 }
 
 - (void)testButtonAction {
-    _testButton.frame = CGRectMake(250, 400, 100, 100);
+    _testView.frame = CGRectMake(200, 0, 400, 100);
 }
 
 
+
+
+- (void)addobserver{
+    // Do any additional setup after loading the view from its nib.
+    //----- SETUP DEVICE ORIENTATION CHANGE NOTIFICATION -----
+    UIDevice *device = [UIDevice currentDevice]; //Get the device object
+    [device beginGeneratingDeviceOrientationNotifications]; //Tell it to start monitoring the accelerometer for orientation
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter]; //Get the notification centre for the app
+    [nc addObserver:self selector:@selector(orientationChanged:) name:UIDeviceOrientationDidChangeNotification  object:device];
+}
+- (void)removeobserver{
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    UIDevice *device = [UIDevice currentDevice]; //Get the device object
+    [nc removeObserver:self name:UIDeviceOrientationDidChangeNotification object:device];
+}
+- (void)orientationChanged:(NSNotification *)note  {      UIDeviceOrientation o = [[UIDevice currentDevice] orientation];
+    switch (o) {
+        case UIDeviceOrientationPortrait:            // Device oriented vertically, home button on the bottom
+            [self  rotation_icon:0.0];
+            break;
+        case UIDeviceOrientationPortraitUpsideDown:  // Device oriented vertically, home button on the top
+            [self  rotation_icon:180.0];
+            break;
+        case UIDeviceOrientationLandscapeLeft :      // Device oriented horizontally, home button on the right
+            [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:YES];
+            
+            [self  rotation_icon:90.0*3];
+            break;
+        case UIDeviceOrientationLandscapeRight:      // Device oriented horizontally, home button on the left
+            [[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeLeft animated:YES];
+            
+            [self  rotation_icon:90.0];
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)rotation_icon:(float)n {
+    if (0.0 == n || 180.0 == n) {
+        
+        _testView.frame = CGRectMake(0, 0, 200, 100);
+    }else {
+        _testView.frame = CGRectMake(400, 0, 500, 100);
+    }
+}
+
+
+
 - (IBAction)testButton11Action:(UIButton *)sender {
-    _testView.frame = CGRectMake(250, 400, 100, 100);
+    // hack, turn to landscape code.
+    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
+    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+        [UIApplication sharedApplication].keyWindow.rootViewController = nil;
+        [UIApplication sharedApplication].keyWindow.rootViewController = root;
+    } completion:^(BOOL finished) {
+        
+    }];
+    
+    // the tab bar is showing unexpected, hide it.
+   // UITabBarController *tab = (UITabBarController *)root;
+    //NSInteger currentIdx = tab.selectedIndex;
+    //[tab setSelectedIndex:(currentIdx+1)%4];
+    //[tab setSelectedIndex:currentIdx];
 }
 
 
