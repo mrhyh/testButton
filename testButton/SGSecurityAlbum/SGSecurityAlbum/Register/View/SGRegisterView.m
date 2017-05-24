@@ -43,7 +43,7 @@
         make.centerX.equalTo(superview);
     }];
     UILabel *logoLabel = [UILabel new];
-    logoLabel.text = @"Add Account";
+    logoLabel.text = YLGSGWelcomeViewAddAccountHint;
     logoLabel.textColor = [UIColor brownColor];
     logoLabel.textAlignment = NSTextAlignmentCenter;
     logoLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:32];
@@ -62,7 +62,7 @@
     pwdFiled.returnKeyType = UIReturnKeyNext;
     pwdFiled.textAlignment = NSTextAlignmentCenter;
     pwdFiled.secureTextEntry = YES;
-    pwdFiled.placeholder = @"Please enter your password";
+    pwdFiled.placeholder = YLGSGWelcomeViewPasswordHint;
     pwdFiled.borderStyle = UITextBorderStyleRoundedRect;
     self.pwdFiled = pwdFiled;
     [self addSubview:pwdFiled];
@@ -79,7 +79,7 @@
     confirmField.returnKeyType = UIReturnKeyGo;
     confirmField.textAlignment = NSTextAlignmentCenter;
     confirmField.secureTextEntry = YES;
-    confirmField.placeholder = @"Please confirm your password";
+    confirmField.placeholder = YLGSGWelcomeViewConfirmPassword;
     confirmField.borderStyle = UITextBorderStyleRoundedRect;
     self.confirmField = confirmField;
     [self addSubview:confirmField];

@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Register";
+    self.title =YLGSGWelcomeViewRegisterHint;
 }
 
 - (void)viewDidAppear:(BOOL)animated {

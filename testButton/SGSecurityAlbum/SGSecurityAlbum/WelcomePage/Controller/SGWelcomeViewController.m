@@ -29,8 +29,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"Login";
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Register" style:UIBarButtonItemStylePlain target:self action:@selector(registerClick)];
+    self.title = YLGSGWelcomeViewLoginHint;
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:YLGSGWelcomeViewRegisterHint style:UIBarButtonItemStylePlain target:self action:@selector(registerClick)];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -66,7 +66,7 @@
 - (void)loginWithAccount:(SGAccount *)account {
     dispatch_async(dispatch_get_main_queue(), ^{
         if (!account) {
-            [MBProgressHUD showError:@"Password Error"];
+            [MBProgressHUD showError:YLGSGWelcomeViewPasswordErrorHint];
             return;
         }
         [SGAccountManager sharedManager].currentAccount = account;

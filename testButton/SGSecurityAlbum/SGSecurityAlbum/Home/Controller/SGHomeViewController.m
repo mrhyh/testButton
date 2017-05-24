@@ -38,7 +38,7 @@
     }];
     self.homeView = view;
     [self.view addSubview:view];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:YLGSGWelcomeViewRLogoutHint style:UIBarButtonItemStylePlain target:self action:@selector(logout)];
 }
 
 - (void)logout {

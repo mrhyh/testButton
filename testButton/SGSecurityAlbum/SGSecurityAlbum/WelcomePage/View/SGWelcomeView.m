@@ -39,7 +39,7 @@
         make.centerX.equalTo(superview);
     }];
     UILabel *logoLabel = [UILabel new];
-    logoLabel.text = @"Agony";
+    logoLabel.text = YLGSGWelcomeViewLoginName;
     logoLabel.textColor = [UIColor brownColor];
     logoLabel.textAlignment = NSTextAlignmentCenter;
     logoLabel.font = [UIFont fontWithName:@"Arial-BoldMT" size:32];
@@ -56,7 +56,7 @@
     pwdFiled.returnKeyType = UIReturnKeyGo;
     pwdFiled.textAlignment = NSTextAlignmentCenter;
     pwdFiled.secureTextEntry = YES;
-    pwdFiled.placeholder = @"Please enter your password";
+    pwdFiled.placeholder = YLGSGWelcomeViewPasswordHint;
     pwdFiled.borderStyle = UITextBorderStyleRoundedRect;
     self.pwdFiled = pwdFiled;
     [self addSubview:pwdFiled];
