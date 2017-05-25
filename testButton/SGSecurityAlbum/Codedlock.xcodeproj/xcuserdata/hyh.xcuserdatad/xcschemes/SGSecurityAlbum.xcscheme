@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6857E9AB1D2F909D0013E1DC"
-               BuildableName = "SGSecurityAlbum.app"
-               BlueprintName = "SGSecurityAlbum"
-               ReferencedContainer = "container:SGSecurityAlbum.xcodeproj">
+               BuildableName = "Codedlock.app"
+               BlueprintName = "Codedlock"
+               ReferencedContainer = "container:Codedlock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6857E9C41D2F909D0013E1DC"
-               BuildableName = "SGSecurityAlbumTests.xctest"
-               BlueprintName = "SGSecurityAlbumTests"
-               ReferencedContainer = "container:SGSecurityAlbum.xcodeproj">
+               BuildableName = "CodedlockTests.xctest"
+               BlueprintName = "CodedlockTests"
+               ReferencedContainer = "container:Codedlock.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6857E9CF1D2F909E0013E1DC"
-               BuildableName = "SGSecurityAlbumUITests.xctest"
-               BlueprintName = "SGSecurityAlbumUITests"
-               ReferencedContainer = "container:SGSecurityAlbum.xcodeproj">
+               BuildableName = "CodedlockUITests.xctest"
+               BlueprintName = "CodedlockUITests"
+               ReferencedContainer = "container:Codedlock.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6857E9AB1D2F909D0013E1DC"
-            BuildableName = "SGSecurityAlbum.app"
-            BlueprintName = "SGSecurityAlbum"
-            ReferencedContainer = "container:SGSecurityAlbum.xcodeproj">
+            BuildableName = "Codedlock.app"
+            BlueprintName = "Codedlock"
+            ReferencedContainer = "container:Codedlock.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6857E9AB1D2F909D0013E1DC"
-            BuildableName = "SGSecurityAlbum.app"
-            BlueprintName = "SGSecurityAlbum"
-            ReferencedContainer = "container:SGSecurityAlbum.xcodeproj">
+            BuildableName = "Codedlock.app"
+            BlueprintName = "Codedlock"
+            ReferencedContainer = "container:Codedlock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6857E9AB1D2F909D0013E1DC"
-            BuildableName = "SGSecurityAlbum.app"
-            BlueprintName = "SGSecurityAlbum"
-            ReferencedContainer = "container:SGSecurityAlbum.xcodeproj">
+            BuildableName = "Codedlock.app"
+            BlueprintName = "Codedlock"
+            ReferencedContainer = "container:Codedlock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

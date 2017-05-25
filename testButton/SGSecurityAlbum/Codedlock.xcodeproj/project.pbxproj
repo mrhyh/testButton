@@ -255,16 +255,16 @@
 		6850D7491D3251CD0022E455 /* SGPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPhotoViewController.m; sourceTree = "<group>"; };
 		6850D74B1D3257EC0022E455 /* SGPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPhotoView.h; sourceTree = "<group>"; };
 		6850D74C1D3257EC0022E455 /* SGPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPhotoView.m; sourceTree = "<group>"; };
-		6857E9AC1D2F909D0013E1DC /* SGSecurityAlbum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SGSecurityAlbum.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6857E9AC1D2F909D0013E1DC /* Codedlock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Codedlock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6857E9B01D2F909D0013E1DC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6857E9B21D2F909D0013E1DC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6857E9B31D2F909D0013E1DC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6857E9BB1D2F909D0013E1DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6857E9C01D2F909D0013E1DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6857E9C51D2F909D0013E1DC /* SGSecurityAlbumTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGSecurityAlbumTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6857E9C51D2F909D0013E1DC /* CodedlockTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodedlockTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6857E9C91D2F909D0013E1DC /* SGSecurityAlbumTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGSecurityAlbumTests.m; sourceTree = "<group>"; };
 		6857E9CB1D2F909D0013E1DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6857E9D01D2F909E0013E1DC /* SGSecurityAlbumUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SGSecurityAlbumUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6857E9D01D2F909E0013E1DC /* CodedlockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CodedlockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6857E9D41D2F909E0013E1DC /* SGSecurityAlbumUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SGSecurityAlbumUITests.m; sourceTree = "<group>"; };
 		6857E9D61D2F909E0013E1DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6857E9E81D2F98040013E1DC /* SGWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGWelcomeViewController.h; sourceTree = "<group>"; };
@@ -694,9 +694,9 @@
 		6857E9AD1D2F909D0013E1DC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6857E9AC1D2F909D0013E1DC /* SGSecurityAlbum.app */,
-				6857E9C51D2F909D0013E1DC /* SGSecurityAlbumTests.xctest */,
-				6857E9D01D2F909E0013E1DC /* SGSecurityAlbumUITests.xctest */,
+				6857E9AC1D2F909D0013E1DC /* Codedlock.app */,
+				6857E9C51D2F909D0013E1DC /* CodedlockTests.xctest */,
+				6857E9D01D2F909E0013E1DC /* CodedlockUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -855,9 +855,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		6857E9AB1D2F909D0013E1DC /* SGSecurityAlbum */ = {
+		6857E9AB1D2F909D0013E1DC /* Codedlock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6857E9D91D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "SGSecurityAlbum" */;
+			buildConfigurationList = 6857E9D91D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "Codedlock" */;
 			buildPhases = (
 				6857E9A81D2F909D0013E1DC /* Sources */,
 				6857E9A91D2F909D0013E1DC /* Frameworks */,
@@ -867,14 +867,14 @@
 			);
 			dependencies = (
 			);
-			name = SGSecurityAlbum;
+			name = Codedlock;
 			productName = SGSecurityAlbum;
-			productReference = 6857E9AC1D2F909D0013E1DC /* SGSecurityAlbum.app */;
+			productReference = 6857E9AC1D2F909D0013E1DC /* Codedlock.app */;
 			productType = "com.apple.product-type.application";
 		};
-		6857E9C41D2F909D0013E1DC /* SGSecurityAlbumTests */ = {
+		6857E9C41D2F909D0013E1DC /* CodedlockTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6857E9DC1D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "SGSecurityAlbumTests" */;
+			buildConfigurationList = 6857E9DC1D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "CodedlockTests" */;
 			buildPhases = (
 				6857E9C11D2F909D0013E1DC /* Sources */,
 				6857E9C21D2F909D0013E1DC /* Frameworks */,
@@ -885,14 +885,14 @@
 			dependencies = (
 				6857E9C71D2F909D0013E1DC /* PBXTargetDependency */,
 			);
-			name = SGSecurityAlbumTests;
+			name = CodedlockTests;
 			productName = SGSecurityAlbumTests;
-			productReference = 6857E9C51D2F909D0013E1DC /* SGSecurityAlbumTests.xctest */;
+			productReference = 6857E9C51D2F909D0013E1DC /* CodedlockTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6857E9CF1D2F909E0013E1DC /* SGSecurityAlbumUITests */ = {
+		6857E9CF1D2F909E0013E1DC /* CodedlockUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6857E9DF1D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "SGSecurityAlbumUITests" */;
+			buildConfigurationList = 6857E9DF1D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "CodedlockUITests" */;
 			buildPhases = (
 				6857E9CC1D2F909E0013E1DC /* Sources */,
 				6857E9CD1D2F909E0013E1DC /* Frameworks */,
@@ -903,9 +903,9 @@
 			dependencies = (
 				6857E9D21D2F909E0013E1DC /* PBXTargetDependency */,
 			);
-			name = SGSecurityAlbumUITests;
+			name = CodedlockUITests;
 			productName = SGSecurityAlbumUITests;
-			productReference = 6857E9D01D2F909E0013E1DC /* SGSecurityAlbumUITests.xctest */;
+			productReference = 6857E9D01D2F909E0013E1DC /* CodedlockUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -945,7 +945,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6857E9A71D2F909D0013E1DC /* Build configuration list for PBXProject "SGSecurityAlbum" */;
+			buildConfigurationList = 6857E9A71D2F909D0013E1DC /* Build configuration list for PBXProject "Codedlock" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -963,9 +963,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				6857E9AB1D2F909D0013E1DC /* SGSecurityAlbum */,
-				6857E9C41D2F909D0013E1DC /* SGSecurityAlbumTests */,
-				6857E9CF1D2F909E0013E1DC /* SGSecurityAlbumUITests */,
+				6857E9AB1D2F909D0013E1DC /* Codedlock */,
+				6857E9C41D2F909D0013E1DC /* CodedlockTests */,
+				6857E9CF1D2F909E0013E1DC /* CodedlockUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1112,12 +1112,12 @@
 /* Begin PBXTargetDependency section */
 		6857E9C71D2F909D0013E1DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6857E9AB1D2F909D0013E1DC /* SGSecurityAlbum */;
+			target = 6857E9AB1D2F909D0013E1DC /* Codedlock */;
 			targetProxy = 6857E9C61D2F909D0013E1DC /* PBXContainerItemProxy */;
 		};
 		6857E9D21D2F909E0013E1DC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 6857E9AB1D2F909D0013E1DC /* SGSecurityAlbum */;
+			target = 6857E9AB1D2F909D0013E1DC /* Codedlock */;
 			targetProxy = 6857E9D11D2F909E0013E1DC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1234,7 +1234,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.mimasuo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1249,7 +1249,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.mimasuo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1261,7 +1261,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulghost.SGSecurityAlbumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SGSecurityAlbum.app/SGSecurityAlbum";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Codedlock.app/Codedlock";
 			};
 			name = Debug;
 		};
@@ -1273,7 +1273,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.soulghost.SGSecurityAlbumTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SGSecurityAlbum.app/SGSecurityAlbum";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Codedlock.app/Codedlock";
 			};
 			name = Release;
 		};
@@ -1302,7 +1302,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6857E9A71D2F909D0013E1DC /* Build configuration list for PBXProject "SGSecurityAlbum" */ = {
+		6857E9A71D2F909D0013E1DC /* Build configuration list for PBXProject "Codedlock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6857E9D71D2F909E0013E1DC /* Debug */,
@@ -1311,7 +1311,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6857E9D91D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "SGSecurityAlbum" */ = {
+		6857E9D91D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "Codedlock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6857E9DA1D2F909E0013E1DC /* Debug */,
@@ -1320,7 +1320,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6857E9DC1D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "SGSecurityAlbumTests" */ = {
+		6857E9DC1D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "CodedlockTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6857E9DD1D2F909E0013E1DC /* Debug */,
@@ -1329,7 +1329,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6857E9DF1D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "SGSecurityAlbumUITests" */ = {
+		6857E9DF1D2F909E0013E1DC /* Build configuration list for PBXNativeTarget "CodedlockUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6857E9E01D2F909E0013E1DC /* Debug */,
