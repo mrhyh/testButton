@@ -77,7 +77,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     SGAlbum *album = self.homeView.albums[indexPath.row];
     if (album.type == SGAlbumButtonTypeAddButton) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"New Folder" message:@"Please enter folder name" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"新文件夹" message:@"请输入名称" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"创建", nil];
         alertView.alertViewStyle = UIAlertViewStylePlainTextInput;
         [alertView show];
     } else {
@@ -92,13 +92,13 @@
     if (buttonIndex == 1) {
         NSString *folderName = [alertView textFieldAtIndex:0].text;
         if (!folderName.length) {
-            [MBProgressHUD showError:@"Folder Name Cannot be Empty"];
+            [MBProgressHUD showError:@"文件夹名字不能为空"];
             return;
         }
         NSFileManager *mgr = [NSFileManager defaultManager];
         NSString *folderPath = [[SGFileUtil sharedUtil].rootPath stringByAppendingPathComponent:folderName];
         if ([mgr fileExistsAtPath:folderPath isDirectory:nil]) {
-            [MBProgressHUD showError:@"Folder Exists"];
+            [MBProgressHUD showError:@"此文件名已经存在"];
             return;
         }
         [mgr createDirectoryAtPath:folderPath withIntermediateDirectories:NO attributes:nil error:nil];
