@@ -93,7 +93,7 @@
 
 #pragma mark - ToolBar Action
 - (void)trashAction {
-    [[[SGBlockActionSheet alloc] initWithTitle:@"Please Confirm Delete" callback:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+    [[[SGBlockActionSheet alloc] initWithTitle:@"确认要删除吗？" callback:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
         if (buttonIndex == 0) {
             [[NSFileManager defaultManager] removeItemAtPath:self.photoView.currentPhoto.photoURL.path error:nil];
             [[NSFileManager defaultManager] removeItemAtPath:self.photoView.currentPhoto.thumbURL.path error:nil];
@@ -102,11 +102,11 @@
             self.browser.reloadHandler();
             [self.browser reloadData];
         }
-    } cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitlesArray:nil] showInView:self.view];
+    } cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitlesArray:nil] showInView:self.view];
 }
 
 - (void)exportAction {
-    [[[SGBlockActionSheet alloc] initWithTitle:@"Save To Where" callback:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+    [[[SGBlockActionSheet alloc] initWithTitle:@"保存到哪里？" callback:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
         if (buttonIndex == 1) {
             ALAssetsLibrary *lib = [ALAssetsLibrary new];
             UIImage *image = self.photoView.currentImageView.innerImageView.image;
@@ -116,7 +116,7 @@
                 [MBProgressHUD showSuccess:@"Succeeded"];
             }];
         }
-    } cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesArray:@[@"Photo Library"]] showInView:self.view];
+    } cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitlesArray:@[@"相册"]] showInView:self.view];
 }
 
 #pragma mark - dealloc 

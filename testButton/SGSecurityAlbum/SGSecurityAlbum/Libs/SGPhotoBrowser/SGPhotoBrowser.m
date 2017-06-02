@@ -21,10 +21,10 @@
     CGFloat _margin, _gutter;
 }
 
-@property (nonatomic, weak) SGPhotoCollectionView *collectionView;
-@property (nonatomic, assign) CGSize photoSize;
-@property (nonatomic, weak) SGBrowserToolBar *toolBar;
-@property (nonatomic, strong) NSMutableArray *selectModels;
+@property (nonatomic, weak)   SGPhotoCollectionView *collectionView;
+@property (nonatomic, assign) CGSize                 photoSize;
+@property (nonatomic, weak)   SGBrowserToolBar      *toolBar;
+@property (nonatomic, strong) NSMutableArray        *selectModels;
 
 @end
 
@@ -79,21 +79,21 @@
                 break;
             }
             case SGBrowserToolButtonAction: {
-                [[[SGBlockActionSheet alloc] initWithTitle:@"Save To Where" callback:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+                [[[SGBlockActionSheet alloc] initWithTitle:@"保存到哪里？" callback:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
                     switch (buttonIndex) {
                         case 1:
                             [weakSelf handleBatchSave];
                             break;
                     }
-                } cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitlesArray:@[@"Photo Library"]] showInView:self.view];
+                } cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitlesArray:@[@"相册"]] showInView:self.view];
                 break;
             }
             case SGBrowserToolButtonTrash: {
-                [[[SGBlockActionSheet alloc] initWithTitle:@"Please Confirm Delete" callback:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
+                [[[SGBlockActionSheet alloc] initWithTitle:@"确认要删除吗？" callback:^(UIActionSheet *actionSheet, NSInteger buttonIndex) {
                     if (buttonIndex == 0) {
                         [weakSelf handleBatchDelete];
                     }
-                } cancelButtonTitle:@"Cancel" destructiveButtonTitle:@"Delete" otherButtonTitlesArray:nil] showInView:self.view];
+                } cancelButtonTitle:@"取消" destructiveButtonTitle:@"删除" otherButtonTitlesArray:nil] showInView:self.view];
                 break;
             }
         }
@@ -182,7 +182,7 @@
 - (void)handleBatchDelete {
     NSInteger count = self.selectModels.count;
     if (count == 0) {
-        [MBProgressHUD showError:@"Select Images Before Delete"];
+        [MBProgressHUD showError:@"请先选择要删除的内容"];
         return;
     }
     NSFileManager *mgr = [NSFileManager defaultManager];
