@@ -58,6 +58,7 @@
     [self reloadData];
 }
 
+#warning TODO Test 
 #pragma mark - UIBarButtonItem Action
 - (void)addClick {
     QBImagePickerController *picker = [QBImagePickerController new];
@@ -67,10 +68,16 @@
     [self presentViewController:picker animated:YES completion:nil];
 }
 
+#warning TODO Test 选中图片或者视频点击完成后的回调
 #pragma mark - QBImagePickerController Delegate
 - (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets {
     PHImageRequestOptions *op = [[PHImageRequestOptions alloc] init];
     op.synchronous = YES;
+    
+    PHVideoRequestOptions *videoOp = [[PHVideoRequestOptions alloc] init];
+    videoOp.deliveryMode = PHVideoRequestOptionsDeliveryModeHighQualityFormat;
+    
+    
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:imagePickerController.view];
     [imagePickerController.view addSubview:hud];
     hud.mode = MBProgressHUDModeAnnularDeterminate;
@@ -110,6 +117,29 @@
                 hudProgressBlock(++progressCount);
             }];
         });
+        
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+           
+            [imageManager requestAVAssetForVideo:asset options:videoOp resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+                
+            }];
+            
+            [imageManager requestExportSessionForVideo:asset options:videoOp exportPreset:@"test" resultHandler:^(AVAssetExportSession * _Nullable exportSession, NSDictionary * _Nullable info) {
+                
+            }];
+            
+            
+#warning TODO Test 保存视频
+            AVAssetExportSession *session = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetHighestQuality];
+            session.outputFileType = AVFileTypeMPEG4;
+            session.outputURL = ; // 这个就是你可以导出的文件路径了。
+            
+            [session exportAsynchronouslyWithCompletionHandler: ];
+            
+            
+        });
+        
     }
 }
 
