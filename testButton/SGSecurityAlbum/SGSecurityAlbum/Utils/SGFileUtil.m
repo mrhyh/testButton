@@ -31,6 +31,10 @@
     return [rootPath stringByAppendingPathComponent:@"Thumb"];
 }
 
++ (NSString *)videoPathForRootPath:(NSString *)rootPath {
+    return [rootPath stringByAppendingPathComponent:@"Video"];
+}
+
 + (void)savePhoto:(UIImage *)image toRootPath:(NSString *)rootPath withName:(NSString *)name {
     NSData *imageDate = UIImagePNGRepresentation(image);
     rootPath = [self photoPathForRootPath:rootPath];
@@ -51,6 +55,16 @@
     }
     rootPath = [rootPath stringByAppendingPathComponent:name];
     [imageDate writeToFile:rootPath atomically:YES];
+}
+
++ (void)saveVideo:(NSData  *)videoData toRootPath:(NSString *)rootPath withName:(NSString *)name {
+    rootPath = [self videoPathForRootPath:rootPath];
+    NSFileManager *mgr = [NSFileManager defaultManager];
+    if(![mgr fileExistsAtPath:rootPath isDirectory:nil]) {
+        [mgr createDirectoryAtPath:rootPath withIntermediateDirectories:NO attributes:nil error:nil];
+    }
+    rootPath = [rootPath stringByAppendingPathComponent:name];
+    [videoData writeToFile:rootPath atomically:YES];
 }
 
 - (void)setAccount:(SGAccount *)account {

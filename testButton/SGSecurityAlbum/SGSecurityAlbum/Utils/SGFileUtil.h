@@ -17,7 +17,9 @@
 + (NSString *)getFileNameFromPath:(NSString *)filePath;
 + (void)savePhoto:(UIImage *)image toRootPath:(NSString *)rootPath withName:(NSString *)name;
 + (void)saveThumb:(UIImage *)image toRootPath:(NSString *)rootPath withName:(NSString *)name;
++ (void)saveVideo:(NSData  *)videoData toRootPath:(NSString *)rootPath withName:(NSString *)name;
 + (NSString *)photoPathForRootPath:(NSString *)rootPath;
 + (NSString *)thumbPathForRootPath:(NSString *)rootPath;
++ (NSString *)videoPathForRootPath:(NSString *)rootPath;
 
 @end

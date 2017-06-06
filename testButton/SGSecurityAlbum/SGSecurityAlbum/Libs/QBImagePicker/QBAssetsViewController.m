@@ -243,6 +243,7 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
                 break;
         }
         
+#warning TODO Test 
         self.fetchResult = [PHAsset fetchAssetsInAssetCollection:self.assetCollection options:options];
         
         if ([self isAutoDeselectEnabled] && self.imagePickerController.selectedAssets.count > 0) {
@@ -569,7 +570,12 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     QBImagePickerController *imagePickerController = self.imagePickerController;
     NSMutableOrderedSet *selectedAssets = imagePickerController.selectedAssets;
     
-    PHAsset *asset = self.fetchResult[indexPath.item];
+#warning TODO Test
+    AVAsset *asset = self.fetchResult[indexPath.item];
+    //PHAsset *asset = self.fetchResult[indexPath.item];
+    
+    
+    
     
     if (imagePickerController.allowsMultipleSelection) {
         if ([self isAutoDeselectEnabled] && selectedAssets.count > 0) {

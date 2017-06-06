@@ -43,6 +43,7 @@
     NSFileManager *mgr = [NSFileManager defaultManager];
     NSString *photoPath = [SGFileUtil photoPathForRootPath:self.rootPath];
     NSString *thumbPath = [SGFileUtil thumbPathForRootPath:self.rootPath];
+    NSString *videoPath = [SGFileUtil videoPathForRootPath:self.rootPath];
     NSMutableArray *photoModels = @[].mutableCopy;
     NSArray *fileNames = [mgr contentsOfDirectoryAtPath:photoPath error:nil];
     for (NSUInteger i = 0; i < fileNames.count; i++) {
@@ -54,6 +55,17 @@
         model.thumbURL = thumbURL;
         [photoModels addObject:model];
     }
+    
+    NSArray *videoFileNames = [mgr contentsOfDirectoryAtPath:videoPath error:nil];
+    for (NSUInteger i = 0; i < videoFileNames.count; i++) {
+        NSString *fileName = videoFileNames[i];
+        NSURL *videoURL = [NSURL fileURLWithPath:[videoPath stringByAppendingPathComponent:fileName]];
+        SGPhotoModel *model = [SGPhotoModel new];
+        model.videoURL = videoURL;
+        [photoModels addObject:model];
+    }
+    
+    
     self.photoModels = photoModels;
     [self reloadData];
 }
@@ -103,45 +115,55 @@
     };
     for (int i = 0; i < assets.count; i++) {
         PHAsset *asset = assets[i];
+        
         [importAssets addObject:asset];
         PHCachingImageManager *imageManager = [[PHCachingImageManager alloc] init];
         NSString *fileName = [[NSString stringWithFormat:@"%@%@",dateStr,@(i)] MD5];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            [imageManager requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFill options:op resultHandler:^(UIImage *result, NSDictionary *info) {
+            
+            // 获取一个资源（PHAsset）
+            if (asset.mediaType == PHAssetMediaTypeVideo) {
+                PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
+                options.version = PHImageRequestOptionsVersionCurrent;
+                options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
                 
-                [SGFileUtil savePhoto:result toRootPath:self.rootPath withName:fileName];
-                hudProgressBlock(++progressCount);
-            }];
-            [imageManager requestImageForAsset:asset targetSize:CGSizeMake(120, 120) contentMode:PHImageContentModeAspectFill options:op resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-                [SGFileUtil saveThumb:result toRootPath:self.rootPath withName:fileName];
-                hudProgressBlock(++progressCount);
-            }];
-        });
-        
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-           
-            [imageManager requestAVAssetForVideo:asset options:videoOp resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
-                
-            }];
-            
-            [imageManager requestExportSessionForVideo:asset options:videoOp exportPreset:@"test" resultHandler:^(AVAssetExportSession * _Nullable exportSession, NSDictionary * _Nullable info) {
-                
-            }];
-            
-            
-#warning TODO Test 保存视频
-            AVAssetExportSession *session = [AVAssetExportSession exportSessionWithAsset:asset presetName:AVAssetExportPresetHighestQuality];
-            session.outputFileType = AVFileTypeMPEG4;
-            session.outputURL = ; // 这个就是你可以导出的文件路径了。
-            
-            [session exportAsynchronouslyWithCompletionHandler: ];
-            
-            
+                PHImageManager *manager = [PHImageManager defaultManager];
+                [manager requestAVAssetForVideo:asset options:options resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+                    AVURLAsset *urlAsset = (AVURLAsset *)asset;
+                    
+                    NSURL *url = urlAsset.URL;
+                    NSData *data = [NSData dataWithContentsOfURL:url];
+                    
+                    [SGFileUtil saveVideo:data toRootPath:self.rootPath withName:fileName];
+                    hudProgressBlock(++progressCount);
+                    
+                    //NSLog(@"%@",data);
+                }];
+            }else if (asset.mediaType == PHAssetMediaTypeImage) {
+                [imageManager requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFill options:op resultHandler:^(UIImage *result, NSDictionary *info) {
+                    
+                    [SGFileUtil savePhoto:result toRootPath:self.rootPath withName:fileName];
+                    hudProgressBlock(++progressCount);
+                }];
+                [imageManager requestImageForAsset:asset targetSize:CGSizeMake(120, 120) contentMode:PHImageContentModeAspectFill options:op resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+                    [SGFileUtil saveThumb:result toRootPath:self.rootPath withName:fileName];
+                    hudProgressBlock(++progressCount);
+                }];
+            }
         });
         
     }
 }
+
+//获取Documents目录
+-(NSString *)dirDoc{
+    //[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"app_home_doc: %@",documentsDirectory);
+    return documentsDirectory;
+}
+
 
 - (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController {
     [imagePickerController dismissViewControllerAnimated:YES completion:nil];

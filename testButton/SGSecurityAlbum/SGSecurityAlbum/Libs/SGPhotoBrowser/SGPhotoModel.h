@@ -12,6 +12,7 @@
 
 @property (nonatomic, copy) NSURL *photoURL;
 @property (nonatomic, copy) NSURL *thumbURL;
+@property (nonatomic, copy) NSURL *videoURL;
 @property (nonatomic, assign) BOOL isSelected;
 
 @end
