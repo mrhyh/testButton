@@ -75,6 +75,7 @@
 - (void)addClick {
     QBImagePickerController *picker = [QBImagePickerController new];
     picker.delegate = self;
+    picker.mediaType = QBImagePickerMediaTypeAny;
     picker.allowsMultipleSelection = YES;
     picker.showsNumberOfSelectedAssets = YES;
     [self presentViewController:picker animated:YES completion:nil];
@@ -99,7 +100,9 @@
     NSString *dateStr = [formatter stringFromDate:[NSDate date]];
     __block  NSInteger progressCount = 0;
     NSMutableArray *importAssets = @[].mutableCopy;
-    NSInteger progressSum = assets.count * 2;
+#warning TODO Test 这里为什么要*2呢？
+    //NSInteger progressSum = assets.count * 2;
+    NSInteger progressSum = assets.count * 1;
     void (^hudProgressBlock)(NSInteger currentProgressCount) = ^(NSInteger progressCount) {
         dispatch_async(dispatch_get_main_queue(), ^{
             hud.progress = (double)progressCount / progressSum;

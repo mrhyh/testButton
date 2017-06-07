@@ -86,7 +86,8 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
 {
     QBAssetsViewController *assetsViewController = segue.destinationViewController;
     assetsViewController.imagePickerController = self.imagePickerController;
-    self.imagePickerController.mediaType = QBImagePickerMediaTypeVideo;
+#warning TODO Test
+    self.imagePickerController.mediaType = QBImagePickerMediaTypeAny;
     assetsViewController.assetCollection = self.assetCollections[self.tableView.indexPathForSelectedRow.row];
 }
 

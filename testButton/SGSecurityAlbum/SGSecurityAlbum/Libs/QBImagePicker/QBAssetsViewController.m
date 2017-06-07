@@ -571,8 +571,9 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     NSMutableOrderedSet *selectedAssets = imagePickerController.selectedAssets;
     
 #warning TODO Test
-    AVAsset *asset = self.fetchResult[indexPath.item];
-    //PHAsset *asset = self.fetchResult[indexPath.item];
+    //AVAsset *asset = self.fetchResult[indexPath.item];
+    
+    PHAsset *asset = self.fetchResult[indexPath.item];
     
     
     
