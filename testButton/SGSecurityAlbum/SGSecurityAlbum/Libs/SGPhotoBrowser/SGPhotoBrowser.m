@@ -16,6 +16,7 @@
 #import "SDWebImageManager.h"
 #import "SGUIKit.h"
 #import "SDWebImagePrefetcher.h"
+ #import <MediaPlayer/MediaPlayer.h>
 
 @interface SGPhotoBrowser () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     CGFloat _margin, _gutter;
@@ -254,6 +255,20 @@
     cell.model = model;
     return cell;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
+    
+    if (SGPMediaTypeMediaTypeVideo == model.mediaType) {
+        NSURL *url = model.videoURL;
+        
+        MPMoviePlayerViewController *playerVc = [[MPMoviePlayerViewController alloc] initWithContentURL:url];;
+        [self presentMoviePlayerViewControllerAnimated:playerVc];
+    }
+
+}
+
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(_margin, _margin, _margin, _margin);

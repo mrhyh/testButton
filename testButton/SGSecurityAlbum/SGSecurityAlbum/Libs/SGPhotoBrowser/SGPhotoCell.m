@@ -9,6 +9,8 @@
 #import "SGPhotoCell.h"
 #import "SGPhotoModel.h"
 #import "UIImageView+WebCache.h"
+#import <AVFoundation/AVFoundation.h>
+ #import <MediaPlayer/MediaPlayer.h>
 
 @interface SGPhotoCellMaskView : UIView
 
@@ -74,13 +76,40 @@
 - (void)setModel:(SGPhotoModel *)model {
     _model = model;
     NSURL *thumbURL = model.thumbURL;
-    if ([thumbURL isFileURL]) {
-        self.imageView.image = [UIImage imageWithContentsOfFile:thumbURL.path];
-    } else {
-        [self.imageView sg_setImageWithURL:thumbURL model:model];
+    
+    if (SGPMediaTypeMediaTypeImage == model.mediaType) {
+        if ([thumbURL isFileURL]) {
+            self.imageView.image = [UIImage imageWithContentsOfFile:thumbURL.path];
+        } else {
+            [self.imageView sg_setImageWithURL:thumbURL model:model];
+        }
+    }else if (SGPMediaTypeMediaTypeVideo == model.mediaType) {
+        
+#warning TODO Test
+        UIImage *image = [self getVideoPreViewImageWithVideoPath:model.videoURL];
+        self.imageView.image = image;
     }
+    
     self.sg_select = model.isSelected;
 }
+
+// 获取视频的某一帧
+- (UIImage*) getVideoPreViewImageWithVideoPath:(NSURL *)videoPath
+{
+    AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoPath options:nil];
+    AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    gen.appliesPreferredTrackTransform = YES;
+    gen.requestedTimeToleranceAfter = kCMTimeZero;
+    gen.requestedTimeToleranceBefore = kCMTimeZero;
+    CMTime time = CMTimeMakeWithSeconds(0.0, 600);
+    NSError *error = nil;
+    CMTime actualTime;
+    CGImageRef image = [gen copyCGImageAtTime:time actualTime:&actualTime error:&error];
+    UIImage *img = [[UIImage alloc] initWithCGImage:image];
+    CGImageRelease(image);
+    return img;
+}
+
 
 - (void)setSg_select:(BOOL)sg_select {
     _sg_select = sg_select;

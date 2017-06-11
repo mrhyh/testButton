@@ -51,8 +51,9 @@
         NSURL *photoURL = [NSURL fileURLWithPath:[photoPath stringByAppendingPathComponent:fileName]];
         NSURL *thumbURL = [NSURL fileURLWithPath:[thumbPath stringByAppendingPathComponent:fileName]];
         SGPhotoModel *model = [SGPhotoModel new];
-        model.photoURL = photoURL;
-        model.thumbURL = thumbURL;
+        model.photoURL  = photoURL;
+        model.thumbURL  = thumbURL;
+        model.mediaType = SGPMediaTypeMediaTypeImage;
         [photoModels addObject:model];
     }
     
@@ -61,7 +62,8 @@
         NSString *fileName = videoFileNames[i];
         NSURL *videoURL = [NSURL fileURLWithPath:[videoPath stringByAppendingPathComponent:fileName]];
         SGPhotoModel *model = [SGPhotoModel new];
-        model.videoURL = videoURL;
+        model.videoURL  = videoURL;
+        model.mediaType = SGPMediaTypeMediaTypeVideo;
         [photoModels addObject:model];
     }
     
