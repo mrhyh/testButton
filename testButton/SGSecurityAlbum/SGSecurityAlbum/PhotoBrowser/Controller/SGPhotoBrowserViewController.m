@@ -124,6 +124,7 @@
         [importAssets addObject:asset];
         PHCachingImageManager *imageManager = [[PHCachingImageManager alloc] init];
         NSString *fileName = [[NSString stringWithFormat:@"%@%@",dateStr,@(i)] MD5];
+        fileName = [NSString stringWithFormat:@"%@.mp4",fileName];
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             // 获取一个资源（PHAsset）

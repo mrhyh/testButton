@@ -14,8 +14,8 @@
 
 @interface SGPhotoCellMaskView : UIView
 
-@property (nonatomic, weak) UIImageView *selectImageView;
-
+@property (nonatomic, strong) UIImageView *selectImageView;
+@property (nonatomic, strong) UIImageView *itemImageView;
 @end
 
 @implementation SGPhotoCellMaskView
@@ -28,6 +28,10 @@
         UIImageView *selectImageView = [[UIImageView alloc] initWithImage:selectImage];
         self.selectImageView = selectImageView;
         [self addSubview:selectImageView];
+        
+        _itemImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        [self addSubview:_itemImageView];
+        
     }
     return self;
 }
@@ -86,11 +90,43 @@
     }else if (SGPMediaTypeMediaTypeVideo == model.mediaType) {
         
 #warning TODO Test
-        UIImage *image = [self getVideoPreViewImageWithVideoPath:model.videoURL];
-        self.imageView.image = image;
+        
+       
+        UIImage *image = [self movieToImageWithVideoUrl:model.videoURL];
+        UIImageView *testImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        testImageView.image = image;
+        
+        _imageView = testImageView;
+        [self addSubview:_imageView];
     }
     
     self.sg_select = model.isSelected;
+}
+
+
+- (UIImage *)movieToImageWithVideoUrl:(NSURL *)videoUrl {
+    
+    AVURLAsset *asset=[[AVURLAsset alloc] initWithURL:videoUrl options:nil];
+    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
+    generator.appliesPreferredTrackTransform=TRUE;
+    CMTime thumbTime = CMTimeMakeWithSeconds(0,30);
+    __block UIImage *firstImage = [[UIImage alloc] init];
+    
+    AVAssetImageGeneratorCompletionHandler handler =
+    ^(CMTime requestedTime, CGImageRef im, CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error){
+        if (result != AVAssetImageGeneratorSucceeded) {       }//没成功
+        
+        firstImage = [UIImage imageWithCGImage:im];
+        
+        //[self performSelectorOnMainThread:@selector(movieImage:) withObject:thumbImg waitUntilDone:YES];
+        
+    };
+    
+    generator.maximumSize = self.frame.size;
+    [generator generateCGImagesAsynchronouslyForTimes:
+     [NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
+    
+    return firstImage;
 }
 
 // 获取视频的某一帧

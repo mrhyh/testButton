@@ -261,6 +261,7 @@
     SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
     
     if (SGPMediaTypeMediaTypeVideo == model.mediaType) {
+        
         NSURL *url = model.videoURL;
         
         MPMoviePlayerViewController *playerVc = [[MPMoviePlayerViewController alloc] initWithContentURL:url];;
@@ -305,7 +306,8 @@
     SGPhotoViewController *vc = [SGPhotoViewController new];
     vc.browser = self;
     vc.index = indexPath.row;
-    [self.navigationController pushViewController:vc animated:YES];
+#warning TODO Test 临时注释
+    //[self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -
