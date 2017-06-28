@@ -10,6 +10,7 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong) UILabel                *liveVideoProgressView_timeLabel;
 
 @end
 

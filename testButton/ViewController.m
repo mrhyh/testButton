@@ -36,7 +36,7 @@ static NSString *StopRecord = @"结束";
 @property (nonatomic, strong)UILabel *lbTip;
 @property (nonatomic, strong)UILabel *lbTime;
 @property (nonatomic, strong)TestView *testView;
-
+@property (nonatomic, assign)NSInteger testInteger;
 
 //test Switch效果
 
@@ -64,12 +64,69 @@ static NSString *StopRecord = @"结束";
     return view;
 }
 
+- (void)rotateView:(UIImageView *)view
+{
+    CABasicAnimation *rotationAnimation;
+    rotationAnimation = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation.fromValue = [NSNumber numberWithFloat:-M_PI*0.2];
+    rotationAnimation.toValue = [NSNumber numberWithFloat:M_PI*0.2];
+    rotationAnimation.duration = 4;
+    //rotationAnimation.repeatCount = 1;
+    //rotationAnimation.autoreverses = YES;
+    //[view.layer addAnimation:rotationAnimation forKey:@"rotationAnimation"];
+    
+    
+    CABasicAnimation *rotationAnimation2;
+    rotationAnimation2 = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
+    rotationAnimation2.fromValue = [NSNumber numberWithFloat:M_PI*0.2];
+    rotationAnimation2.toValue = [NSNumber numberWithFloat:M_PI*0.4];
+    rotationAnimation2.duration = 1;
+    //rotationAnimation2.repeatCount = 1;
+    //rotationAnimation2.autoreverses = YES;
+    //[view.layer addAnimation:rotationAnimation2 forKey:@"rotationAnimation"];
+    
+    
+    //动画组
+    CAAnimationGroup *animGroup = [CAAnimationGroup animation];
+    animGroup.animations = [NSArray arrayWithObjects:rotationAnimation, rotationAnimation2, nil];
+    animGroup.duration = 8;
+    //animGroup.repeatCount = 5;
+    //animGroup.autoreverses = YES;
+
+    [view.layer addAnimation:animGroup forKey:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    [self addobserver];
     
+    self.liveVideoProgressView_timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 50, 100, 50)];
+    self.liveVideoProgressView_timeLabel.textAlignment = NSTextAlignmentCenter;
+    self.liveVideoProgressView_timeLabel.textColor = [UIColor redColor];
+    self.liveVideoProgressView_timeLabel.text = @"11:11";
+    self.liveVideoProgressView_timeLabel.font = [UIFont systemFontOfSize:12.0];
+    [self.view addSubview:self.liveVideoProgressView_timeLabel];
+    
+    UIImageView *image1View = [[UIImageView alloc] initWithFrame:CGRectMake(100, 100, 200, 100)];
+    image1View.image = [UIImage imageNamed:@"3.jpeg"];
+    [self.view addSubview:image1View];
+    
+    [self rotateView:image1View];
+    
+    //[self.playStatusImageView.layer removeAllAnimations];//停止动画
+//    
+//    UIView *bgBGView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,200 , 200)];
+//    [self.view addSubview:bgBGView];
+//    bgBGView.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.0];
+//    
+//    UIView *bgBGBGView = [[UIView alloc] initWithFrame:CGRectMake(0, 0,100 , 100)];
+//    [bgBGView addSubview:bgBGBGView];
+//    bgBGBGView.backgroundColor = [UIColor colorWithWhite:0.f alpha:1.0];
+    
+
+    
+    [self addobserver];
     
     
     _testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 250, 50, 50)];
@@ -236,6 +293,9 @@ static NSString *StopRecord = @"结束";
 
 - (IBAction)testButton11Action:(UIButton *)sender {
     // hack, turn to landscape code.
+    self.testInteger += 20;
+    self.liveVideoProgressView_timeLabel.text = [NSString stringWithFormat:@"%ld",(long)self.testInteger];
+    return ;
     UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
     [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
         [UIApplication sharedApplication].keyWindow.rootViewController = nil;
