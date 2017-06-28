@@ -260,14 +260,36 @@
     
     SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
     
+//    
+//    if (self.toolBar.isEditing) {
+//        SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
+//        model.isSelected = !model.isSelected;
+//        if (model.isSelected) {
+//            [self.selectModels addObject:model];
+//        } else {
+//            [self.selectModels removeObject:model];
+//        }
+//        SGPhotoCell *cell = (SGPhotoCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//        cell.model = model;
+//        return;
+//    }
+    
+    if (self.toolBar.isEditing) {
+        return;
+    }
+    
     if (SGPMediaTypeMediaTypeVideo == model.mediaType) {
         
         NSURL *url = model.videoURL;
         
         MPMoviePlayerViewController *playerVc = [[MPMoviePlayerViewController alloc] initWithContentURL:url];;
         [self presentMoviePlayerViewControllerAnimated:playerVc];
+    }else {
+        SGPhotoViewController *vc = [SGPhotoViewController new];
+        vc.browser = self;
+        vc.index = indexPath.row;
+        [self.navigationController pushViewController:vc animated:YES];
     }
-
 }
 
 
@@ -303,11 +325,11 @@
         cell.model = model;
         return;
     }
-    SGPhotoViewController *vc = [SGPhotoViewController new];
-    vc.browser = self;
-    vc.index = indexPath.row;
-#warning TODO Test 临时注释
-    //[self.navigationController pushViewController:vc animated:YES];
+//    SGPhotoViewController *vc = [SGPhotoViewController new];
+//    vc.browser = self;
+//    vc.index = indexPath.row;
+//#warning TODO Test 临时注释
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark -

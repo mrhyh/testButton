@@ -259,38 +259,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SGSecurityAlbum/Libs/SGPhotoBrowser/SGPhotoBrowser.m"
-            timestampString = "519752604.361562"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SGSecurityAlbum/Libs/SGPhotoBrowser/SGPhotoBrowser.m"
-            timestampString = "519752604.361562"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
-            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "SGSecurityAlbum/Libs/QBImagePicker/QBAssetsViewController.m"
             timestampString = "519748870.920204"
             startingColumnNumber = "9223372036854775807"
@@ -372,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SGSecurityAlbum/Libs/SGPhotoBrowser/SGPhotoCell.m"
-            timestampString = "519751498.279696"
+            timestampString = "520356121.168932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-setModel:"
             landmarkType = "7">
          </BreakpointContent>
@@ -452,7 +420,7 @@
                   moduleName = "Codedlock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hyh/Downloads/Github%E5%BA%9F%E5%BC%83/testButton/testButton/SGSecurityAlbum/SGSecurityAlbum/PhotoBrowser/Controller/SGPhotoBrowserViewController.m"
-                  timestampString = "519752796.035608"
+                  timestampString = "520353160.590974"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "128"
@@ -467,7 +435,7 @@
                   moduleName = "Codedlock"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/hyh/Downloads/Github%E5%BA%9F%E5%BC%83/testButton/testButton/SGSecurityAlbum/SGSecurityAlbum/PhotoBrowser/Controller/SGPhotoBrowserViewController.m"
-                  timestampString = "519752796.038497"
+                  timestampString = "520353160.595306"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "128"
@@ -475,6 +443,38 @@
                   offsetFromSymbolStart = "28">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SGSecurityAlbum/Libs/SGPhotoBrowser/SGPhotoBrowser.m"
+            timestampString = "520353229.906465"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SGSecurityAlbum/Libs/SGPhotoBrowser/SGPhotoBrowser.m"
+            timestampString = "520357146.258879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "316"
+            endingLineNumber = "316"
+            landmarkName = "-collectionView:didUnhighlightItemAtIndexPath:"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

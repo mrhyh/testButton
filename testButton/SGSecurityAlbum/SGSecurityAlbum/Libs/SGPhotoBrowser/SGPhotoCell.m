@@ -89,45 +89,14 @@
         }
     }else if (SGPMediaTypeMediaTypeVideo == model.mediaType) {
         
-#warning TODO Test
-        
-       
-        UIImage *image = [self movieToImageWithVideoUrl:model.videoURL];
-        UIImageView *testImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        testImageView.image = image;
-        
-        _imageView = testImageView;
+        UIImage *image = [self getVideoPreViewImageWithVideoPath:model.videoURL];
+        _imageView.image = image;
         [self addSubview:_imageView];
     }
     
     self.sg_select = model.isSelected;
 }
 
-
-- (UIImage *)movieToImageWithVideoUrl:(NSURL *)videoUrl {
-    
-    AVURLAsset *asset=[[AVURLAsset alloc] initWithURL:videoUrl options:nil];
-    AVAssetImageGenerator *generator = [[AVAssetImageGenerator alloc] initWithAsset:asset];
-    generator.appliesPreferredTrackTransform=TRUE;
-    CMTime thumbTime = CMTimeMakeWithSeconds(0,30);
-    __block UIImage *firstImage = [[UIImage alloc] init];
-    
-    AVAssetImageGeneratorCompletionHandler handler =
-    ^(CMTime requestedTime, CGImageRef im, CMTime actualTime, AVAssetImageGeneratorResult result, NSError *error){
-        if (result != AVAssetImageGeneratorSucceeded) {       }//没成功
-        
-        firstImage = [UIImage imageWithCGImage:im];
-        
-        //[self performSelectorOnMainThread:@selector(movieImage:) withObject:thumbImg waitUntilDone:YES];
-        
-    };
-    
-    generator.maximumSize = self.frame.size;
-    [generator generateCGImagesAsynchronouslyForTimes:
-     [NSArray arrayWithObject:[NSValue valueWithCMTime:thumbTime]] completionHandler:handler];
-    
-    return firstImage;
-}
 
 // 获取视频的某一帧
 - (UIImage*) getVideoPreViewImageWithVideoPath:(NSURL *)videoPath
@@ -137,7 +106,7 @@
     gen.appliesPreferredTrackTransform = YES;
     gen.requestedTimeToleranceAfter = kCMTimeZero;
     gen.requestedTimeToleranceBefore = kCMTimeZero;
-    CMTime time = CMTimeMakeWithSeconds(0.0, 600);
+    CMTime time = CMTimeMakeWithSeconds(0, 1); //当前第0秒第一帧，一秒60帧，当前时间  1/60
     NSError *error = nil;
     CMTime actualTime;
     CGImageRef image = [gen copyCGImageAtTime:time actualTime:&actualTime error:&error];
@@ -145,7 +114,6 @@
     CGImageRelease(image);
     return img;
 }
-
 
 - (void)setSg_select:(BOOL)sg_select {
     _sg_select = sg_select;
