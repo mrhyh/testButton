@@ -51,6 +51,7 @@
 
 @property (nonatomic, weak) UIImageView *imageView;
 @property (nonatomic, weak) SGPhotoCellMaskView *selectMaskView;
+@property (nonatomic, strong) UIImageView *selectImageView;
 
 @end
 
@@ -60,6 +61,12 @@
     static NSString *ID = @"SGPhotoCell";
     [collectionView registerClass:[SGPhotoCell class] forCellWithReuseIdentifier:ID];
     SGPhotoCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:ID forIndexPath:indexPath];
+    
+    UIImageView *imageView = [UIImageView new];
+    imageView.contentMode = UIViewContentModeScaleAspectFill;
+    imageView.clipsToBounds = YES;
+    [cell addSubview:imageView];
+    
     return cell;
 }
 
@@ -68,11 +75,13 @@
         UIImageView *imageView = [UIImageView new];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
+        imageView.frame =  self.contentView.bounds;
         self.imageView = imageView;
-        [self.contentView addSubview:imageView];
-        SGPhotoCellMaskView *selectMaskView = [[SGPhotoCellMaskView alloc] initWithFrame:self.contentView.bounds];
-        [self.contentView addSubview:selectMaskView];
-        self.selectMaskView = selectMaskView;
+        [self.contentView addSubview:self.imageView];
+        
+//        SGPhotoCellMaskView *selectMaskView = [[SGPhotoCellMaskView alloc] initWithFrame:self.contentView.bounds];
+//        [self.contentView addSubview:selectMaskView];
+//        self.selectMaskView = selectMaskView;
     }
     return self;
 }
@@ -80,6 +89,8 @@
 - (void)setModel:(SGPhotoModel *)model {
     _model = model;
     NSURL *thumbURL = model.thumbURL;
+    self.userInteractionEnabled = YES;
+    self.imageView.userInteractionEnabled = YES;
     
     if (SGPMediaTypeMediaTypeImage == model.mediaType) {
         if ([thumbURL isFileURL]) {
@@ -91,10 +102,23 @@
         
         UIImage *image = [self getVideoPreViewImageWithVideoPath:model.videoURL];
         _imageView.image = image;
+        _imageView.userInteractionEnabled = YES;
         [self addSubview:_imageView];
     }
+
+    if (_model.isSelected) {
+        UIImage *selectImage = [UIImage imageNamed:@"SelectButton"];
+        UIImageView *selectImageView = [[UIImageView alloc] initWithImage:selectImage];
+        selectImageView.frame = CGRectMake(0, 0, 50, 50);
+        self.selectImageView = selectImageView;
+        [self addSubview:self.selectImageView];
+        self.selectImageView.hidden = NO;
+    }else {
+        self.selectImageView.hidden = YES;
+    }
     
-    self.sg_select = model.isSelected;
+
+    //self.sg_select = model.isSelected;
 }
 
 

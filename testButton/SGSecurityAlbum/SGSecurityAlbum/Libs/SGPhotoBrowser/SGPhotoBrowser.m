@@ -22,7 +22,8 @@
     CGFloat _margin, _gutter;
 }
 
-@property (nonatomic, weak)   SGPhotoCollectionView *collectionView;
+//@property (nonatomic, weak)   SGPhotoCollectionView *collectionView;
+@property (nonatomic, weak)   UICollectionView *collectionView;
 @property (nonatomic, assign) CGSize                 photoSize;
 @property (nonatomic, weak)   SGBrowserToolBar      *toolBar;
 @property (nonatomic, strong) NSMutableArray        *selectModels;
@@ -33,10 +34,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self initParams];
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-    SGPhotoCollectionView *collectionView = [[SGPhotoCollectionView alloc] initWithFrame:[self getCollectionViewFrame] collectionViewLayout:layout];
+    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:[self getCollectionViewFrame] collectionViewLayout:layout];
     self.collectionView = collectionView;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
     [self.view addSubview:collectionView];
     [self setupViews];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];
@@ -197,8 +201,8 @@
 
 - (void)checkImplementation {
     if (self.photoAtIndexHandler && self.numberOfPhotosHandler) {
-        self.collectionView.delegate = self;
-        self.collectionView.dataSource = self;
+//        self.collectionView.delegate = self;
+//        self.collectionView.dataSource = self;
         [self.collectionView reloadData];
     }
 }
@@ -260,21 +264,16 @@
     
     SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
     
-//    
-//    if (self.toolBar.isEditing) {
-//        SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
-//        model.isSelected = !model.isSelected;
-//        if (model.isSelected) {
-//            [self.selectModels addObject:model];
-//        } else {
-//            [self.selectModels removeObject:model];
-//        }
-//        SGPhotoCell *cell = (SGPhotoCell *)[collectionView cellForItemAtIndexPath:indexPath];
-//        cell.model = model;
-//        return;
-//    }
-    
     if (self.toolBar.isEditing) {
+        SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
+        model.isSelected = !model.isSelected;
+        if (model.isSelected) {
+            [self.selectModels addObject:model];
+        } else {
+            [self.selectModels removeObject:model];
+        }
+        SGPhotoCell *cell = (SGPhotoCell *)[collectionView cellForItemAtIndexPath:indexPath];
+        cell.model = model;
         return;
     }
     
@@ -312,25 +311,25 @@
 
 #pragma mark -
 #pragma mark UICollectionView Delegate (FlowLayout)
-- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    if (self.toolBar.isEditing) {
-        SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
-        model.isSelected = !model.isSelected;
-        if (model.isSelected) {
-            [self.selectModels addObject:model];
-        } else {
-            [self.selectModels removeObject:model];
-        }
-        SGPhotoCell *cell = (SGPhotoCell *)[collectionView cellForItemAtIndexPath:indexPath];
-        cell.model = model;
-        return;
-    }
+//- (void)collectionView:(UICollectionView *)collectionView didUnhighlightItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
+//    if (self.toolBar.isEditing) {
+//        SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
+//        model.isSelected = !model.isSelected;
+//        if (model.isSelected) {
+//            [self.selectModels addObject:model];
+//        } else {
+//            [self.selectModels removeObject:model];
+//        }
+//        SGPhotoCell *cell = (SGPhotoCell *)[collectionView cellForItemAtIndexPath:indexPath];
+//        cell.model = model;
+//        return;
+//    }
 //    SGPhotoViewController *vc = [SGPhotoViewController new];
 //    vc.browser = self;
 //    vc.index = indexPath.row;
 //#warning TODO Test 临时注释
 //    [self.navigationController pushViewController:vc animated:YES];
-}
+//}
 
 #pragma mark -
 #pragma mark dealloc
