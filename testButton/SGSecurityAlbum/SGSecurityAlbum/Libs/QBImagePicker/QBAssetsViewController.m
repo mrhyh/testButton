@@ -576,8 +576,6 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
     PHAsset *asset = self.fetchResult[indexPath.item];
     
     
-    
-    
     if (imagePickerController.allowsMultipleSelection) {
         if ([self isAutoDeselectEnabled] && selectedAssets.count > 0) {
             // Remove previous selected asset from set

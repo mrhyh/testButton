@@ -123,8 +123,9 @@
         
         [importAssets addObject:asset];
         PHCachingImageManager *imageManager = [[PHCachingImageManager alloc] init];
-        NSString *fileName = [[NSString stringWithFormat:@"%@%@",dateStr,@(i)] MD5];
-        fileName = [NSString stringWithFormat:@"%@.mp4",fileName];
+        //NSString *fileName = [[NSString stringWithFormat:@"%@%@",dateStr,@(i)] MD5];
+        NSString *fileName = [NSString stringWithFormat:@"%@%@",dateStr,@(i)];
+        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
             // 获取一个资源（PHAsset）
@@ -140,10 +141,10 @@
                     NSURL *url = urlAsset.URL;
                     NSData *data = [NSData dataWithContentsOfURL:url];
                     
+                    
+                    
                     [SGFileUtil saveVideo:data toRootPath:self.rootPath withName:fileName];
                     hudProgressBlock(++progressCount);
-                    
-                    //NSLog(@"%@",data);
                 }];
             }else if (asset.mediaType == PHAssetMediaTypeImage) {
                 [imageManager requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFill options:op resultHandler:^(UIImage *result, NSDictionary *info) {

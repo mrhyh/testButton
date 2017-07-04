@@ -35,6 +35,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self initParams];
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:[self getCollectionViewFrame] collectionViewLayout:layout];
