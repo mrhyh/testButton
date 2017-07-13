@@ -8,6 +8,7 @@
 
 #import "SGPhotoBrowserViewController.h"
 #import "QBImagePickerController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface SGPhotoBrowserViewController () <QBImagePickerControllerDelegate>
 
@@ -124,7 +125,7 @@
         [importAssets addObject:asset];
         PHCachingImageManager *imageManager = [[PHCachingImageManager alloc] init];
         //NSString *fileName = [[NSString stringWithFormat:@"%@%@",dateStr,@(i)] MD5];
-        NSString *fileName = [NSString stringWithFormat:@"%@%@",dateStr,@(i)];
+        __block NSString *fileName = [NSString stringWithFormat:@"%@%@",dateStr,@(i)];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             
@@ -140,8 +141,14 @@
                     
                     NSURL *url = urlAsset.URL;
                     NSData *data = [NSData dataWithContentsOfURL:url];
+
                     
+                    //ALAssetRepresentation *imageRep = [asset defaultRepresentation];
+                    //NSLog(@"[imageRep filename] : %@", [imageRep filename]);
                     
+                    NSArray *arr = [url.absoluteString componentsSeparatedByString:@"/"];
+                    
+                    fileName = [arr lastObject];
                     
                     [SGFileUtil saveVideo:data toRootPath:self.rootPath withName:fileName];
                     hudProgressBlock(++progressCount);

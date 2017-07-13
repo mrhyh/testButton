@@ -202,8 +202,8 @@
 
 - (void)checkImplementation {
     if (self.photoAtIndexHandler && self.numberOfPhotosHandler) {
-//        self.collectionView.delegate = self;
-//        self.collectionView.dataSource = self;
+        self.collectionView.delegate = self;
+        self.collectionView.dataSource = self;
         [self.collectionView reloadData];
     }
 }
