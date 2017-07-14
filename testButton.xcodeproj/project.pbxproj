@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		183E2B341F0DE0590095C8BA /* CNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 183E2B331F0DE0590095C8BA /* CNotificationManager.m */; };
 		18403DE91E7BB595007ECADC /* UncaughtExceptionHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */; };
 		184840131E77BF6B00380983 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 184840121E77BF6B00380983 /* 5.jpg */; };
 		1849A0441ED2ED7B0024AD33 /* testView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1849A0431ED2ED7B0024AD33 /* testView.xib */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		183E2B321F0DE0590095C8BA /* CNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNotificationManager.h; sourceTree = "<group>"; };
+		183E2B331F0DE0590095C8BA /* CNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNotificationManager.m; sourceTree = "<group>"; };
 		18403DE71E7BB595007ECADC /* UncaughtExceptionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UncaughtExceptionHandler.h; sourceTree = "<group>"; };
 		18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UncaughtExceptionHandler.m; sourceTree = "<group>"; };
 		184840121E77BF6B00380983 /* 5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 5.jpg; sourceTree = "<group>"; };
@@ -120,6 +123,8 @@
 				188F4FE41E7650A5005738D0 /* ViewController.m */,
 				18403DE71E7BB595007ECADC /* UncaughtExceptionHandler.h */,
 				18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */,
+				183E2B321F0DE0590095C8BA /* CNotificationManager.h */,
+				183E2B331F0DE0590095C8BA /* CNotificationManager.m */,
 				1849A0451ED2ED9E0024AD33 /* TestView.h */,
 				1849A0461ED2ED9E0024AD33 /* TestView.m */,
 				1849A0431ED2ED7B0024AD33 /* testView.xib */,
@@ -243,6 +248,7 @@
 			files = (
 				188F4FE51E7650A5005738D0 /* ViewController.m in Sources */,
 				18403DE91E7BB595007ECADC /* UncaughtExceptionHandler.m in Sources */,
+				183E2B341F0DE0590095C8BA /* CNotificationManager.m in Sources */,
 				1849A0471ED2ED9E0024AD33 /* TestView.m in Sources */,
 				188F4FE21E7650A5005738D0 /* AppDelegate.m in Sources */,
 				188F4FDF1E7650A5005738D0 /* main.m in Sources */,

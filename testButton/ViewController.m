@@ -12,7 +12,7 @@
 #import <ifaddrs.h>
 #import <arpa/inet.h>
 #import "TestView.h"
-
+ #import "CNotificationManager.h"
 
 static NSString *StartRecord = @"开始";
 static NSString *StopRecord = @"结束";
@@ -24,6 +24,17 @@ static NSString *StopRecord = @"结束";
 #endif
 
 #define AnimationDuration (0.3)
+
+
+UIWindow *_window;
+// 窗口的高度
+#define XWWindowHeight 20
+// 动画的执行时间
+#define XWDuration 0.5
+// 窗口的停留时间
+#define XWDelay 1.5
+// 字体大小
+#define XWFont [UIFont systemFontOfSize:12]
 
 @interface ViewController () <RPBroadcastActivityViewControllerDelegate,RPPreviewViewControllerDelegate>
 
@@ -45,17 +56,16 @@ static NSString *StopRecord = @"结束";
 @property (nonatomic, assign) BOOL isSwitchOn;
 @property (nonatomic, strong) UIView *oneView;
 
-
 @property (nonatomic, strong) UIButton *testButton;
-
 @property (strong, nonatomic) IBOutlet UIButton *testButton11;
-
 
 @end
 
-
-
 @implementation ViewController
+
+
+
+
 
 - (UIView *)createViewWithColor:(UIColor *)color rect:(CGRect)frame {
     UIView *view = [[UIView alloc] initWithFrame:frame];
@@ -99,6 +109,19 @@ static NSString *StopRecord = @"结束";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+
+    
+    //[self showMessage:@"测试提醒" image:[UIImage imageNamed:@"1.jpeg"]];
+    
+
+    [CNotificationManager showMessage:@"欢迎回来，我最亲爱的主人" withOptions:@{CN_TEXT_COLOR_KEY:[UIColor redColor],CN_BACKGROUND_COLOR_KEY:[UIColor blackColor]}];
+    
+    [CNotificationManager showMessage:@"11欢迎回来，我最亲爱的主人" withOptions:@{CN_TEXT_COLOR_KEY:[UIColor whiteColor],CN_BACKGROUND_COLOR_KEY:[UIColor blueColor]} completeBlock:^{
+        
+        NSLog(@"notification display end");
+        
+    }];
+    
 
     
     self.liveVideoProgressView_timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(250, 50, 100, 50)];
@@ -779,5 +802,56 @@ static NSString *StopRecord = @"结束";
 }
 
 
-
+/**
+ *  显示信息
+ *
+ *  @param msg   文字内容
+ *  @param image 图片对象
+ */
+- (void)showMessage:(NSString *)msg image:(UIImage *)image
+{
+    
+    if (_window) return;
+    
+    // 创建按钮
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    // 设置按钮文字大小
+    btn.titleLabel.font = XWFont;
+    
+    // 切掉文字左边的 10
+    btn.titleEdgeInsets = UIEdgeInsetsMake(0, 10, 0, 0);
+    
+    // 设置数据
+    [btn setTitle:msg forState:UIControlStateNormal];
+    [btn setImage:image forState:UIControlStateNormal];
+    
+    // 创建窗口
+    _window = [[UIWindow alloc] init];
+    // 窗口背景
+    _window.backgroundColor = [UIColor blackColor];
+    _window.windowLevel = UIWindowLevelAlert;
+    _window.frame = CGRectMake(0, -XWWindowHeight, [UIScreen mainScreen].bounds.size.width, XWWindowHeight);
+    btn.frame = _window.bounds;
+    [_window addSubview:btn];
+    _window.hidden = NO;
+    
+    // 状态栏 也是一个window
+    // UIWindowLevelAlert > UIWindowLevelStatusBar > UIWindowLevelNormal
+    
+    // 动画
+    [UIView animateWithDuration:XWDuration animations:^{
+        CGRect frame = _window.frame;
+        frame.origin.y = 0;
+        _window.frame = frame;
+    }completion:^(BOOL finished) {
+        [UIView animateWithDuration:XWDuration delay:XWDelay options:kNilOptions animations:^{
+            CGRect frame = _window.frame;
+            frame.origin.y = -XWWindowHeight;
+            _window.frame = frame;
+        } completion:^(BOOL finished) {
+            _window = nil;
+        }];
+    }];
+}
 @end
