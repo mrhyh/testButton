@@ -16,9 +16,9 @@ typedef void(^SGPhotoBrowserReloadRequestBlock)(void);
 @interface SGPhotoBrowser : UIViewController
 
 @property (nonatomic, assign) NSInteger numberOfPhotosPerRow;
-@property (nonatomic, copy) SGPhotoBrowserDataSourceNumberBlock numberOfPhotosHandler;
-@property (nonatomic, copy) SGPhotoBrowserDataSourcePhotoBlock photoAtIndexHandler;
-@property (nonatomic, copy) SGPhotoBrowserReloadRequestBlock reloadHandler;
+@property (nonatomic, copy)   SGPhotoBrowserDataSourceNumberBlock numberOfPhotosHandler;
+@property (nonatomic, copy)   SGPhotoBrowserDataSourcePhotoBlock photoAtIndexHandler;
+@property (nonatomic, copy)   SGPhotoBrowserReloadRequestBlock reloadHandler;
 
 - (void)setNumberOfPhotosHandlerBlock:(SGPhotoBrowserDataSourceNumberBlock)handler;
 - (void)setphotoAtIndexHandlerBlock:(SGPhotoBrowserDataSourcePhotoBlock)handler;

@@ -93,7 +93,6 @@
     PHVideoRequestOptions *videoOp = [[PHVideoRequestOptions alloc] init];
     videoOp.deliveryMode = PHVideoRequestOptionsDeliveryModeHighQualityFormat;
     
-    
     MBProgressHUD *hud = [[MBProgressHUD alloc] initWithView:imagePickerController.view];
     [imagePickerController.view addSubview:hud];
     hud.mode = MBProgressHUDModeAnnularDeterminate;

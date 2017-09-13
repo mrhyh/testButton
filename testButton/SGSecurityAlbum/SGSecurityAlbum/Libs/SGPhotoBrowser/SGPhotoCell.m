@@ -49,9 +49,9 @@
 
 @interface SGPhotoCell ()
 
-@property (nonatomic, weak) UIImageView *imageView;
-@property (nonatomic, weak) SGPhotoCellMaskView *selectMaskView;
-@property (nonatomic, strong) UIImageView *selectImageView;
+@property (nonatomic, weak)   UIImageView         *imageView;
+@property (nonatomic, weak)   SGPhotoCellMaskView *selectMaskView;
+@property (nonatomic, strong) UIImageView         *selectImageView;
 
 @end
 
@@ -93,6 +93,9 @@
     self.imageView.userInteractionEnabled = YES;
     
     if (SGPMediaTypeMediaTypeImage == model.mediaType) {
+        
+        [_imageView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        
         if ([thumbURL isFileURL]) {
             self.imageView.image = [UIImage imageWithContentsOfFile:thumbURL.path];
         } else {
@@ -103,6 +106,12 @@
         UIImage *image = [self getVideoPreViewImageWithVideoPath:model.videoURL];
         _imageView.image = image;
         _imageView.userInteractionEnabled = YES;
+        
+        UIImageView *playImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+        playImageView.image = [UIImage imageNamed:@"tyh_playIcon"];
+        playImageView.center = _imageView.center;
+        [_imageView addSubview:playImageView];
+        
         [self addSubview:_imageView];
     }
 
@@ -116,15 +125,12 @@
     }else {
         self.selectImageView.hidden = YES;
     }
-    
-
     //self.sg_select = model.isSelected;
 }
 
 
 // 获取视频的某一帧
-- (UIImage*) getVideoPreViewImageWithVideoPath:(NSURL *)videoPath
-{
+- (UIImage*) getVideoPreViewImageWithVideoPath:(NSURL *)videoPath {
     AVURLAsset *asset = [[AVURLAsset alloc] initWithURL:videoPath options:nil];
     AVAssetImageGenerator *gen = [[AVAssetImageGenerator alloc] initWithAsset:asset];
     gen.appliesPreferredTrackTransform = YES;
