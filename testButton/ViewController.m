@@ -113,6 +113,18 @@ UIWindow *_window;
     
     //[self showMessage:@"测试提醒" image:[UIImage imageNamed:@"1.jpeg"]];
     
+   
+//    for (int i = 0; i < 1000000000; ++i) {
+//        @autoreleasepool {
+//            NSString *str = @"Abc";
+//            str = [str lowercaseString];
+//            str = [str stringByAppendingString:@"xyz"];
+//            
+//            NSLog(@"%@", str);
+//        }
+//    }
+    
+    
 
     [CNotificationManager showMessage:@"欢迎回来，我最亲爱的主人" withOptions:@{CN_TEXT_COLOR_KEY:[UIColor redColor],CN_BACKGROUND_COLOR_KEY:[UIColor blackColor]}];
     
@@ -153,7 +165,13 @@ UIWindow *_window;
     
     
     _testButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 250, 50, 50)];
-    _testButton.backgroundColor = [UIColor blueColor];
+    //_testButton.backgroundColor = [UIColor blueColor];
+    [_testButton setImage:[UIImage imageNamed:@"1.jpeg"] forState:UIControlStateNormal];
+    [_testButton setImage:[UIImage imageNamed:@"4.jpeg"] forState:UIControlStateSelected];
+    
+    _testButton.adjustsImageWhenHighlighted = NO;
+   _testButton.adjustsImageWhenDisabled = NO;
+    
     [_testButton addTarget:self action:@selector(testButtonAction) forControlEvents:UIControlEventTouchUpInside];
     
     
@@ -261,6 +279,7 @@ UIWindow *_window;
 }
 
 - (void)testButtonAction {
+    _testButton.selected = !_testButton.selected;
     _testView.frame = CGRectMake(200, 0, 400, 100);
 }
 
