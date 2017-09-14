@@ -10,15 +10,16 @@
 
 typedef NS_ENUM(NSUInteger, SGPMediaType) {
     SGPMediaTypeMediaTypeImage = 0,
-    SGPMediaTypeMediaTypeVideo
+    SGPMediaTypeMediaTypeVideo = 1
 };
 
 @interface SGPhotoModel : NSObject
 
-@property (nonatomic, copy) NSURL *photoURL;
-@property (nonatomic, copy) NSURL *thumbURL;
-@property (nonatomic, copy) NSURL *videoURL;
+@property (nonatomic, copy)   NSURL *photoURL;
+@property (nonatomic, copy)   NSURL *thumbURL;
+@property (nonatomic, copy)   NSURL *videoURL;
+@property (nonatomic, assign) BOOL  isSelected;
+
 @property (nonatomic, assign) SGPMediaType mediaType;
-@property (nonatomic, assign) BOOL isSelected;
 
 @end

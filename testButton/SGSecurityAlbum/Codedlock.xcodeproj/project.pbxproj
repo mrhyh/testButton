@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181524DA1F6A6DBD009E3412 /* SGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 181524D91F6A6DBD009E3412 /* SGTool.m */; };
 		185B28C61ED537C30093546C /* Artboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 185B28C51ED537C30093546C /* Artboard2.png */; };
 		3C9BAE62BF54BE40633EC9F0 /* libPods-Codedlock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BDA14C87DEA97E073CE056 /* libPods-Codedlock.a */; };
 		6806EABB1D30D28A0044ED1E /* SGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6806EABA1D30D28A0044ED1E /* SGFileUtil.m */; };
@@ -121,6 +122,8 @@
 
 /* Begin PBXFileReference section */
 		09276219CA403052F2694A47 /* Pods-Codedlock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codedlock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Codedlock/Pods-Codedlock.debug.xcconfig"; sourceTree = "<group>"; };
+		181524D81F6A6DBD009E3412 /* SGTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTool.h; sourceTree = "<group>"; };
+		181524D91F6A6DBD009E3412 /* SGTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTool.m; sourceTree = "<group>"; };
 		1842E8CD1ED6842A003EE136 /* SGSecurityAlbum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SGSecurityAlbum.entitlements; sourceTree = "<group>"; };
 		185B28C51ED537C30093546C /* Artboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artboard2.png; sourceTree = "<group>"; };
 		185B28C81ED557940093546C /* YLGStaticDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGStaticDefine.h; sourceTree = "<group>"; };
@@ -347,6 +350,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		181524D71F6A6DAC009E3412 /* SGTool */ = {
+			isa = PBXGroup;
+			children = (
+				181524D81F6A6DBD009E3412 /* SGTool.h */,
+				181524D91F6A6DBD009E3412 /* SGTool.m */,
+			);
+			path = SGTool;
+			sourceTree = "<group>";
+		};
 		185B28C71ED557320093546C /* MacroDefinition */ = {
 			isa = PBXGroup;
 			children = (
@@ -796,6 +808,7 @@
 		6857E9E71D2F971E0013E1DC /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				181524D71F6A6DAC009E3412 /* SGTool */,
 				6850D73B1D322A0B0022E455 /* SGPhotoBrowser */,
 				6806EBD91D3106750044ED1E /* QBImagePicker */,
 				6806EB911D30FA120044ED1E /* SDWebImage */,
@@ -1087,6 +1100,7 @@
 				682406EB1D30A8A400023559 /* SGHomeView.m in Sources */,
 				6806EB901D30F9F20044ED1E /* UIImage+MWPhotoBrowser.m in Sources */,
 				6806EABF1D30DEFA0044ED1E /* SGAlbum.m in Sources */,
+				181524DA1F6A6DBD009E3412 /* SGTool.m in Sources */,
 				6850D7411D322ADE0022E455 /* SGPhotoCollectionView.m in Sources */,
 				6857EA0E1D2FA4120013E1DC /* NSArray+MASAdditions.m in Sources */,
 				6857E9B41D2F909D0013E1DC /* AppDelegate.m in Sources */,

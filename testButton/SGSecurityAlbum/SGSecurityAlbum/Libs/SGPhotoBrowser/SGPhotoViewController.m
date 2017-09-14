@@ -16,9 +16,9 @@
 
 @interface SGPhotoViewController ()
 
-@property (nonatomic, assign) BOOL isBarHidden;
-@property (nonatomic, weak) SGPhotoView *photoView;
-@property (nonatomic, weak) SGPhotoToolBar *toolBar;
+@property (nonatomic, assign) BOOL           isBarHidden;
+@property (nonatomic, weak)   SGPhotoView    *photoView;
+@property (nonatomic, weak)   SGPhotoToolBar *toolBar;
 
 @end
 

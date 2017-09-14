@@ -261,6 +261,7 @@
     return cell;
 }
 
+// 点击
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     SGPhotoModel *model = self.photoAtIndexHandler(indexPath.row);
@@ -278,13 +279,13 @@
         return;
     }
     
-    if (SGPMediaTypeMediaTypeVideo == model.mediaType) {
+    if (SGPMediaTypeMediaTypeVideo == model.mediaType) { // 视频直接播放
         
         NSURL *url = model.videoURL;
         
         MPMoviePlayerViewController *playerVc = [[MPMoviePlayerViewController alloc] initWithContentURL:url];;
         [self presentMoviePlayerViewControllerAnimated:playerVc];
-    }else {
+    }else { // 图片就进入浏览模式
         SGPhotoViewController *vc = [SGPhotoViewController new];
         vc.browser = self;
         vc.index = indexPath.row;

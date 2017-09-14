@@ -19,8 +19,9 @@ typedef void(^SGZoomingImageViewTapHandlerBlock)(void);
 @interface SGZoomingImageView : UIScrollView
 
 @property (nonatomic, assign) SGImageViewState state;
-@property (nonatomic, strong) UIImageView *innerImageView;
-@property (nonatomic, assign) BOOL isOrigin;
+@property (nonatomic, strong) UIImageView      *innerImageView;
+@property (nonatomic, assign) BOOL             isOrigin;
+@property (nonatomic, assign) BOOL             isVideo;
 
 - (void)setSingleTapHandler:(SGZoomingImageViewTapHandlerBlock)handler;
 - (void)scaleToFitAnimated:(BOOL)animated;

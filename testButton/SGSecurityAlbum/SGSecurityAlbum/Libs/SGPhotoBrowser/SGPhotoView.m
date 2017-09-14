@@ -13,14 +13,16 @@
 #import "SGPhotoModel.h"
 #import "SGZoomingImageView.h"
 #import "SGPhotoViewController.h"
+#import "SGTool.h"
+
 
 @interface SGPhotoView () <UIScrollViewDelegate> {
     CGFloat _pageW;
 }
 
-@property (nonatomic, copy) SGPhotoViewTapHandlerBlcok singleTapHandler;
+@property (nonatomic, copy)   SGPhotoViewTapHandlerBlcok    singleTapHandler;
 @property (nonatomic, strong) NSArray<SGZoomingImageView *> *imageViews;
-@property (nonatomic, assign) NSInteger titleIndex;
+@property (nonatomic, assign) NSInteger                     titleIndex;
 
 @end
 
@@ -51,7 +53,16 @@
     for (NSUInteger i = 0; i < count; i++) {
         SGZoomingImageView *imageView = [SGZoomingImageView new];
         SGPhotoModel *model = self.browser.photoAtIndexHandler(i);
-        [imageView.innerImageView sg_setImageWithURL:model.thumbURL model:model];
+        
+        if (model.mediaType == SGPMediaTypeMediaTypeVideo) { // 视频
+            //[imageView.innerImageView sg_setImageWithURL:model.thumbURL model:model];
+            imageView.innerImageView.image = [SGTool getVideoPreViewImageWithVideoPath:model.videoURL];
+            imageView.isVideo = YES;
+            
+        }else { // 图片
+            [imageView.innerImageView sg_setImageWithURL:model.thumbURL model:model];
+            imageView.isVideo = NO;
+        }
         imageView.isOrigin = NO;
         [imageViews addObject:imageView];
         [self addSubview:imageView];
@@ -69,9 +80,20 @@
     for (NSUInteger i = 0; i < self.imageViews.count; i++) {
         SGZoomingImageView *imageView = self.imageViews[i];
         imageView.isOrigin = NO;
-        CGRect frame = (CGRect){imageViewWidth * i, 0, imageViewWidth, self.bounds.size.height};
-        imageView.frame = CGRectInset(frame, PhotoGutt, 0);
+        CGRect tempframe = (CGRect){imageViewWidth * i, 0, imageViewWidth, self.bounds.size.height};
+        imageView.frame = CGRectInset(tempframe, PhotoGutt, 0);
+        imageView.innerImageView.frame = CGRectMake(0, 0, imageViewWidth, self.bounds.size.height);
         [self addSubview:imageView];
+        
+        if (imageView.isVideo) {
+#warning TODO Test
+            UIImageView *playImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+            playImageView.image = [UIImage imageNamed:@"tyh_playIcon"];
+            playImageView.center = imageView.innerImageView.center;
+            playImageView.center = CGPointMake(tempframe.origin.x - tempframe.size.width/2.0, tempframe.origin.y - tempframe.size.height/2.0);
+            [imageView.innerImageView addSubview:playImageView];
+        }
+        
         [imageView scaleToFitAnimated:NO];
     }
     self.contentOffset = CGPointMake(self.index * _pageW, 0);
@@ -100,16 +122,34 @@
         }
         NSURL *photoURL = model.photoURL;
         NSURL *thumbURL = model.thumbURL;
-        if (i >= index - 1 && i <= index + 1) {
-            if (imageView.isOrigin) continue;
-            [imageView.innerImageView sg_setImageWithURL:photoURL model:model];
-            imageView.isOrigin = YES;
-            [imageView scaleToFitAnimated:NO];
-        } else {
-            if (!imageView.isOrigin) continue;
-            [imageView.innerImageView sg_setImageWithURL:thumbURL model:model];
-            imageView.isOrigin = NO;
-            [imageView scaleToFitAnimated:NO];
+        
+        if (model.mediaType == SGPMediaTypeMediaTypeVideo) {
+            
+            if (i >= index - 1 && i <= index + 1) {
+                if (imageView.isOrigin) continue;
+                //[imageView.innerImageView sg_setImageWithURL:photoURL model:model];
+                imageView.isOrigin = YES;
+                [imageView scaleToFitAnimated:NO];
+            } else {
+                if (!imageView.isOrigin) continue;
+                //[imageView.innerImageView sg_setImageWithURL:thumbURL model:model];
+                imageView.isOrigin = NO;
+                [imageView scaleToFitAnimated:NO];
+            }
+            
+        }else {
+            
+            if (i >= index - 1 && i <= index + 1) {
+                if (imageView.isOrigin) continue;
+                [imageView.innerImageView sg_setImageWithURL:photoURL model:model];
+                imageView.isOrigin = YES;
+                [imageView scaleToFitAnimated:NO];
+            } else {
+                if (!imageView.isOrigin) continue;
+                [imageView.innerImageView sg_setImageWithURL:thumbURL model:model];
+                imageView.isOrigin = NO;
+                [imageView scaleToFitAnimated:NO];
+            }
         }
     }
 }
