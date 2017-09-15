@@ -73,7 +73,6 @@
     [self reloadData];
 }
 
-#warning TODO Test 
 #pragma mark - UIBarButtonItem Action
 - (void)addClick {
     QBImagePickerController *picker = [QBImagePickerController new];
@@ -104,7 +103,7 @@
     NSMutableArray *importAssets = @[].mutableCopy;
 #warning TODO Test 这里为什么要*2呢？
     //NSInteger progressSum = assets.count * 2;
-    NSInteger progressSum = assets.count * 1;
+    NSInteger progressSum = assets.count * 2;
     void (^hudProgressBlock)(NSInteger currentProgressCount) = ^(NSInteger progressCount) {
         dispatch_async(dispatch_get_main_queue(), ^{
             hud.progress = (double)progressCount / progressSum;
@@ -164,19 +163,16 @@
                 }];
             }
         });
-        
     }
 }
 
 //获取Documents目录
 -(NSString *)dirDoc{
-    //[NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSLog(@"app_home_doc: %@",documentsDirectory);
     return documentsDirectory;
 }
-
 
 - (void)qb_imagePickerControllerDidCancel:(QBImagePickerController *)imagePickerController {
     [imagePickerController dismissViewControllerAnimated:YES completion:nil];
