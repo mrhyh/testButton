@@ -124,9 +124,9 @@
 		09276219CA403052F2694A47 /* Pods-Codedlock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codedlock.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Codedlock/Pods-Codedlock.debug.xcconfig"; sourceTree = "<group>"; };
 		181524D81F6A6DBD009E3412 /* SGTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGTool.h; sourceTree = "<group>"; };
 		181524D91F6A6DBD009E3412 /* SGTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGTool.m; sourceTree = "<group>"; };
+		181524DB1F6B7A29009E3412 /* SGStaticDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGStaticDefine.h; sourceTree = "<group>"; };
 		1842E8CD1ED6842A003EE136 /* SGSecurityAlbum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SGSecurityAlbum.entitlements; sourceTree = "<group>"; };
 		185B28C51ED537C30093546C /* Artboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artboard2.png; sourceTree = "<group>"; };
-		185B28C81ED557940093546C /* YLGStaticDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YLGStaticDefine.h; sourceTree = "<group>"; };
 		378821A8F47D9376255D1247 /* Pods-Codedlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codedlock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Codedlock/Pods-Codedlock.release.xcconfig"; sourceTree = "<group>"; };
 		6806EAB91D30D28A0044ED1E /* SGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFileUtil.h; sourceTree = "<group>"; };
 		6806EABA1D30D28A0044ED1E /* SGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFileUtil.m; sourceTree = "<group>"; };
@@ -362,7 +362,7 @@
 		185B28C71ED557320093546C /* MacroDefinition */ = {
 			isa = PBXGroup;
 			children = (
-				185B28C81ED557940093546C /* YLGStaticDefine.h */,
+				181524DB1F6B7A29009E3412 /* SGStaticDefine.h */,
 			);
 			path = MacroDefinition;
 			sourceTree = "<group>";

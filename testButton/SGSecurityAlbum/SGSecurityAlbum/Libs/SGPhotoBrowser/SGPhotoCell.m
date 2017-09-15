@@ -26,13 +26,13 @@
         self.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.6f];
         self.hidden = YES;
         UIImage *selectImage = [UIImage imageNamed:@"SelectButton"];
+        
         UIImageView *selectImageView = [[UIImageView alloc] initWithImage:selectImage];
         self.selectImageView = selectImageView;
         [self addSubview:selectImageView];
         
-        _itemImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        _itemImageView = [[UIImageView alloc] initWithFrame:CGRectMake(CGRectGetMaxX(self.frame)-20-10, CGRectGetMaxY(self.frame)-20-10, 20, 20)];
         [self addSubview:_itemImageView];
-        
     }
     return self;
 }
@@ -79,10 +79,6 @@
         imageView.frame =  self.contentView.bounds;
         self.imageView = imageView;
         [self.contentView addSubview:self.imageView];
-        
-//        SGPhotoCellMaskView *selectMaskView = [[SGPhotoCellMaskView alloc] initWithFrame:self.contentView.bounds];
-//        [self.contentView addSubview:selectMaskView];
-//        self.selectMaskView = selectMaskView;
     }
     return self;
 }
@@ -94,9 +90,7 @@
     self.imageView.userInteractionEnabled = YES;
     
     if (SGPMediaTypeMediaTypeImage == model.mediaType) {
-        
         [_imageView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
-        
         if ([thumbURL isFileURL]) {
             self.imageView.image = [UIImage imageWithContentsOfFile:thumbURL.path];
         } else {
@@ -119,14 +113,13 @@
     if (_model.isSelected) {
         UIImage *selectImage = [UIImage imageNamed:@"SelectButton"];
         UIImageView *selectImageView = [[UIImageView alloc] initWithImage:selectImage];
-        selectImageView.frame = CGRectMake(0, 0, 50, 50);
+        selectImageView.frame = CGRectMake(CGRectGetWidth(self.frame)-20-10, CGRectGetHeight(self.frame)-20-10, 20, 20);
         self.selectImageView = selectImageView;
         [self addSubview:self.selectImageView];
         self.selectImageView.hidden = NO;
     }else {
         self.selectImageView.hidden = YES;
     }
-    //self.sg_select = model.isSelected;
 }
 
 - (void)setSg_select:(BOOL)sg_select {

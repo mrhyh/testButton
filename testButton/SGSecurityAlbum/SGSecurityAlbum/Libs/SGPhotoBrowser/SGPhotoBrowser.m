@@ -19,14 +19,12 @@
  #import <MediaPlayer/MediaPlayer.h>
 
 @interface SGPhotoBrowser () <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
-    CGFloat _margin, _gutter;
 }
 
-//@property (nonatomic, weak)   SGPhotoCollectionView *collectionView;
-@property (nonatomic, weak)   UICollectionView *collectionView;
-@property (nonatomic, assign) CGSize                 photoSize;
-@property (nonatomic, weak)   SGBrowserToolBar      *toolBar;
-@property (nonatomic, strong) NSMutableArray        *selectModels;
+@property (nonatomic, weak)   UICollectionView  *collectionView;
+@property (nonatomic, assign) CGSize            photoSize;
+@property (nonatomic, weak)   SGBrowserToolBar  *toolBar;
+@property (nonatomic, strong) NSMutableArray    *selectModels;
 
 @end
 
@@ -53,8 +51,6 @@
 }
 
 - (void)initParams {
-    _margin = 0;
-    _gutter = 1;
     self.numberOfPhotosPerRow = 3;
     [SDWebImagePrefetcher sharedImagePrefetcher].maxConcurrentDownloads = 6;
 }
@@ -194,8 +190,13 @@
     NSFileManager *mgr = [NSFileManager defaultManager];
     for (NSUInteger i = 0; i < count; i++) {
         SGPhotoModel *model = self.selectModels[i];
-        [mgr removeItemAtPath:model.photoURL.path error:nil];
-        [mgr removeItemAtPath:model.thumbURL.path error:nil];
+        
+        if (model.mediaType == SGPMediaTypeMediaTypeImage) { // 图片
+            [mgr removeItemAtPath:model.photoURL.path error:nil];
+            [mgr removeItemAtPath:model.thumbURL.path error:nil];
+        }else { // 视频
+            [mgr removeItemAtPath:model.videoURL.path error:nil];
+        }
     }
     self.reloadHandler();
 }
@@ -295,20 +296,20 @@
 
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(_margin, _margin, _margin, _margin);
+    return UIEdgeInsetsMake(SGPhotoCellMargin, SGPhotoCellMargin, SGPhotoCellMargin, SGPhotoCellMargin);
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGFloat value = (self.view.bounds.size.width - (self.numberOfPhotosPerRow - 1) * _gutter - 2 * _margin) / self.numberOfPhotosPerRow;
+    CGFloat value = (self.view.bounds.size.width - (self.numberOfPhotosPerRow - 1) * SGPhotoCellGutter - 2 * SGPhotoCellMargin) / self.numberOfPhotosPerRow;
     return CGSizeMake(value, value);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
-    return _gutter;
+    return SGPhotoCellGutter;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
-    return _gutter;
+    return SGPhotoCellGutter;
 }
 
 #pragma mark -

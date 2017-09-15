@@ -34,7 +34,7 @@
  *  Utils
  */
 #import "SGFileUtil.h"
-#import "YLGStaticDefine.h"
+#import "SGStaticDefine.h"
 
 #endif
 

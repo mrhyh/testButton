@@ -14,6 +14,7 @@
 #import "SGZoomingImageView.h"
 #import "SGPhotoViewController.h"
 #import "SGTool.h"
+#import "SGStaticDefine.h"
 
 
 @interface SGPhotoView () <UIScrollViewDelegate> {
@@ -86,11 +87,8 @@
         [self addSubview:imageView];
         
         if (imageView.isVideo) {
-#warning TODO Test
-            UIImageView *playImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 60, 60)];
+            UIImageView *playImageView = [[UIImageView alloc] initWithFrame:CGRectMake((kScreenWidth-60)/2.0, (kScreenHeight-60)/2.0, 60, 60)];
             playImageView.image = [UIImage imageNamed:@"tyh_playIcon"];
-            playImageView.center = imageView.innerImageView.center;
-            playImageView.center = CGPointMake(tempframe.origin.x - tempframe.size.width/2.0, tempframe.origin.y - tempframe.size.height/2.0);
             [imageView.innerImageView addSubview:playImageView];
         }
         
