@@ -32,14 +32,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.view.backgroundColor           = [UIColor whiteColor];
+    self.collectionView.backgroundColor = [UIColor whiteColor];
     
     [self initParams];
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-    UICollectionView *collectionView = [[UICollectionView alloc] initWithFrame:[self getCollectionViewFrame] collectionViewLayout:layout];
-    self.collectionView = collectionView;
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
+    UICollectionView *collectionView   = [[UICollectionView alloc] initWithFrame:[self getCollectionViewFrame] collectionViewLayout:layout];
+    self.collectionView                = collectionView;
+    self.collectionView.delegate       = self;
+    self.collectionView.dataSource     = self;
     [self.view addSubview:collectionView];
     [self setupViews];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(orientationDidChanged:) name:UIDeviceOrientationDidChangeNotification object:nil];

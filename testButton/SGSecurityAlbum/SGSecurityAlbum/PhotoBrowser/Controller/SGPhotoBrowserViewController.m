@@ -25,6 +25,7 @@
 }
 
 - (void)commonInit {
+    self.view.backgroundColor = [UIColor whiteColor];
     self.numberOfPhotosPerRow = 4;
     self.title = [SGFileUtil getFileNameFromPath:self.rootPath];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addClick)];

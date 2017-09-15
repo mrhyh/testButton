@@ -37,7 +37,7 @@
 }
 
 - (void)commonInit {
-    self.backgroundColor = [UIColor blackColor];
+    self.backgroundColor = [UIColor whiteColor];
     self.pagingEnabled = YES;
     self.delegate = self;
 }

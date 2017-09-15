@@ -49,7 +49,7 @@
     self.thumbImageView = thumbImageView;
     UILabel *nameLabel = [UILabel new];
     nameLabel.text = @"Default";
-    nameLabel.textColor = [UIColor blackColor];
+    nameLabel.textColor = [UIColor whiteColor];
     nameLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:nameLabel];
     self.nameLabel = nameLabel;
