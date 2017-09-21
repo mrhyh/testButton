@@ -245,7 +245,6 @@ static CGSize CGSizeScale(CGSize size, CGFloat scale) {
         
 #warning TODO Test 
         self.fetchResult = [PHAsset fetchAssetsInAssetCollection:self.assetCollection options:options];
-        
         if ([self isAutoDeselectEnabled] && self.imagePickerController.selectedAssets.count > 0) {
             // Get index of previous selected asset
             PHAsset *asset = [self.imagePickerController.selectedAssets firstObject];

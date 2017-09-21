@@ -24,7 +24,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.delegate = self;
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor whiteColor];
         self.maximumZoomScale = 5.0f;
         self.minimumZoomScale = 1.0f;
         self.showsVerticalScrollIndicator = self.showsHorizontalScrollIndicator = NO;

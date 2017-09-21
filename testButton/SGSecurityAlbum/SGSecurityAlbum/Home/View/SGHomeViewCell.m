@@ -11,12 +11,12 @@
 
 @interface SGHomeViewCell ()
 
-@property (nonatomic, weak) UIImageView *backgroundImageView;
-@property (nonatomic, weak) UIImageView *thumbImageView;
-@property (nonatomic, weak) UILabel *nameLabel;
+@property (nonatomic, weak)   UIImageView   *backgroundImageView;
+@property (nonatomic, weak)   UIImageView   *thumbImageView;
+@property (nonatomic, weak)   UILabel       *nameLabel;
 @property (nonatomic, strong) MASConstraint *thumbLeftConstraint;
 @property (nonatomic, strong) MASConstraint *thumbRightConstraint;
-@property (nonatomic, copy) SGHomeViewCellActionBlock actionBlock;
+@property (nonatomic, copy)   SGHomeViewCellActionBlock actionBlock;
 
 @end
 
@@ -49,7 +49,8 @@
     self.thumbImageView = thumbImageView;
     UILabel *nameLabel = [UILabel new];
     nameLabel.text = @"Default";
-    nameLabel.textColor = [UIColor whiteColor];
+    nameLabel.textColor = [UIColor blackColor];
+    nameLabel.font = [UIFont systemFontOfSize:13.0];
     nameLabel.textAlignment = NSTextAlignmentCenter;
     [self.contentView addSubview:nameLabel];
     self.nameLabel = nameLabel;
@@ -82,7 +83,7 @@
     _album = album;
     if (album.type == SGAlbumButtonTypeAddButton) {
         self.thumbImageView.image = [UIImage imageNamed:@"AlbumAddButton"];
-        self.nameLabel.text = @"Add";
+        self.nameLabel.text = @"创建相册";
     } else {
         UIImage *thumb = [UIImage imageNamed:album.coverImageURL ?: @"AlbumCover_placeholder"];
         self.thumbImageView.image = thumb;

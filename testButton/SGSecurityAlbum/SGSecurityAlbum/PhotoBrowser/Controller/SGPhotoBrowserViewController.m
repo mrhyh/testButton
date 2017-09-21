@@ -85,6 +85,7 @@
 }
 
 #warning TODO Test 选中图片或者视频点击完成后的回调
+
 #pragma mark - QBImagePickerController Delegate
 - (void)qb_imagePickerController:(QBImagePickerController *)imagePickerController didFinishPickingAssets:(NSArray *)assets {
     PHImageRequestOptions *op = [[PHImageRequestOptions alloc] init];
@@ -102,8 +103,6 @@
     NSString *dateStr = [formatter stringFromDate:[NSDate date]];
     __block  NSInteger progressCount = 0;
     NSMutableArray *importAssets = @[].mutableCopy;
-#warning TODO Test 这里为什么要*2呢？
-    //NSInteger progressSum = assets.count * 2;
     NSInteger progressSum = assets.count * 2;
     void (^hudProgressBlock)(NSInteger currentProgressCount) = ^(NSInteger progressCount) {
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -123,7 +122,6 @@
         
         [importAssets addObject:asset];
         PHCachingImageManager *imageManager = [[PHCachingImageManager alloc] init];
-        //NSString *fileName = [[NSString stringWithFormat:@"%@%@",dateStr,@(i)] MD5];
         __block NSString *fileName = [NSString stringWithFormat:@"%@%@",dateStr,@(i)];
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -140,11 +138,6 @@
                     
                     NSURL *url = urlAsset.URL;
                     NSData *data = [NSData dataWithContentsOfURL:url];
-
-                    
-                    //ALAssetRepresentation *imageRep = [asset defaultRepresentation];
-                    //NSLog(@"[imageRep filename] : %@", [imageRep filename]);
-                    
                     NSArray *arr = [url.absoluteString componentsSeparatedByString:@"/"];
                     
                     fileName = [arr lastObject];
@@ -154,7 +147,6 @@
                 }];
             }else if (asset.mediaType == PHAssetMediaTypeImage) {
                 [imageManager requestImageForAsset:asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFill options:op resultHandler:^(UIImage *result, NSDictionary *info) {
-                    
                     [SGFileUtil savePhoto:result toRootPath:self.rootPath withName:fileName];
                     hudProgressBlock(++progressCount);
                 }];
