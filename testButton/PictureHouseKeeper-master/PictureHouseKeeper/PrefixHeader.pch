@@ -1,0 +1,56 @@
+//
+//  PrefixHeader.pch
+//  PictureHouseKeeper
+//
+//  Created by 李亚军 on 16/8/15.
+//  Copyright © 2016年 zyyj. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#import "PublicMethod.h"
+#import "YJProgressHUD.h"
+#import "CommonGlobal.h"
+#import "PCCircleViewConst.h"
+
+#import "UIView+SDAutoLayout.h"
+
+#import "NSString+Extension.h"
+#import "UIView+Extension.h"
+
+#define KScreenWidth   [[UIScreen mainScreen] bounds].size.width
+#define KScreenHeight   [[UIScreen mainScreen] bounds].size.height
+
+#define NumberPwdSettingKey @"NumberPwdSettingKey"
+#define TouchIDPwdSettingKey @"TouchIDPwdSettingKey"
+
+
+#define KColorWithRGB(r,g,b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define KColorWithRGBA(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+#define KColorWithDecimal(r,g,b) [UIColor colorWithRed:r green:g blue:b alpha:1.0]
+#define KColorRandom KColorWithRGB(arc4random_uniform(256),arc4random_uniform(256),arc4random_uniform(256))
+
+
+#define showAlert(msg) [[[UIAlertView alloc] initWithTitle:@"提示" message:(msg) delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil] show]
+
+
+#define blueColor KColorWithRGB(61, 152, 253)
+
+#define DocumentImagePathName @"Picture"
+#define DocumentVideoPathName @"Video"
+#define FileListName @"FileList.plist"
+
+
+#define folderName @"folderName"
+#define folderImage @"folderImage"
+
+#define myFileList [FilePicManager shareinstance].fileList
+
+//---------------Notification------------------
+#define SetGestureSaveSuccess @"SetGestureSaveSuccess"
+#define SetNumberPwdSaveSuccess @"SetNumberPwdSaveSuccess"
+
+
+#endif /* PrefixHeader_pch */
