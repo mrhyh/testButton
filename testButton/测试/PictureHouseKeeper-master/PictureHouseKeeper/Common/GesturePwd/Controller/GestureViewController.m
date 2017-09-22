@@ -271,10 +271,8 @@
             //[self.navigationController popToRootViewControllerAnimated:YES];
             
             AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
-            
             delegate.window.rootViewController = delegate.mainVC;
-            
-            
+
         } else {
             NSLog(@"密码错误！");
             [self.msgLabel showWarnMsgAndShake:gestureTextGestureVerifyError];

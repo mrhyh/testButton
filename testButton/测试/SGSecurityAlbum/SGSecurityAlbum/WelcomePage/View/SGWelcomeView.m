@@ -10,9 +10,9 @@
 
 @interface SGWelcomeView () <UITextFieldDelegate>
 
-@property (nonatomic, weak) UIImageView *logoView;
-@property (nonatomic, weak) UILabel *logoLabel;
-@property (nonatomic, weak) UITextField *pwdFiled;
+@property (nonatomic, weak) UIImageView    *logoView;
+@property (nonatomic, weak) UILabel        *logoLabel;
+@property (nonatomic, weak) UITextField    *pwdFiled;
 @property (nonatomic, copy) SGWelcomeBlock handler;
 
 @end
