@@ -70,8 +70,11 @@
             return;
         }
         [SGAccountManager sharedManager].currentAccount = account;
-        AppDelegate *app = [UIApplication sharedApplication].delegate;
-        app.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[SGHomeViewController new]];
+//        AppDelegate *app = [UIApplication sharedApplication].delegate;
+//        app.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[SGHomeViewController new]];
+        
+        AppDelegate *delegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+        delegate.window.rootViewController = nil;
     });
 }
 
@@ -79,5 +82,4 @@
     SGRegisterViewController *vc = [SGRegisterViewController new];
     [self.navigationController pushViewController:vc animated:YES];
 }
-
 @end

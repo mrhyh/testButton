@@ -127,6 +127,8 @@
 		181524DB1F6B7A29009E3412 /* SGStaticDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGStaticDefine.h; sourceTree = "<group>"; };
 		1842E8CD1ED6842A003EE136 /* SGSecurityAlbum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SGSecurityAlbum.entitlements; sourceTree = "<group>"; };
 		185B28C51ED537C30093546C /* Artboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artboard2.png; sourceTree = "<group>"; };
+		186DFF2D1F760E0D00DC3FE5 /* MainTabbarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainTabbarVC.m; path = "../../../PictureHouseKeeper-master/PictureHouseKeeper/MainTabbarVC.m"; sourceTree = "<group>"; };
+		186DFF2E1F760E0D00DC3FE5 /* MainTabbarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainTabbarVC.h; path = "../../../PictureHouseKeeper-master/PictureHouseKeeper/MainTabbarVC.h"; sourceTree = "<group>"; };
 		312BC46097A5CDD10007CE2A /* Pods-mimasuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mimasuo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mimasuo/Pods-mimasuo.debug.xcconfig"; sourceTree = "<group>"; };
 		378821A8F47D9376255D1247 /* Pods-Codedlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codedlock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Codedlock/Pods-Codedlock.release.xcconfig"; sourceTree = "<group>"; };
 		6806EAB91D30D28A0044ED1E /* SGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFileUtil.h; sourceTree = "<group>"; };
@@ -370,6 +372,15 @@
 			path = MacroDefinition;
 			sourceTree = "<group>";
 		};
+		186DFF2C1F760DFA00DC3FE5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				186DFF2E1F760E0D00DC3FE5 /* MainTabbarVC.h */,
+				186DFF2D1F760E0D00DC3FE5 /* MainTabbarVC.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		6806EAB81D30D2750044ED1E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -501,16 +512,8 @@
 			isa = PBXGroup;
 			children = (
 				6806EBD21D30FAD80044ED1E /* Controller */,
-				6806EBD11D30FACE0044ED1E /* View */,
 			);
 			path = PhotoBrowser;
-			sourceTree = "<group>";
-		};
-		6806EBD11D30FACE0044ED1E /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		6806EBD21D30FAD80044ED1E /* Controller */ = {
@@ -730,6 +733,7 @@
 				1842E8CD1ED6842A003EE136 /* SGSecurityAlbum.entitlements */,
 				6857E9B21D2F909D0013E1DC /* AppDelegate.h */,
 				6857E9B31D2F909D0013E1DC /* AppDelegate.m */,
+				186DFF2C1F760DFA00DC3FE5 /* Main */,
 				682406E31D30A84F00023559 /* Home */,
 				6806EBD01D30FAA80044ED1E /* PhotoBrowser */,
 				6806EAB81D30D2750044ED1E /* Utils */,

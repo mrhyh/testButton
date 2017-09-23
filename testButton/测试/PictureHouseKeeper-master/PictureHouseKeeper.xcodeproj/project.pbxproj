@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		186DFF2B1F760C6600DC3FE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 186DFF2A1F760C6600DC3FE5 /* AppDelegate.m */; };
 		C7EA6396DB9ADB99D482BFDB /* libPods-PictureHouseKeeper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7749401E10BAD5BA35671E57 /* libPods-PictureHouseKeeper.a */; };
 		FA1404CE1D91265800EC590D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1404CD1D91265800EC590D /* AboutViewController.m */; };
 		FA1A33421D61C81600CB6AAD /* MainTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A33411D61C81600CB6AAD /* MainTabbarVC.m */; };
@@ -68,7 +69,6 @@
 		FAB974D81D6EEB48003F5C44 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB974D71D6EEB48003F5C44 /* MobileCoreServices.framework */; };
 		FAC323951D644FF7007683F2 /* CommonGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC323941D644FF7007683F2 /* CommonGlobal.m */; };
 		FACC874E1D5C748D002EEF25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FACC874D1D5C748D002EEF25 /* main.m */; };
-		FACC87511D5C748D002EEF25 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FACC87501D5C748D002EEF25 /* AppDelegate.m */; };
 		FACC87571D5C748D002EEF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACC87551D5C748D002EEF25 /* Main.storyboard */; };
 		FACC87591D5C748D002EEF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACC87581D5C748D002EEF25 /* Assets.xcassets */; };
 		FACC875C1D5C748D002EEF25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACC875A1D5C748D002EEF25 /* LaunchScreen.storyboard */; };
@@ -98,6 +98,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		186DFF291F760C6600DC3FE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PictureHouseKeeper/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		186DFF2A1F760C6600DC3FE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PictureHouseKeeper/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		5E80D22B2C0ED0FD896C0BEC /* Pods-PictureHouseKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureHouseKeeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictureHouseKeeper/Pods-PictureHouseKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		7749401E10BAD5BA35671E57 /* libPods-PictureHouseKeeper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PictureHouseKeeper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68637680C9AACFC51F3F80B /* Pods-PictureHouseKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureHouseKeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictureHouseKeeper/Pods-PictureHouseKeeper.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,8 +211,6 @@
 		FAC323941D644FF7007683F2 /* CommonGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonGlobal.m; sourceTree = "<group>"; };
 		FACC87491D5C748D002EEF25 /* PictureHouseKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureHouseKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACC874D1D5C748D002EEF25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FACC874F1D5C748D002EEF25 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
-		FACC87501D5C748D002EEF25 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		FACC87561D5C748D002EEF25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FACC87581D5C748D002EEF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FACC875B1D5C748D002EEF25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -310,8 +310,8 @@
 		FA1A33431D61C93B00CB6AAD /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				FACC874F1D5C748D002EEF25 /* AppDelegate.h */,
-				FACC87501D5C748D002EEF25 /* AppDelegate.m */,
+				186DFF291F760C6600DC3FE5 /* AppDelegate.h */,
+				186DFF2A1F760C6600DC3FE5 /* AppDelegate.m */,
 				FACC87551D5C748D002EEF25 /* Main.storyboard */,
 				FA1A33401D61C81600CB6AAD /* MainTabbarVC.h */,
 				FA1A33411D61C81600CB6AAD /* MainTabbarVC.m */,
@@ -863,12 +863,12 @@
 				FA8338801D76815C00FA2C9E /* VerticalUIButton.m in Sources */,
 				FAB5E9E31D6C199900B1E46A /* SecretSettingViewController.m in Sources */,
 				FADEA3891D63FDB80079261C /* PictureCell.m in Sources */,
+				186DFF2B1F760C6600DC3FE5 /* AppDelegate.m in Sources */,
 				FAB5E9ED1D6D877C00B1E46A /* TouchWindow.m in Sources */,
 				FAB5E9E61D6C461400B1E46A /* NumberPwdViewController.m in Sources */,
 				FAB5E9E01D6C135D00B1E46A /* PCLockLabel.m in Sources */,
 				FADEA3831D63431E0079261C /* UIView+Extension.m in Sources */,
 				FAB5E9DD1D6C135D00B1E46A /* PCCircleViewConst.m in Sources */,
-				FACC87511D5C748D002EEF25 /* AppDelegate.m in Sources */,
 				FAC323951D644FF7007683F2 /* CommonGlobal.m in Sources */,
 				FA1A335E1D62C6DB00CB6AAD /* FolderCell.m in Sources */,
 				FA8338871D76815C00FA2C9E /* XMShareQQUtil.m in Sources */,

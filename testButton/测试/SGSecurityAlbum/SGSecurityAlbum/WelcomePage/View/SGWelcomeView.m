@@ -66,6 +66,7 @@
         make.right.equalTo(superview).offset(-20);
         make.height.equalTo(28);
     }];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
 }
