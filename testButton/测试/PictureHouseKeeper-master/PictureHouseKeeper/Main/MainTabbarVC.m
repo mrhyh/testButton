@@ -7,9 +7,9 @@
 //
 
 #import "MainTabbarVC.h"
-#import "SGHomeViewController.h"
+#import "HomeViewController.h"
 #import "SeetingViewController.h"
-
+#import "VideoViewController.h"
 
 @interface MainTabbarVC ()
 
@@ -21,21 +21,21 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    SGHomeViewController *home = [[SGHomeViewController alloc] init];
+    HomeViewController *home = [[HomeViewController alloc] init];
     UINavigationController *homeNav = [[UINavigationController alloc] initWithRootViewController:home];
     home.title = @"相册";
     home.navigationItem.title = @"相册";
     home.tabBarItem.image = [[UIImage imageNamed:@"home"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
     home.tabBarItem.selectedImage = [[UIImage imageNamed:@"home_selected"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
     
-    /*
+    
     VideoViewController *pic = [[VideoViewController alloc] init];
     UINavigationController *picNav = [[UINavigationController alloc] initWithRootViewController:pic];
     pic.title = @"视频";
     pic.navigationItem.title = @"视频";
     pic.tabBarItem.image = [[UIImage imageNamed:@"picture"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
     pic.tabBarItem.selectedImage = [[UIImage imageNamed:@"picture_selected"] imageWithRenderingMode:UIImageRenderingModeAutomatic];
-    */
+    
     
     SeetingViewController *setting = [[SeetingViewController alloc] init];
     UINavigationController *setNav = [[UINavigationController alloc] initWithRootViewController:setting];
@@ -48,7 +48,7 @@
     
     NSMutableArray *arry = [[NSMutableArray alloc] init];
     [arry addObject:homeNav];
-//   [arry addObject:picNav];
+    [arry addObject:picNav];
     [arry addObject:setNav];
     [self setViewControllers:arry animated:YES];
     

@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		186DFF2B1F760C6600DC3FE5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 186DFF2A1F760C6600DC3FE5 /* AppDelegate.m */; };
 		C7EA6396DB9ADB99D482BFDB /* libPods-PictureHouseKeeper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7749401E10BAD5BA35671E57 /* libPods-PictureHouseKeeper.a */; };
 		FA1404CE1D91265800EC590D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1404CD1D91265800EC590D /* AboutViewController.m */; };
-		FA1A33421D61C81600CB6AAD /* MainTabbarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A33411D61C81600CB6AAD /* MainTabbarVC.m */; };
 		FA1A33481D61CA3400CB6AAD /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A33471D61CA3400CB6AAD /* HomeViewController.m */; };
 		FA1A334B1D61CA3F00CB6AAD /* SeetingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A334A1D61CA3F00CB6AAD /* SeetingViewController.m */; };
 		FA1A33551D62B03000CB6AAD /* PublicMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1A33541D62B03000CB6AAD /* PublicMethod.m */; };
@@ -65,11 +63,9 @@
 		FAB5E9E61D6C461400B1E46A /* NumberPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB5E9E51D6C461400B1E46A /* NumberPwdViewController.m */; };
 		FAB5E9EA1D6C466400B1E46A /* NumberPwdView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB5E9E91D6C466400B1E46A /* NumberPwdView.m */; };
 		FAB5E9ED1D6D877C00B1E46A /* TouchWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB5E9EC1D6D877C00B1E46A /* TouchWindow.m */; };
-		FAB974D61D6EE72C003F5C44 /* VideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAB974D51D6EE72C003F5C44 /* VideoViewController.m */; };
 		FAB974D81D6EEB48003F5C44 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAB974D71D6EEB48003F5C44 /* MobileCoreServices.framework */; };
 		FAC323951D644FF7007683F2 /* CommonGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC323941D644FF7007683F2 /* CommonGlobal.m */; };
 		FACC874E1D5C748D002EEF25 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FACC874D1D5C748D002EEF25 /* main.m */; };
-		FACC87571D5C748D002EEF25 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACC87551D5C748D002EEF25 /* Main.storyboard */; };
 		FACC87591D5C748D002EEF25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACC87581D5C748D002EEF25 /* Assets.xcassets */; };
 		FACC875C1D5C748D002EEF25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FACC875A1D5C748D002EEF25 /* LaunchScreen.storyboard */; };
 		FACC87671D5C748D002EEF25 /* PictureHouseKeeperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FACC87661D5C748D002EEF25 /* PictureHouseKeeperTests.m */; };
@@ -98,15 +94,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		186DFF291F760C6600DC3FE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = PictureHouseKeeper/AppDelegate.h; sourceTree = SOURCE_ROOT; };
-		186DFF2A1F760C6600DC3FE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = PictureHouseKeeper/AppDelegate.m; sourceTree = SOURCE_ROOT; };
+		186DFF341F76403F00DC3FE5 /* VideoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoViewController.h; sourceTree = "<group>"; };
+		186DFF351F76403F00DC3FE5 /* VideoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoViewController.m; sourceTree = "<group>"; };
+		186DFF371F76407600DC3FE5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		186DFF381F76407600DC3FE5 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		186DFF391F76407600DC3FE5 /* MainTabbarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainTabbarVC.h; sourceTree = "<group>"; };
+		186DFF3A1F76407600DC3FE5 /* MainTabbarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabbarVC.m; sourceTree = "<group>"; };
 		5E80D22B2C0ED0FD896C0BEC /* Pods-PictureHouseKeeper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureHouseKeeper.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PictureHouseKeeper/Pods-PictureHouseKeeper.debug.xcconfig"; sourceTree = "<group>"; };
 		7749401E10BAD5BA35671E57 /* libPods-PictureHouseKeeper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PictureHouseKeeper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68637680C9AACFC51F3F80B /* Pods-PictureHouseKeeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PictureHouseKeeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-PictureHouseKeeper/Pods-PictureHouseKeeper.release.xcconfig"; sourceTree = "<group>"; };
 		FA1404CC1D91265800EC590D /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		FA1404CD1D91265800EC590D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		FA1A33401D61C81600CB6AAD /* MainTabbarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainTabbarVC.h; path = PictureHouseKeeper/MainTabbarVC.h; sourceTree = SOURCE_ROOT; };
-		FA1A33411D61C81600CB6AAD /* MainTabbarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainTabbarVC.m; path = PictureHouseKeeper/MainTabbarVC.m; sourceTree = SOURCE_ROOT; };
 		FA1A33461D61CA3400CB6AAD /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		FA1A33471D61CA3400CB6AAD /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		FA1A33491D61CA3F00CB6AAD /* SeetingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeetingViewController.h; sourceTree = "<group>"; };
@@ -204,14 +202,11 @@
 		FAB5E9E91D6C466400B1E46A /* NumberPwdView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberPwdView.m; sourceTree = "<group>"; };
 		FAB5E9EB1D6D877C00B1E46A /* TouchWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchWindow.h; sourceTree = "<group>"; };
 		FAB5E9EC1D6D877C00B1E46A /* TouchWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchWindow.m; sourceTree = "<group>"; };
-		FAB974D41D6EE72C003F5C44 /* VideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VideoViewController.h; path = PictureHouseKeeper/Video/VideoViewController.h; sourceTree = SOURCE_ROOT; };
-		FAB974D51D6EE72C003F5C44 /* VideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VideoViewController.m; path = PictureHouseKeeper/Video/VideoViewController.m; sourceTree = SOURCE_ROOT; };
 		FAB974D71D6EEB48003F5C44 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FAC323931D644FF7007683F2 /* CommonGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonGlobal.h; sourceTree = "<group>"; };
 		FAC323941D644FF7007683F2 /* CommonGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonGlobal.m; sourceTree = "<group>"; };
 		FACC87491D5C748D002EEF25 /* PictureHouseKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PictureHouseKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACC874D1D5C748D002EEF25 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FACC87561D5C748D002EEF25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FACC87581D5C748D002EEF25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FACC875B1D5C748D002EEF25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FACC875D1D5C748D002EEF25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -275,6 +270,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		186DFF331F76403F00DC3FE5 /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				186DFF341F76403F00DC3FE5 /* VideoViewController.h */,
+				186DFF351F76403F00DC3FE5 /* VideoViewController.m */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
+		186DFF361F76407600DC3FE5 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				186DFF371F76407600DC3FE5 /* AppDelegate.h */,
+				186DFF381F76407600DC3FE5 /* AppDelegate.m */,
+				186DFF391F76407600DC3FE5 /* MainTabbarVC.h */,
+				186DFF3A1F76407600DC3FE5 /* MainTabbarVC.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		701E57706E4F92AF187E1653 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,18 +322,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FA1A33431D61C93B00CB6AAD /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				186DFF291F760C6600DC3FE5 /* AppDelegate.h */,
-				186DFF2A1F760C6600DC3FE5 /* AppDelegate.m */,
-				FACC87551D5C748D002EEF25 /* Main.storyboard */,
-				FA1A33401D61C81600CB6AAD /* MainTabbarVC.h */,
-				FA1A33411D61C81600CB6AAD /* MainTabbarVC.m */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		FA1A33441D61CA0900CB6AAD /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,16 +350,6 @@
 				FA1404CD1D91265800EC590D /* AboutViewController.m */,
 			);
 			path = Setting;
-			sourceTree = "<group>";
-		};
-		FA1A334D1D62A4C300CB6AAD /* Video */ = {
-			isa = PBXGroup;
-			children = (
-				FAB974D41D6EE72C003F5C44 /* VideoViewController.h */,
-				FAB974D51D6EE72C003F5C44 /* VideoViewController.m */,
-			);
-			name = Video;
-			path = Picture;
 			sourceTree = "<group>";
 		};
 		FA1A33511D62AB1A00CB6AAD /* Views */ = {
@@ -619,12 +612,12 @@
 		FACC874B1D5C748D002EEF25 /* PictureHouseKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				186DFF361F76407600DC3FE5 /* Main */,
 				FAF601CC1D86A1F20037CE7F /* NewFearure */,
 				FA1A33521D62B01500CB6AAD /* Common */,
-				FA1A334D1D62A4C300CB6AAD /* Video */,
+				186DFF331F76403F00DC3FE5 /* Video */,
 				FA1A33451D61CA1700CB6AAD /* Setting */,
 				FA1A33441D61CA0900CB6AAD /* Home */,
-				FA1A33431D61C93B00CB6AAD /* Main */,
 				FACC874C1D5C748D002EEF25 /* Supporting Files */,
 			);
 			path = PictureHouseKeeper;
@@ -780,7 +773,6 @@
 				FACC87591D5C748D002EEF25 /* Assets.xcassets in Resources */,
 				FA8338851D76815C00FA2C9E /* icon_share_wechat@2x.png in Resources */,
 				FA83384E1D7678AC00FA2C9E /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				FACC87571D5C748D002EEF25 /* Main.storyboard in Resources */,
 				FA83384C1D7678AC00FA2C9E /* WeiboSDK.bundle in Resources */,
 				FA8338841D76815C00FA2C9E /* icon_share_webo@2x.png in Resources */,
 				FA8338831D76815C00FA2C9E /* icon_share_qzone@2x.png in Resources */,
@@ -863,7 +855,6 @@
 				FA8338801D76815C00FA2C9E /* VerticalUIButton.m in Sources */,
 				FAB5E9E31D6C199900B1E46A /* SecretSettingViewController.m in Sources */,
 				FADEA3891D63FDB80079261C /* PictureCell.m in Sources */,
-				186DFF2B1F760C6600DC3FE5 /* AppDelegate.m in Sources */,
 				FAB5E9ED1D6D877C00B1E46A /* TouchWindow.m in Sources */,
 				FAB5E9E61D6C461400B1E46A /* NumberPwdViewController.m in Sources */,
 				FAB5E9E01D6C135D00B1E46A /* PCLockLabel.m in Sources */,
@@ -875,13 +866,11 @@
 				FA1A334B1D61CA3F00CB6AAD /* SeetingViewController.m in Sources */,
 				FAF601CF1D86A21C0037CE7F /* NewFearureViewController.m in Sources */,
 				FACC874E1D5C748D002EEF25 /* main.m in Sources */,
-				FA1A33421D61C81600CB6AAD /* MainTabbarVC.m in Sources */,
 				FA83388B1D76815C00FA2C9E /* XMShareView.m in Sources */,
 				FA2BCE461D6ACCA500ADD79C /* settingCell.m in Sources */,
 				FA83388A1D76815C00FA2C9E /* XMShareWeiboUtil.m in Sources */,
 				FAB5E9D91D6C135D00B1E46A /* GestureViewController.m in Sources */,
 				FAB5E9DC1D6C135D00B1E46A /* PCCircleView.m in Sources */,
-				FAB974D61D6EE72C003F5C44 /* VideoViewController.m in Sources */,
 				FA1A33551D62B03000CB6AAD /* PublicMethod.m in Sources */,
 				FA1404CE1D91265800EC590D /* AboutViewController.m in Sources */,
 				FAB5E9DB1D6C135D00B1E46A /* PCCircle.m in Sources */,
@@ -933,15 +922,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FACC87551D5C748D002EEF25 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FACC87561D5C748D002EEF25 /* Base */,
-			);
-			name = Main.storyboard;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		FACC875A1D5C748D002EEF25 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
