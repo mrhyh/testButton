@@ -7,30 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		08B0149A769455A61BB93F10BB896F12 /* Pods-Codedlock-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 080769AA44BB3DAD417FB0B33486ABA3 /* Pods-Codedlock-dummy.m */; };
-		0A0417D607D2BEB66F164EEE380233AF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		1EB4BEBAE466F56DE2554208E14FF811 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		2E561278DE5C34E9662AE5F8E6CEDAB4 /* Pods-mimasuo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CB385A2B3813E0A14266821ED06B2D11 /* Pods-mimasuo-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		080769AA44BB3DAD417FB0B33486ABA3 /* Pods-Codedlock-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Codedlock-dummy.m"; sourceTree = "<group>"; };
+		017755050B9BDD91F8C6C442B3E0B700 /* Pods-mimasuo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mimasuo.release.xcconfig"; sourceTree = "<group>"; };
+		0C13492689E912EE5BB97356EBADD28C /* Pods-mimasuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-mimasuo.debug.xcconfig"; sourceTree = "<group>"; };
+		1C2477270A2D740C08B5AC9FD57AD486 /* Pods-mimasuo-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mimasuo-resources.sh"; sourceTree = "<group>"; };
 		2060545726DA7DFBA9D77A24B0D0FC56 /* UMMobClick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UMMobClick.framework; path = umsdk_IOS_analyics_idfa_v4.2.4/UMMobClick.framework; sourceTree = "<group>"; };
-		334A92F96816EAB1953C4E9536D5B44C /* libPods-Codedlock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-Codedlock.a"; path = "libPods-Codedlock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		368322F8CDFECF3179962CFBB788DFC4 /* Pods-Codedlock.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Codedlock.debug.xcconfig"; sourceTree = "<group>"; };
-		3F4CEB20B7C7D8C1513CADAF92C19BB4 /* Pods-Codedlock-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Codedlock-frameworks.sh"; sourceTree = "<group>"; };
-		4FF3B4A687853CE763F9D7B7E499112D /* Pods-Codedlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Codedlock.release.xcconfig"; sourceTree = "<group>"; };
-		5BF83D901EF2D3E415CD82B7CDC7182C /* Pods-Codedlock-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Codedlock-acknowledgements.plist"; sourceTree = "<group>"; };
+		45E51F2175A2F81E2260AA6937F32FF3 /* Pods-mimasuo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-mimasuo-acknowledgements.markdown"; sourceTree = "<group>"; };
+		86EF978F579A280714CDE1FD45DF976F /* libPods-mimasuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-mimasuo.a"; path = "libPods-mimasuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C29009EDB74999CE671F7081891E4713 /* Pods-Codedlock-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Codedlock-acknowledgements.markdown"; sourceTree = "<group>"; };
-		C9CF981573FC86B24AE7F5DE538842C3 /* Pods-Codedlock-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Codedlock-resources.sh"; sourceTree = "<group>"; };
+		CB385A2B3813E0A14266821ED06B2D11 /* Pods-mimasuo-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-mimasuo-dummy.m"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D53F7FE62AA8938F6F828C4695FB049F /* Pods-mimasuo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-mimasuo-frameworks.sh"; sourceTree = "<group>"; };
+		D9CD8EFEDE9CA6352665CCF65BBB95C8 /* Pods-mimasuo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-mimasuo-acknowledgements.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		5277D8731AE36DE0A802495943E4AF65 /* Frameworks */ = {
+		7966FFE0B013FFF2C46F59731AC94E1F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A0417D607D2BEB66F164EEE380233AF /* Foundation.framework in Frameworks */,
+				1EB4BEBAE466F56DE2554208E14FF811 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,27 +46,27 @@
 			path = UMengAnalytics;
 			sourceTree = "<group>";
 		};
-		4A7CB3C834B72F143EA36E53339D9E1A /* Products */ = {
+		34F85841539813C4880C58B6D78ED18F /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				334A92F96816EAB1953C4E9536D5B44C /* libPods-Codedlock.a */,
+				478615A6D6CFD8AE696FDAB4DC84F222 /* Pods-mimasuo */,
 			);
-			name = Products;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		4F95640DDEF6BF7F621CB3F0FE941231 /* Pods-Codedlock */ = {
+		478615A6D6CFD8AE696FDAB4DC84F222 /* Pods-mimasuo */ = {
 			isa = PBXGroup;
 			children = (
-				C29009EDB74999CE671F7081891E4713 /* Pods-Codedlock-acknowledgements.markdown */,
-				5BF83D901EF2D3E415CD82B7CDC7182C /* Pods-Codedlock-acknowledgements.plist */,
-				080769AA44BB3DAD417FB0B33486ABA3 /* Pods-Codedlock-dummy.m */,
-				3F4CEB20B7C7D8C1513CADAF92C19BB4 /* Pods-Codedlock-frameworks.sh */,
-				C9CF981573FC86B24AE7F5DE538842C3 /* Pods-Codedlock-resources.sh */,
-				368322F8CDFECF3179962CFBB788DFC4 /* Pods-Codedlock.debug.xcconfig */,
-				4FF3B4A687853CE763F9D7B7E499112D /* Pods-Codedlock.release.xcconfig */,
+				45E51F2175A2F81E2260AA6937F32FF3 /* Pods-mimasuo-acknowledgements.markdown */,
+				D9CD8EFEDE9CA6352665CCF65BBB95C8 /* Pods-mimasuo-acknowledgements.plist */,
+				CB385A2B3813E0A14266821ED06B2D11 /* Pods-mimasuo-dummy.m */,
+				D53F7FE62AA8938F6F828C4695FB049F /* Pods-mimasuo-frameworks.sh */,
+				1C2477270A2D740C08B5AC9FD57AD486 /* Pods-mimasuo-resources.sh */,
+				0C13492689E912EE5BB97356EBADD28C /* Pods-mimasuo.debug.xcconfig */,
+				017755050B9BDD91F8C6C442B3E0B700 /* Pods-mimasuo.release.xcconfig */,
 			);
-			name = "Pods-Codedlock";
-			path = "Target Support Files/Pods-Codedlock";
+			name = "Pods-mimasuo";
+			path = "Target Support Files/Pods-mimasuo";
 			sourceTree = "<group>";
 		};
 		59299B2AFD331B7EDBCD8552CF8A28E8 /* Frameworks */ = {
@@ -99,17 +99,9 @@
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				6430D1264667C74778080E17313E7E31 /* Pods */,
-				4A7CB3C834B72F143EA36E53339D9E1A /* Products */,
-				A5926305758F43D2A75BD24835F98E76 /* Targets Support Files */,
+				DBC1A2E26D8B695011DF547F47826797 /* Products */,
+				34F85841539813C4880C58B6D78ED18F /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		A5926305758F43D2A75BD24835F98E76 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4F95640DDEF6BF7F621CB3F0FE941231 /* Pods-Codedlock */,
-			);
-			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -120,23 +112,31 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DBC1A2E26D8B695011DF547F47826797 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				86EF978F579A280714CDE1FD45DF976F /* libPods-mimasuo.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2DCFAD4794C95715B897047E573622E8 /* Pods-Codedlock */ = {
+		10D62DACB427EA6E3B50D96E3CC4F9D0 /* Pods-mimasuo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F8B9B45C74C39A762427463F3CECAF57 /* Build configuration list for PBXNativeTarget "Pods-Codedlock" */;
+			buildConfigurationList = F5123760C8E482C513224D21F313F4EF /* Build configuration list for PBXNativeTarget "Pods-mimasuo" */;
 			buildPhases = (
-				1C71BF4592F34C0DC201B02788AED7EB /* Sources */,
-				5277D8731AE36DE0A802495943E4AF65 /* Frameworks */,
+				6DF7D4BBC0FF5580B2429D7026C358D9 /* Sources */,
+				7966FFE0B013FFF2C46F59731AC94E1F /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Pods-Codedlock";
-			productName = "Pods-Codedlock";
-			productReference = 334A92F96816EAB1953C4E9536D5B44C /* libPods-Codedlock.a */;
+			name = "Pods-mimasuo";
+			productName = "Pods-mimasuo";
+			productReference = 86EF978F579A280714CDE1FD45DF976F /* libPods-mimasuo.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -156,21 +156,21 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 4A7CB3C834B72F143EA36E53339D9E1A /* Products */;
+			productRefGroup = DBC1A2E26D8B695011DF547F47826797 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2DCFAD4794C95715B897047E573622E8 /* Pods-Codedlock */,
+				10D62DACB427EA6E3B50D96E3CC4F9D0 /* Pods-mimasuo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C71BF4592F34C0DC201B02788AED7EB /* Sources */ = {
+		6DF7D4BBC0FF5580B2429D7026C358D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08B0149A769455A61BB93F10BB896F12 /* Pods-Codedlock-dummy.m in Sources */,
+				2E561278DE5C34E9662AE5F8E6CEDAB4 /* Pods-mimasuo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,29 +221,6 @@
 			};
 			name = Debug;
 		};
-		3FFCE562D09D1A6D3986E151E12DE617 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 368322F8CDFECF3179962CFBB788DFC4 /* Pods-Codedlock.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				MACH_O_TYPE = staticlib;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
 		44CDBB6D11DE06DB64D6268622BDC47E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -284,9 +261,32 @@
 			};
 			name = Release;
 		};
-		B5C34845D3C7902B809B1CC47FC5D030 /* Release */ = {
+		D2829B018BFF4DE5F8F9CC8251D09A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4FF3B4A687853CE763F9D7B7E499112D /* Pods-Codedlock.release.xcconfig */;
+			baseConfigurationReference = 0C13492689E912EE5BB97356EBADD28C /* Pods-mimasuo.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		EB7BEF660361E2FA50C61078495BB56F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 017755050B9BDD91F8C6C442B3E0B700 /* Pods-mimasuo.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -319,11 +319,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F8B9B45C74C39A762427463F3CECAF57 /* Build configuration list for PBXNativeTarget "Pods-Codedlock" */ = {
+		F5123760C8E482C513224D21F313F4EF /* Build configuration list for PBXNativeTarget "Pods-mimasuo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3FFCE562D09D1A6D3986E151E12DE617 /* Debug */,
-				B5C34845D3C7902B809B1CC47FC5D030 /* Release */,
+				D2829B018BFF4DE5F8F9CC8251D09A92 /* Debug */,
+				EB7BEF660361E2FA50C61078495BB56F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

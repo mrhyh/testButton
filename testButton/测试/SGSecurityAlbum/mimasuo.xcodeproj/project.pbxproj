@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		181524DA1F6A6DBD009E3412 /* SGTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 181524D91F6A6DBD009E3412 /* SGTool.m */; };
 		185B28C61ED537C30093546C /* Artboard2.png in Resources */ = {isa = PBXBuildFile; fileRef = 185B28C51ED537C30093546C /* Artboard2.png */; };
-		3C9BAE62BF54BE40633EC9F0 /* libPods-Codedlock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9BDA14C87DEA97E073CE056 /* libPods-Codedlock.a */; };
 		6806EABB1D30D28A0044ED1E /* SGFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6806EABA1D30D28A0044ED1E /* SGFileUtil.m */; };
 		6806EABF1D30DEFA0044ED1E /* SGAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 6806EABE1D30DEFA0044ED1E /* SGAlbum.m */; };
 		6806EB871D30F9F20044ED1E /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 6806EB4F1D30F9F20044ED1E /* .gitkeep */; };
@@ -101,6 +100,7 @@
 		68F5CE511D362FF100906271 /* SGBrowserMainToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F5CE501D362FF100906271 /* SGBrowserMainToolBar.m */; };
 		68F5CE541D36314200906271 /* SGBrowserSecondToolBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F5CE531D36314200906271 /* SGBrowserSecondToolBar.m */; };
 		68F7BF761D2FF44600F604ED /* SGAccountSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 68F7BF751D2FF44600F604ED /* SGAccountSet.m */; };
+		6B994C24A968FC263C1B53FE /* libPods-mimasuo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 705C18AE9B7A5774FD84B11A /* libPods-mimasuo.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +127,7 @@
 		181524DB1F6B7A29009E3412 /* SGStaticDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SGStaticDefine.h; sourceTree = "<group>"; };
 		1842E8CD1ED6842A003EE136 /* SGSecurityAlbum.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SGSecurityAlbum.entitlements; sourceTree = "<group>"; };
 		185B28C51ED537C30093546C /* Artboard2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Artboard2.png; sourceTree = "<group>"; };
+		312BC46097A5CDD10007CE2A /* Pods-mimasuo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mimasuo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mimasuo/Pods-mimasuo.debug.xcconfig"; sourceTree = "<group>"; };
 		378821A8F47D9376255D1247 /* Pods-Codedlock.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Codedlock.release.xcconfig"; path = "Pods/Target Support Files/Pods-Codedlock/Pods-Codedlock.release.xcconfig"; sourceTree = "<group>"; };
 		6806EAB91D30D28A0044ED1E /* SGFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGFileUtil.h; sourceTree = "<group>"; };
 		6806EABA1D30D28A0044ED1E /* SGFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGFileUtil.m; sourceTree = "<group>"; };
@@ -320,7 +321,9 @@
 		68F5CE531D36314200906271 /* SGBrowserSecondToolBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBrowserSecondToolBar.m; sourceTree = "<group>"; };
 		68F7BF741D2FF44600F604ED /* SGAccountSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGAccountSet.h; sourceTree = "<group>"; };
 		68F7BF751D2FF44600F604ED /* SGAccountSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGAccountSet.m; sourceTree = "<group>"; };
+		705C18AE9B7A5774FD84B11A /* libPods-mimasuo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-mimasuo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BDA14C87DEA97E073CE056 /* libPods-Codedlock.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Codedlock.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E55842C54E45268AFB8F7798 /* Pods-mimasuo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mimasuo.release.xcconfig"; path = "Pods/Target Support Files/Pods-mimasuo/Pods-mimasuo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -329,7 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				68128B7C1D2FEE3A0070BE88 /* LocalAuthentication.framework in Frameworks */,
-				3C9BAE62BF54BE40633EC9F0 /* libPods-Codedlock.a in Frameworks */,
+				6B994C24A968FC263C1B53FE /* libPods-mimasuo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +633,7 @@
 			children = (
 				68128B7B1D2FEE3A0070BE88 /* LocalAuthentication.framework */,
 				A9BDA14C87DEA97E073CE056 /* libPods-Codedlock.a */,
+				705C18AE9B7A5774FD84B11A /* libPods-mimasuo.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -877,6 +881,8 @@
 			children = (
 				09276219CA403052F2694A47 /* Pods-Codedlock.debug.xcconfig */,
 				378821A8F47D9376255D1247 /* Pods-Codedlock.release.xcconfig */,
+				312BC46097A5CDD10007CE2A /* Pods-mimasuo.debug.xcconfig */,
+				E55842C54E45268AFB8F7798 /* Pods-mimasuo.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1047,7 +1053,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Codedlock/Pods-Codedlock-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mimasuo/Pods-mimasuo-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AE8A752D302749457755963D /* [CP] Copy Pods Resources */ = {
@@ -1062,7 +1068,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Codedlock/Pods-Codedlock-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mimasuo/Pods-mimasuo-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F577F1DF9CF0B5726DC54486 /* [CP] Check Pods Manifest.lock */ = {
@@ -1306,7 +1312,7 @@
 		};
 		6857E9DA1D2F909E0013E1DC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 09276219CA403052F2694A47 /* Pods-Codedlock.debug.xcconfig */;
+			baseConfigurationReference = 312BC46097A5CDD10007CE2A /* Pods-mimasuo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EQHJZ8ZG26;
@@ -1322,7 +1328,7 @@
 		};
 		6857E9DB1D2F909E0013E1DC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 378821A8F47D9376255D1247 /* Pods-Codedlock.release.xcconfig */;
+			baseConfigurationReference = E55842C54E45268AFB8F7798 /* Pods-mimasuo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = EQHJZ8ZG26;
