@@ -36,7 +36,7 @@ UIWindow *_window;
 // 字体大小
 #define XWFont [UIFont systemFontOfSize:12]
 
-@interface ViewController () <RPBroadcastActivityViewControllerDelegate,RPPreviewViewControllerDelegate>
+@interface ViewController () <RPBroadcastActivityViewControllerDelegate,RPPreviewViewControllerDelegate, NSStreamDelegate>
 
 @property (nonatomic, strong)UIButton *btnStart;
 @property (nonatomic, strong)UIButton *btnStop;
@@ -106,10 +106,116 @@ UIWindow *_window;
     [view.layer addAnimation:animGroup forKey:nil];
 }
 
+
+//3.实现代理方法
+- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
+{
+    
+    //    NSStreamEventOpenCompleted = 1UL << 0,     // 输入流打开完成
+    //    NSStreamEventHasBytesAvailable = 1UL << 1,  //获取到字节数
+    //    NSStreamEventHasSpaceAvailable = 1UL << 2, //有可用的空间,不知道怎么翻译..
+    //    NSStreamEventErrorOccurred = 1UL << 3,     // 发生错误
+    //    NSStreamEventEndEncountered = 1UL << 4     //输入完成
+    
+    NSInputStream *inputStream = (NSInputStream *)aStream;
+    
+    switch (eventCode) {
+            
+            //开始输入
+        case NSStreamEventHasBytesAvailable:
+            
+        {
+            
+            //定义一个数组
+            uint8_t streamData[1000000];
+            
+            //返回输入长度
+            NSUInteger length = [inputStream read:streamData maxLength:1000000];
+            
+            if (length) {
+                
+                //转换为data
+                NSData *data = [NSData dataWithBytes:streamData length:length];
+                
+                NSLog(@"读取的数据%lu",(unsigned long)data.length);
+                
+            }else{
+                
+                
+                NSLog(@"没有数据");
+            }
+        }
+            break;
+            
+            //异常处理
+        case NSStreamEventErrorOccurred:
+            
+            NSLog(@"进行异常处理");
+            
+            break;
+            
+            //输入完成
+        case NSStreamEventEndEncountered:
+        {
+            //输入流关闭处理
+            [inputStream close];
+            //从运行循环中移除
+            [inputStream removeFromRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+            //置为空
+            inputStream = nil;
+            
+        }
+            break;
+        default:
+            break;
+    }
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    //创建NSInputStream对象 , 配置路径 , 加入运行循环等..
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"xxxx.pdf" ofType:nil];
+    
+    //[NSInputStream inputStreamWithURL:<#(nonnull NSURL *)#>]
+    //[NSInputStream inputStreamWithData:<#(nonnull NSData *)#>]
+    
+    //根据路径创建输入流 , 创建输入流的方法有很多,如上
+    NSInputStream *inputStream = [NSInputStream inputStreamWithFileAtPath:path];
+    
+    //设置代理
+    inputStream.delegate = self;
+    
+    //加入运行循环
+    [inputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
+    
+    //打开输入流
+    [inputStream open];
+    
+    
+    
+    return ;
+    
+    dispatch_queue_t queue = dispatch_queue_create("queue1", DISPATCH_QUEUE_SERIAL);
+    for (int i = 0; i < 100000000; i++) {
+
+        dispatch_async(queue, ^{
+
+            @autoreleasepool {
+                NSString *str = @"Abc";
+                str = [str lowercaseString];
+                str = [str stringByAppendingString:@"xyz"];
+    
+                NSLog(@"%@", str);
+            }
+            
+        });
+        
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{ });
+    }
+    
+    
     
     //[self showMessage:@"测试提醒" image:[UIImage imageNamed:@"1.jpeg"]];
     
