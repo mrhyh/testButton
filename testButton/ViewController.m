@@ -179,9 +179,17 @@ UIWindow *_window;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    int i = 0;
+    for (i=0; i<12; i++) {
+//        NSLog(@"%d==,%ld",i,i/2 + i%2);
+//        NSLog(@"%di/==,%ld",i,i/2);
+        NSLog(@"%di%==,%ld",i,i%2);
+    }
+    
+    
     [self initializeLocationService];
     
-    return;
+    
     //创建NSInputStream对象 , 配置路径 , 加入运行循环等..
     NSString *path = [[NSBundle mainBundle]pathForResource:@"xxxx.pdf" ofType:nil];
     
