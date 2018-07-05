@@ -14,6 +14,7 @@
 #import "TestView.h"
 #import "CNotificationManager.h"
 #import <CoreLocation/CoreLocation.h>
+#import "testViewController.h"
 
 static NSString *StartRecord = @"开始";
 static NSString *StopRecord = @"结束";
@@ -179,6 +180,45 @@ UIWindow *_window;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    
+    
+    NSDictionary *headers = @{ @"content-type": @"text/html",
+                               @"cache-control": @"no-cache" };
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://dol.tianya.cn/s?z=tianya&c=10030221&op=1&_v=30&u=app-funinfo"]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    [request setAllHTTPHeaderFields:headers];
+    
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSString *string = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                    }
+                                                }];
+    [dataTask resume];
+    
+    
+    
+    NSDictionary *dic = @{@"key":@"1",@"key2":@"",@"key3":@""};
+    NSString *key = dic[@"key"];
+    NSString *key2 = dic[@"key2"];
+    NSString *key4 = dic[@"key4"];
+    
+    NSMutableDictionary *testDic = nil;
+    [testDic writeToFile:nil atomically:YES];
+
+    NSLog(@"=====%@",testDic);
+    return ;
+    
+    
     int i = 0;
     for (i=0; i<12; i++) {
 //        NSLog(@"%d==,%ld",i,i/2 + i%2);
@@ -458,20 +498,10 @@ UIWindow *_window;
     // hack, turn to landscape code.
     self.testInteger += 20;
     self.liveVideoProgressView_timeLabel.text = [NSString stringWithFormat:@"%ld",(long)self.testInteger];
-    return ;
-    UIViewController *root = [UIApplication sharedApplication].keyWindow.rootViewController;
-    [UIView transitionWithView:self.view duration:0.5 options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
-        [UIApplication sharedApplication].keyWindow.rootViewController = nil;
-        [UIApplication sharedApplication].keyWindow.rootViewController = root;
-    } completion:^(BOOL finished) {
-        
-    }];
     
-    // the tab bar is showing unexpected, hide it.
-   // UITabBarController *tab = (UITabBarController *)root;
-    //NSInteger currentIdx = tab.selectedIndex;
-    //[tab setSelectedIndex:(currentIdx+1)%4];
-    //[tab setSelectedIndex:currentIdx];
+    testViewController *vc = [[testViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
+
 }
 
 
@@ -1104,6 +1134,10 @@ UIWindow *_window;
         }
     }];
     // [manager stopUpdatingLocation];不用的时候关闭更新位置服务
+}
+
+- (void)dealloc {
+    NSLog(@"dealloc.......");
 }
 
 @end

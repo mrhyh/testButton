@@ -31,6 +31,7 @@
 		188F4FF91E766F00005738D0 /* 2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 188F4FF51E766F00005738D0 /* 2.jpeg */; };
 		188F4FFA1E766F00005738D0 /* 3.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 188F4FF61E766F00005738D0 /* 3.jpeg */; };
 		188F4FFB1E766F00005738D0 /* 4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 188F4FF71E766F00005738D0 /* 4.jpeg */; };
+		18CBD99620590FBF00C99168 /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBD99520590FBF00C99168 /* testViewController.m */; };
 		18CD0B011E88E200003DE5BC /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CD0B001E88E200003DE5BC /* ReplayKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		18FEAE101F8C9F780000E7B0 /* xxxx.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18FEAE0F1F8C9EC40000E7B0 /* xxxx.pdf */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,8 @@
 		188F4FF51E766F00005738D0 /* 2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpeg; sourceTree = "<group>"; };
 		188F4FF61E766F00005738D0 /* 3.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpeg; sourceTree = "<group>"; };
 		188F4FF71E766F00005738D0 /* 4.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpeg; sourceTree = "<group>"; };
+		18CBD99420590FBF00C99168 /* testViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		18CBD99520590FBF00C99168 /* testViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		18CD0B001E88E200003DE5BC /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
 		18FEAE0F1F8C9EC40000E7B0 /* xxxx.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = xxxx.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -123,6 +126,8 @@
 				188F4FE11E7650A5005738D0 /* AppDelegate.m */,
 				188F4FE31E7650A5005738D0 /* ViewController.h */,
 				188F4FE41E7650A5005738D0 /* ViewController.m */,
+				18CBD99420590FBF00C99168 /* testViewController.h */,
+				18CBD99520590FBF00C99168 /* testViewController.m */,
 				18403DE71E7BB595007ECADC /* UncaughtExceptionHandler.h */,
 				18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */,
 				183E2B321F0DE0590095C8BA /* CNotificationManager.h */,
@@ -193,7 +198,7 @@
 				TargetAttributes = {
 					188F4FD91E7650A5005738D0 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = EQHJZ8ZG26;
+						DevelopmentTeam = VD58PNDPW6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -255,6 +260,7 @@
 				183E2B341F0DE0590095C8BA /* CNotificationManager.m in Sources */,
 				1849A0471ED2ED9E0024AD33 /* TestView.m in Sources */,
 				188F4FE21E7650A5005738D0 /* AppDelegate.m in Sources */,
+				18CBD99620590FBF00C99168 /* testViewController.m in Sources */,
 				188F4FDF1E7650A5005738D0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -387,10 +393,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EQHJZ8ZG26;
+				DEVELOPMENT_TEAM = VD58PNDPW6;
 				INFOPLIST_FILE = testButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -399,10 +405,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = EQHJZ8ZG26;
+				DEVELOPMENT_TEAM = VD58PNDPW6;
 				INFOPLIST_FILE = testButton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
