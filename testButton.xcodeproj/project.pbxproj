@@ -33,6 +33,7 @@
 		188F4FFB1E766F00005738D0 /* 4.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 188F4FF71E766F00005738D0 /* 4.jpeg */; };
 		18CBD99620590FBF00C99168 /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CBD99520590FBF00C99168 /* testViewController.m */; };
 		18CD0B011E88E200003DE5BC /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18CD0B001E88E200003DE5BC /* ReplayKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		18DA4A58212E9013009B1F59 /* NSNull+XY.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DA4A56212E9012009B1F59 /* NSNull+XY.m */; };
 		18FEAE101F8C9F780000E7B0 /* xxxx.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 18FEAE0F1F8C9EC40000E7B0 /* xxxx.pdf */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,8 @@
 		18CBD99420590FBF00C99168 /* testViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
 		18CBD99520590FBF00C99168 /* testViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		18CD0B001E88E200003DE5BC /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		18DA4A56212E9012009B1F59 /* NSNull+XY.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNull+XY.m"; sourceTree = "<group>"; };
+		18DA4A57212E9013009B1F59 /* NSNull+XY.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNull+XY.h"; sourceTree = "<group>"; };
 		18FEAE0F1F8C9EC40000E7B0 /* xxxx.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = xxxx.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +135,8 @@
 				18403DE81E7BB595007ECADC /* UncaughtExceptionHandler.m */,
 				183E2B321F0DE0590095C8BA /* CNotificationManager.h */,
 				183E2B331F0DE0590095C8BA /* CNotificationManager.m */,
+				18DA4A57212E9013009B1F59 /* NSNull+XY.h */,
+				18DA4A56212E9012009B1F59 /* NSNull+XY.m */,
 				1849A0451ED2ED9E0024AD33 /* TestView.h */,
 				1849A0461ED2ED9E0024AD33 /* TestView.m */,
 				1849A0431ED2ED7B0024AD33 /* testView.xib */,
@@ -261,6 +266,7 @@
 				1849A0471ED2ED9E0024AD33 /* TestView.m in Sources */,
 				188F4FE21E7650A5005738D0 /* AppDelegate.m in Sources */,
 				18CBD99620590FBF00C99168 /* testViewController.m in Sources */,
+				18DA4A58212E9013009B1F59 /* NSNull+XY.m in Sources */,
 				188F4FDF1E7650A5005738D0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
