@@ -113,7 +113,6 @@ UIWindow *_window;
     [view.layer addAnimation:animGroup forKey:nil];
 }
 
-
 //3.实现代理方法
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
 {
@@ -182,7 +181,13 @@ UIWindow *_window;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    NSDictionary *tempDic =  [NSDictionary dictionaryWithObjectsAndKeys:
+                              @"male", @"21",
+                              @"20", @"age",
+                              @"Tom", @"name",
+                              @"run",@"hobby", nil ];
     
+    NSLog(@"====%@",tempDic[@"male"]);
     
     NSArray *testArray = @[@"1",@"2",@"",[NSNull null],@"3",@[],@1,@{}];
     for (int i=0; i<testArray.count; i++) {

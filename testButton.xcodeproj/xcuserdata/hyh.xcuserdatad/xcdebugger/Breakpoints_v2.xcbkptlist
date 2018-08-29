@@ -20,13 +20,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testButton/ViewController.m"
-            timestampString = "556700369.496154"
+            timestampString = "557134988.417352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "631"
-            endingLineNumber = "631"
-            landmarkName = "-click:"
-            landmarkType = "7">
+            startingLineNumber = "637"
+            endingLineNumber = "637"
+            landmarkName = "ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -48,11 +48,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testButton/ViewController.m"
-            timestampString = "556700369.4976701"
+            timestampString = "557134988.427799"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "547"
-            endingLineNumber = "547"
+            startingLineNumber = "553"
+            endingLineNumber = "553"
             landmarkName = "-rotation_icon:"
             landmarkType = "7">
          </BreakpointContent>
@@ -64,11 +64,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testButton/ViewController.m"
-            timestampString = "556700369.4994659"
+            timestampString = "557134988.430935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "550"
-            endingLineNumber = "550"
+            startingLineNumber = "556"
+            endingLineNumber = "556"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -128,13 +128,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testButton/ViewController.m"
-            timestampString = "556700369.5019439"
+            timestampString = "557134988.434943"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1125"
-            endingLineNumber = "1125"
+            startingLineNumber = "1131"
+            endingLineNumber = "1131"
             landmarkName = "-locationManager::fromLocation:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[ViewController locationManager::fromLocation:]_block_invoke"
+                  moduleName = "testButton"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyh/hyh%E6%96%87%E6%A1%A3/GithubSource/testButton/testButton/ViewController.m"
+                  timestampString = "557134989.062533"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1132"
+                  endingLineNumber = "1132"
+                  offsetFromSymbolStart = "507">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[ViewController locationManager::fromLocation:]_block_invoke"
+                  moduleName = "testButton"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyh/hyh%E6%96%87%E6%A1%A3/GithubSource/testButton/testButton/ViewController.m"
+                  timestampString = "557134989.067557"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1132"
+                  endingLineNumber = "1132"
+                  offsetFromSymbolStart = "515">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -144,11 +176,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testButton/ViewController.m"
-            timestampString = "556700369.503319"
+            timestampString = "557134988.44577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1133"
-            endingLineNumber = "1133"
+            startingLineNumber = "1139"
+            endingLineNumber = "1139"
             landmarkName = "-locationManager:didFailWithError:"
             landmarkType = "7">
          </BreakpointContent>
@@ -160,13 +192,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testButton/ViewController.m"
-            timestampString = "556700369.504568"
+            timestampString = "557134988.453629"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1114"
-            endingLineNumber = "1114"
+            startingLineNumber = "1120"
+            endingLineNumber = "1120"
             landmarkName = "-locationManager::fromLocation:"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[ViewController locationManager::fromLocation:]"
+                  moduleName = "testButton"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyh/hyh%E6%96%87%E6%A1%A3/GithubSource/testButton/testButton/ViewController.m"
+                  timestampString = "557134989.0888571"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1121"
+                  endingLineNumber = "1121"
+                  offsetFromSymbolStart = "394">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__48-[ViewController locationManager::fromLocation:]_block_invoke"
+                  moduleName = "testButton"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hyh/hyh%E6%96%87%E6%A1%A3/GithubSource/testButton/testButton/ViewController.m"
+                  timestampString = "557134989.093492"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1123"
+                  endingLineNumber = "1123"
+                  offsetFromSymbolStart = "140">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -176,11 +240,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testButton/ViewController.m"
-            timestampString = "556700369.508024"
+            timestampString = "557134988.459143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "879"
-            endingLineNumber = "879"
+            startingLineNumber = "885"
+            endingLineNumber = "885"
             landmarkName = "-onBtnPressed:"
             landmarkType = "7">
          </BreakpointContent>
@@ -192,11 +256,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "testButton/ViewController.m"
-            timestampString = "556700369.509737"
+            timestampString = "557134988.463011"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1196"
-            endingLineNumber = "1196"
+            startingLineNumber = "1202"
+            endingLineNumber = "1202"
             landmarkName = "-dealloc"
             landmarkType = "7">
          </BreakpointContent>
