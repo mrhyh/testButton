@@ -31,17 +31,15 @@ blue:((CGFloat)(rgbValue & 0xFF)) / 255.0 alpha:(a)]
  */
 typedef void(^CGXStringResultBlock)(id selectValue,id selectRow);
 
-@interface CGXStringPickerView : UIView
+@interface MGStringPickerView : UIView
 
 @property (nonatomic , strong) CGXPickerViewManager *manager;
 
-- (void)initUI;
-
-- (instancetype)initWithDataSource:(NSArray *)dataSource
-              DefaultSelValue:(id)defaultSelValue
-                IisAutoSelect:(BOOL)isAutoSelect
-                      Manager:(CGXPickerViewManager *)manager
-                  ResultBlock:(CGXStringResultBlock)resultBlock;
+- (instancetype)initWithFrame:(CGRect)frame dataSource:(NSArray *)dataSource
+              defaultSelValue:(id)defaultSelValue
+                isAutoSelect:(BOOL)isAutoSelect
+                      manager:(CGXPickerViewManager *)manager
+                  resultBlock:(CGXStringResultBlock)resultBlock;
 @end
 
 @interface CGXPickerViewManager : NSObject

@@ -15,7 +15,7 @@
 		0F0F640B1D2F4E9A00A944BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0F64091D2F4E9A00A944BC /* LaunchScreen.storyboard */; };
 		0F0F64161D2F4E9A00A944BC /* pickerTextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F64151D2F4E9A00A944BC /* pickerTextTests.m */; };
 		0F0F64211D2F4E9A00A944BC /* pickerTextUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F64201D2F4E9A00A944BC /* pickerTextUITests.m */; };
-		EB1A767F225AF3370030F0DC /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */; };
+		EB1A767F225AF3370030F0DC /* MGStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1A7676225AF3370030F0DC /* MGStringPickerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,8 +52,8 @@
 		0F0F641C1D2F4E9A00A944BC /* pickerTextUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pickerTextUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0F64201D2F4E9A00A944BC /* pickerTextUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pickerTextUITests.m; sourceTree = "<group>"; };
 		0F0F64221D2F4E9A00A944BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB1A766E225AF3360030F0DC /* CGXStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXStringPickerView.h; sourceTree = "<group>"; };
-		EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
+		EB1A766E225AF3360030F0DC /* MGStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGStringPickerView.h; sourceTree = "<group>"; };
+		EB1A7676225AF3370030F0DC /* MGStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGStringPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,8 +147,8 @@
 		EB1A7666225AF3360030F0DC /* CGXPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				EB1A766E225AF3360030F0DC /* CGXStringPickerView.h */,
-				EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */,
+				EB1A766E225AF3360030F0DC /* MGStringPickerView.h */,
+				EB1A7676225AF3370030F0DC /* MGStringPickerView.m */,
 			);
 			path = CGXPickerView;
 			sourceTree = "<group>";
@@ -287,7 +287,7 @@
 				0F0F64031D2F4E9900A944BC /* ViewController.m in Sources */,
 				0F0F64001D2F4E9900A944BC /* AppDelegate.m in Sources */,
 				0F0F63FD1D2F4E9900A944BC /* main.m in Sources */,
-				EB1A767F225AF3370030F0DC /* CGXStringPickerView.m in Sources */,
+				EB1A767F225AF3370030F0DC /* MGStringPickerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

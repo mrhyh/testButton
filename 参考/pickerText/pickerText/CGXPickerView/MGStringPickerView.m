@@ -6,10 +6,10 @@
 //  Copyright © 2019年 ylgwhyh. All rights reserved.
 //
 
-#import "CGXStringPickerView.h"
+#import "MGStringPickerView.h"
 #import <UIKit/UIKit.h>
 
-@interface CGXStringPickerView ()<UIPickerViewDelegate, UIPickerViewDataSource>
+@interface MGStringPickerView ()<UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (nonatomic, strong) UIPickerView *pickerView;
 // 是否是单列
@@ -32,7 +32,7 @@
 
 @end
 
-@implementation CGXStringPickerView
+@implementation MGStringPickerView
 
 - (CGXPickerViewManager *)manager
 {
@@ -42,13 +42,11 @@
     return _manager;
 }
 
-#pragma mark - 初始化自定义字符串选择器
-- (instancetype)initWithDataSource:(NSArray *)dataSource
-              DefaultSelValue:(id)defaultSelValue
-                 IisAutoSelect:(BOOL)isAutoSelect
-                     Manager:(CGXPickerViewManager *)manager
-                  ResultBlock:(CGXStringResultBlock)resultBlock
-{
+- (instancetype)initWithFrame:(CGRect)frame dataSource:(NSArray *)dataSource
+              defaultSelValue:(id)defaultSelValue
+                 isAutoSelect:(BOOL)isAutoSelect
+                      manager:(CGXPickerViewManager *)manager
+                  resultBlock:(CGXStringResultBlock)resultBlock {
     if (self = [super init]) {
         self.dataSource = dataSource;
         self.isAutoSelect = isAutoSelect;
@@ -61,16 +59,49 @@
                 self.selectedItems = [defaultSelValue mutableCopy];
             }
         }
+        self.frame = frame;
         [self loadData];
-        [self initUI];
+        
+        //_pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.manager.kTopViewH + 0.5, SCREEN_WIDTH, self.manager.kPickerViewH)];
+        _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
+        _pickerView.backgroundColor = [UIColor whiteColor];
+        _pickerView.dataSource = self;
+        _pickerView.delegate = self;
+        
+        __weak typeof(self) weakSelf = self;
+        if (self.isSingleColumn) {
+            [_dataSource enumerateObjectsUsingBlock:^(NSString *rowItem, NSUInteger rowIdx, BOOL *stop) {
+                if ([weakSelf.selectedItem isEqualToString:rowItem]) {
+                    [weakSelf.pickerView selectRow:rowIdx inComponent:0 animated:NO];
+                    *stop = YES;
+                }
+            }];
+        } else {
+            [self.selectedItems enumerateObjectsUsingBlock:^(NSString *selectedItem, NSUInteger component, BOOL *stop) {
+                [_dataSource[component] enumerateObjectsUsingBlock:^(id rowItem, NSUInteger rowIdx, BOOL *stop) {
+                    if ([selectedItem isEqualToString:rowItem]) {
+                        [weakSelf.pickerView selectRow:rowIdx inComponent:component animated:NO];
+                        *stop = YES;
+                    }
+                }];
+            }];
+        }
     }
+    
+    if (_leftUnitLabel == nil) {
+        _leftUnitLabel = [[UILabel alloc] initWithFrame:CGRectMake(_pickerView.frame.size.width/4+50, _pickerView.frame.size.height/2 - 15, 50, 30)];
+        _leftUnitLabel.text = @"小时";
+        _leftUnitLabel.font = [UIFont systemFontOfSize:13];
+        [_pickerView addSubview:_leftUnitLabel];
+    }
+    if (_rightUnitLabel == nil) {
+        _rightUnitLabel = [[UILabel alloc] initWithFrame:CGRectMake(_pickerView.frame.size.width/4*3+50, _leftUnitLabel.frame.origin.y, _leftUnitLabel.frame.size.width, _leftUnitLabel.frame.size.height)];
+        _rightUnitLabel.text = @"分钟";
+        _rightUnitLabel.font = [UIFont systemFontOfSize:13];
+        [_pickerView addSubview:_rightUnitLabel];
+    }
+    [self addSubview:_pickerView];
     return self;
-}
-
-#pragma mark - 初始化子视图
-- (void)initUI {
-    self.frame = SCREEN_BOUNDS;
-    [self addSubview:self.pickerView];
 }
 
 #pragma mark - 加载自定义字符串数据

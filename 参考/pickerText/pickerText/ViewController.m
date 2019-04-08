@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "CGXStringPickerView.h"
+#import "MGStringPickerView.h"
 
 @interface ViewController ()
 
@@ -21,7 +21,7 @@
     [super viewDidLoad];
 
     self.manager = [[CGXPickerViewManager alloc] init];
-    self.manager.pickerTitleSelectColor = [UIColor redColor];
+    self.manager.pickerTitleSelectColor = [UIColor blackColor];
     
     __weak typeof(self) weakSelf = self;
     NSMutableArray *dataSources1 = [[NSMutableArray alloc] init];
@@ -38,9 +38,11 @@
     if (dataSources == nil || dataSources.count == 0) {
         return;
     }
-    CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithDataSource:dataSources DefaultSelValue:defaultSelValueArr IisAutoSelect:YES Manager:_manager ResultBlock:^(id selectValue, id selectRow) {
+    
+    MGStringPickerView *strPickerView = [[MGStringPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200) dataSource:dataSources defaultSelValue:defaultSelValueArr isAutoSelect:YES manager:_manager resultBlock:^(id selectValue, id selectRow) {
         NSLog(@"选择1：%@ 选择2：%@",selectValue,selectRow);
     }];
+    
     [self.view addSubview:strPickerView];
 }
 
