@@ -41,26 +41,6 @@
     }
     return _manager;
 }
-#pragma mark - 背景遮罩图层
-- (UIView *)backgroundView {
-    if (!_backgroundView) {
-        _backgroundView = [[UIView alloc]initWithFrame:SCREEN_BOUNDS];
-        _backgroundView.backgroundColor = [UIColor colorWithWhite:0 alpha:0.20];
-        _backgroundView.userInteractionEnabled = YES;
-        UITapGestureRecognizer *myTap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapBackgroundView:)];
-        [_backgroundView addGestureRecognizer:myTap];
-    }
-    return _backgroundView;
-}
-
-#pragma mark - 弹出视图
-- (UIView *)alertView {
-    if (!_alertView) {
-        _alertView = [[UIView alloc]initWithFrame:CGRectMake(0, SCREEN_HEIGHT - self.manager.kTopViewH - self.manager.kPickerViewH, SCREEN_WIDTH, self.manager.kTopViewH + self.manager.kPickerViewH)];
-        _alertView.backgroundColor = [UIColor whiteColor];
-    }
-    return _alertView;
-}
 
 #pragma mark - 初始化自定义字符串选择器
 - (instancetype)initWithDataSource:(NSArray *)dataSource
@@ -90,12 +70,7 @@
 #pragma mark - 初始化子视图
 - (void)initUI {
     self.frame = SCREEN_BOUNDS;
-    // 背景遮罩图层
-    //[self addSubview:self.backgroundView];
-    // 弹出视图
-    [self addSubview:self.alertView];
-    // 添加字符串选择器
-    [self.alertView addSubview:self.pickerView];
+    [self addSubview:self.pickerView];
 }
 
 #pragma mark - 加载自定义字符串数据
@@ -169,45 +144,6 @@
             self.selectedItems = [NSMutableArray arrayWithArray:mutableArray];
         }
     }
-}
-
-#pragma mark - 背景视图的点击事件
-- (void)didTapBackgroundView:(UITapGestureRecognizer *)sender {
-    [self dismissWithAnimation:NO];
-}
-
-#pragma mark - 弹出视图方法
-- (void)showWithAnimation:(BOOL)animation {
-    //1. 获取当前应用的主窗口
-    UIWindow *keyWindow = [[UIApplication sharedApplication] keyWindow];
-    [keyWindow addSubview:self];
-    if (animation) {
-        // 动画前初始位置
-        CGRect rect = self.alertView.frame;
-        rect.origin.y = SCREEN_HEIGHT;
-        self.alertView.frame = rect;
-        
-        // 浮现动画
-        [UIView animateWithDuration:0.3 animations:^{
-            CGRect rect = self.alertView.frame;
-            rect.origin.y -= self.manager.kTopViewH + self.manager.kPickerViewH;
-            self.alertView.frame = rect;
-        }];
-    }
-}
-
-#pragma mark - 关闭视图方法
-- (void)dismissWithAnimation:(BOOL)animation {
-    // 关闭动画
-    [UIView animateWithDuration:0.2 animations:^{
-        CGRect rect = self.alertView.frame;
-        rect.origin.y += self.manager.kTopViewH + self.manager.kPickerViewH;
-        self.alertView.frame = rect;
-        
-        self.backgroundView.alpha = 0;
-    } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-    }];
 }
 
 #pragma mark - 字符串选择器

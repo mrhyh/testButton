@@ -34,16 +34,8 @@ typedef void(^CGXStringResultBlock)(id selectValue,id selectRow);
 @interface CGXStringPickerView : UIView
 
 @property (nonatomic , strong) CGXPickerViewManager *manager;
-// 背景视图
-@property (nonatomic, strong) UIView *backgroundView;
-// 弹出视图
-@property (nonatomic, strong) UIView *alertView;
 
-/** 初始化子视图 */
 - (void)initUI;
-
-/** 点击背景遮罩图层事件 */
-- (void)didTapBackgroundView:(UITapGestureRecognizer *)sender;
 
 - (instancetype)initWithDataSource:(NSArray *)dataSource
               DefaultSelValue:(id)defaultSelValue
