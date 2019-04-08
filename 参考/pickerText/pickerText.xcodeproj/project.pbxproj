@@ -17,7 +17,6 @@
 		0F0F64211D2F4E9A00A944BC /* pickerTextUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F64201D2F4E9A00A944BC /* pickerTextUITests.m */; };
 		EB1A7678225AF3370030F0DC /* CGXPickerViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB1A7668225AF3360030F0DC /* CGXPickerViewBundle.bundle */; };
 		EB1A7679225AF3370030F0DC /* CGXPickerViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1A766A225AF3360030F0DC /* CGXPickerViewManager.m */; };
-		EB1A767D225AF3370030F0DC /* CGXPickerUIBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1A7673225AF3370030F0DC /* CGXPickerUIBaseView.m */; };
 		EB1A767F225AF3370030F0DC /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */; };
 /* End PBXBuildFile section */
 
@@ -57,10 +56,8 @@
 		0F0F64221D2F4E9A00A944BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB1A7668225AF3360030F0DC /* CGXPickerViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CGXPickerViewBundle.bundle; sourceTree = "<group>"; };
 		EB1A766A225AF3360030F0DC /* CGXPickerViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerViewManager.m; sourceTree = "<group>"; };
-		EB1A766C225AF3360030F0DC /* CGXPickerUIBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPickerUIBaseView.h; sourceTree = "<group>"; };
 		EB1A766E225AF3360030F0DC /* CGXStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXStringPickerView.h; sourceTree = "<group>"; };
 		EB1A7671225AF3360030F0DC /* CGXPickerViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXPickerViewManager.h; sourceTree = "<group>"; };
-		EB1A7673225AF3370030F0DC /* CGXPickerUIBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXPickerUIBaseView.m; sourceTree = "<group>"; };
 		EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,8 +153,6 @@
 			isa = PBXGroup;
 			children = (
 				EB1A7668225AF3360030F0DC /* CGXPickerViewBundle.bundle */,
-				EB1A766C225AF3360030F0DC /* CGXPickerUIBaseView.h */,
-				EB1A7673225AF3370030F0DC /* CGXPickerUIBaseView.m */,
 				EB1A766E225AF3360030F0DC /* CGXStringPickerView.h */,
 				EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */,
 				EB1A7671225AF3360030F0DC /* CGXPickerViewManager.h */,
@@ -299,7 +294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F0F64031D2F4E9900A944BC /* ViewController.m in Sources */,
-				EB1A767D225AF3370030F0DC /* CGXPickerUIBaseView.m in Sources */,
 				0F0F64001D2F4E9900A944BC /* AppDelegate.m in Sources */,
 				0F0F63FD1D2F4E9900A944BC /* main.m in Sources */,
 				EB1A767F225AF3370030F0DC /* CGXStringPickerView.m in Sources */,

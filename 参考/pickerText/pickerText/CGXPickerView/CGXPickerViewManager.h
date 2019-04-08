@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
 #import <UIKit/UIKit.h>
+
 @interface CGXPickerViewManager : NSObject
 
 @property (nonatomic , assign) CGFloat kPickerViewH;//选择器高度 默认200
