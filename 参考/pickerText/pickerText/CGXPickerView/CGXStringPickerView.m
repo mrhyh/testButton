@@ -2,26 +2,25 @@
 //  CGXStringPickerView.m
 //  CGXPickerView
 //
-//  Created by 曹贵鑫 on 2017/8/22.
-//  Copyright © 2017年 曹贵鑫. All rights reserved.
+//  Created by ylgwhyh on 2019/4/9.
+//  Copyright © 2019年 ylgwhyh. All rights reserved.
 //
 
 #import "CGXStringPickerView.h"
 #import <UIKit/UIKit.h>
 
-@interface CGXStringPickerView ()<UIPickerViewDelegate,UIPickerViewDataSource>
-// 字符串选择器(默认大小: 320px × 216px)
+@interface CGXStringPickerView ()<UIPickerViewDelegate, UIPickerViewDataSource>
+
 @property (nonatomic, strong) UIPickerView *pickerView;
 // 是否是单列
 @property (nonatomic, assign) BOOL isSingleColumn;
 // 数据源是否合法（数组的元素类型只能是字符串或数组类型）
 @property (nonatomic, assign) BOOL isDataSourceValid;
-@property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSArray  *dataSource;
 // 是否开启自动选择
 @property (nonatomic, assign) BOOL isAutoSelect;
+
 @property (nonatomic, copy) CGXStringResultBlock resultBlock;
-//@property (nonatomic, copy) CGXStringResultSelectBlock reuultSelectBlcok;
 
 // 单列选中的项
 @property (nonatomic, copy) NSString *selectedItem;
@@ -32,6 +31,7 @@
 @property (nonatomic, strong) UILabel *rightUnitLabel;
 
 @end
+
 @implementation CGXStringPickerView
 
 - (CGXPickerViewManager *)manager
@@ -62,83 +62,14 @@
     return _alertView;
 }
 
-#pragma mark - 顶部标题栏视图
-- (UIView *)topView {
-    if (!_topView) {
-        _topView =[[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, self.manager.kTopViewH + 0.5)];
-        _topView.backgroundColor = RGB_HEX(0xFDFDFD, 1.0f);
-    }
-    return _topView;
-}
-
-#pragma mark - 左边取消按钮
-- (UIButton *)leftBtn {
-    if (!_leftBtn) {
-        _leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _leftBtn.frame = CGRectMake(5, 7, 60, self.manager.kTopViewH-14);
-        _leftBtn.backgroundColor = self.manager.leftBtnBGColor;
-        _leftBtn.layer.cornerRadius = self.manager.leftBtnCornerRadius;;
-        _leftBtn.layer.borderColor = self.manager.leftBtnborderColor.CGColor;
-        _leftBtn.layer.borderWidth = self.manager.leftBtnBorderWidth;
-        _leftBtn.layer.masksToBounds = YES;
-        _leftBtn.titleLabel.font = [UIFont systemFontOfSize:self.manager.leftBtnTitleSize];
-        [_leftBtn setTitleColor:self.manager.leftBtnTitleColor forState:UIControlStateNormal];
-        [_leftBtn setTitle:self.manager.leftBtnTitle forState:UIControlStateNormal];
-        [_leftBtn addTarget:self action:@selector(clickLeftBtn) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _leftBtn;
-}
-
-#pragma mark - 右边确定按钮
-- (UIButton *)rightBtn {
-    if (!_rightBtn) {
-        _rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _rightBtn.frame = CGRectMake(SCREEN_WIDTH - 65, 7, 60, self.manager.kTopViewH-14);
-        _rightBtn.backgroundColor = self.manager.rightBtnBGColor;;
-        _rightBtn.layer.cornerRadius = self.manager.rightBtnCornerRadius;
-        _rightBtn.layer.masksToBounds = YES;
-        _rightBtn.layer.borderWidth = self.manager.rightBtnBorderWidth;
-        _rightBtn.layer.borderColor = self.manager.rightBtnborderColor.CGColor;
-        _rightBtn.titleLabel.font = [UIFont systemFontOfSize:self.manager.rightBtnTitleSize];
-        [_rightBtn setTitleColor:self.manager.rightBtnTitleColor forState:UIControlStateNormal];
-        [_rightBtn setTitle:self.manager.rightBtnTitle forState:UIControlStateNormal];
-        [_rightBtn addTarget:self action:@selector(clickRightBtn) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _rightBtn;
-}
-
-#pragma mark - 中间标题按钮
-- (UILabel *)titleLabel {
-    if (!_titleLabel) {
-        _titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(65, 0, SCREEN_WIDTH - 130, self.manager.kTopViewH)];
-        _titleLabel.backgroundColor = self.manager.titleLabelBGColor;
-        _titleLabel.font = [UIFont systemFontOfSize:self.manager.titleSize];
-        _titleLabel.textColor = self.manager.titleLabelColor;
-        _titleLabel.textAlignment = NSTextAlignmentCenter;
-    }
-    return _titleLabel;
-}
-
-#pragma mark - 分割线
-- (UIView *)lineView {
-    if (!_lineView) {
-        _lineView = [[UIView alloc]initWithFrame:CGRectMake(0, self.manager.kTopViewH, SCREEN_WIDTH, 0.5)];
-        _lineView.backgroundColor  = self.manager.lineViewColor;
-        [self.alertView addSubview:_lineView];
-    }
-    return _lineView;
-}
-
 #pragma mark - 初始化自定义字符串选择器
-- (instancetype)initWithTitle:(NSString *)title
-                   DataSource:(NSArray *)dataSource
+- (instancetype)initWithDataSource:(NSArray *)dataSource
               DefaultSelValue:(id)defaultSelValue
                  IisAutoSelect:(BOOL)isAutoSelect
                      Manager:(CGXPickerViewManager *)manager
                   ResultBlock:(CGXStringResultBlock)resultBlock
 {
     if (self = [super init]) {
-        self.title = title;
         self.dataSource = dataSource;
         self.isAutoSelect = isAutoSelect;
         self.resultBlock = resultBlock;
@@ -163,19 +94,6 @@
     //[self addSubview:self.backgroundView];
     // 弹出视图
     [self addSubview:self.alertView];
-    // 设置弹出视图子视图
-    // 添加顶部标题栏
-    [self.alertView addSubview:self.topView];
-    // 添加左边取消按钮
-    [self.topView addSubview:self.leftBtn];
-    // 添加右边确定按钮
-    [self.topView addSubview:self.rightBtn];
-    // 添加中间标题按钮
-    [self.topView addSubview:self.titleLabel];
-    // 添加分割线
-    [self.topView addSubview:self.lineView];
-    
-    self.titleLabel.text = self.title;
     // 添加字符串选择器
     [self.alertView addSubview:self.pickerView];
 }
@@ -292,31 +210,6 @@
     }];
 }
 
-#pragma mark - 取消按钮的点击事件
-- (void)clickLeftBtn {
-    [self dismissWithAnimation:YES];
-}
-
-#pragma mark - 确定按钮的点击事件
-- (void)clickRightBtn {
-//    NSLog(@"点击确定按钮后，执行block回调");
-    [self dismissWithAnimation:YES];
-    if(_resultBlock) {
-        if (self.isSingleColumn) {
-            NSString  *str = [NSString stringWithFormat:@"%ld",[_dataSource indexOfObject:self.selectedItem]];
-                _resultBlock([self.selectedItem copy],[str copy]);
-        } else {
-            NSMutableArray *selectRowAry = [NSMutableArray array];
-            for (int i = 0; i<_dataSource.count; i++) {
-                NSArray *arr = _dataSource[i];
-                NSString *str = self.selectedItems[i];
-                [selectRowAry addObject:[NSString stringWithFormat:@"%ld" , [arr indexOfObject:str]]];
-            }
-                _resultBlock([self.selectedItems copy],[selectRowAry copy]);
-        }
-    }
-}
-
 #pragma mark - 字符串选择器
 - (UIPickerView *)pickerView {
     if (!_pickerView) {
@@ -411,7 +304,7 @@
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view {
-    NSLog(@"row:%ld--%ld--%@" , row,component,self.selectedItem);
+    NSLog(@"实时选中row:%ld--%ld--%@" , row,component,self.selectedItem);
     //设置分割线的颜色
     for(UIView *singleLine in pickerView.subviews)
     {
@@ -479,10 +372,6 @@
 
 @end
 
-/// RGB颜色(16进制)
-#define CGXPickerRGBColor(r,g,b,a) [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:a];
-
-
 @interface CGXPickerViewManager ()
 
 @end
@@ -499,32 +388,7 @@
         
         _pickerTitleSelectSize  =15;
         _pickerTitleSelectColor = [UIColor blackColor];
-        
-        _lineViewColor =CGXPickerRGBColor(225, 225, 225, 1);
-        
-        _titleLabelColor = CGXPickerRGBColor(252, 96, 134, 1);
-        _titleSize = 16;
-        _titleLabelBGColor = [UIColor whiteColor];
         _rowHeight = 30;
-        _rightBtnTitle = @"确定";
-        _rightBtnBGColor =  CGXPickerRGBColor(252, 96, 134, 1);
-        _rightBtnTitleSize = 16;
-        _rightBtnTitleColor = [UIColor whiteColor];
-        
-        _rightBtnborderColor = CGXPickerRGBColor(252, 96, 134, 1);
-        _rightBtnCornerRadius = 6;
-        _rightBtnBorderWidth = 1;
-        
-        _leftBtnTitle = @"取消";
-        _leftBtnBGColor =  CGXPickerRGBColor(252, 96, 134, 1);
-        _leftBtnTitleSize = 16;
-        _leftBtnTitleColor = [UIColor whiteColor];
-        
-        _leftBtnborderColor = CGXPickerRGBColor(252, 96, 134, 1);
-        _leftBtnCornerRadius = 6;
-        _leftBtnBorderWidth = 1;
-        _isHaveLimit = NO;
-        
     }
     return self;
 }

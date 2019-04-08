@@ -26,19 +26,19 @@
     __weak typeof(self) weakSelf = self;
     NSMutableArray *dataSources1 = [[NSMutableArray alloc] init];
     for (int i=0; i<=12; i++) {
-        [dataSources1 addObject:[NSString stringWithFormat:@"%d小",i]];
+        [dataSources1 addObject:[NSString stringWithFormat:@"%d",i]];
     }
     NSMutableArray *dataSources2 = [[NSMutableArray alloc] init];
     for (int i=0; i<=59; i++) {
-        [dataSources2 addObject:[NSString stringWithFormat:@"%d分",i]];
+        [dataSources2 addObject:[NSString stringWithFormat:@"%d",i]];
     }
-     NSArray *dataSources = @[dataSources1,dataSources2];
     
+    NSArray *dataSources = @[dataSources1,dataSources2];
     NSArray *defaultSelValueArr = @[@"4"];
     if (dataSources == nil || dataSources.count == 0) {
         return;
     }
-    CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithTitle:@"学历" DataSource:dataSources DefaultSelValue:defaultSelValueArr IisAutoSelect:YES Manager:_manager ResultBlock:^(id selectValue, id selectRow) {
+    CGXStringPickerView *strPickerView = [[CGXStringPickerView alloc] initWithDataSource:dataSources DefaultSelValue:defaultSelValueArr IisAutoSelect:YES Manager:_manager ResultBlock:^(id selectValue, id selectRow) {
         NSLog(@"选择1：%@ 选择2：%@",selectValue,selectRow);
     }];
     [self.view addSubview:strPickerView];

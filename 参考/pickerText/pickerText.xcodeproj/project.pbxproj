@@ -15,7 +15,6 @@
 		0F0F640B1D2F4E9A00A944BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F0F64091D2F4E9A00A944BC /* LaunchScreen.storyboard */; };
 		0F0F64161D2F4E9A00A944BC /* pickerTextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F64151D2F4E9A00A944BC /* pickerTextTests.m */; };
 		0F0F64211D2F4E9A00A944BC /* pickerTextUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F0F64201D2F4E9A00A944BC /* pickerTextUITests.m */; };
-		EB1A7678225AF3370030F0DC /* CGXPickerViewBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = EB1A7668225AF3360030F0DC /* CGXPickerViewBundle.bundle */; };
 		EB1A767F225AF3370030F0DC /* CGXStringPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		0F0F641C1D2F4E9A00A944BC /* pickerTextUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pickerTextUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F0F64201D2F4E9A00A944BC /* pickerTextUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pickerTextUITests.m; sourceTree = "<group>"; };
 		0F0F64221D2F4E9A00A944BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EB1A7668225AF3360030F0DC /* CGXPickerViewBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CGXPickerViewBundle.bundle; sourceTree = "<group>"; };
 		EB1A766E225AF3360030F0DC /* CGXStringPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CGXStringPickerView.h; sourceTree = "<group>"; };
 		EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CGXStringPickerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,7 +147,6 @@
 		EB1A7666225AF3360030F0DC /* CGXPickerView */ = {
 			isa = PBXGroup;
 			children = (
-				EB1A7668225AF3360030F0DC /* CGXPickerViewBundle.bundle */,
 				EB1A766E225AF3360030F0DC /* CGXStringPickerView.h */,
 				EB1A7676225AF3370030F0DC /* CGXStringPickerView.m */,
 			);
@@ -263,7 +260,6 @@
 				0F0F640B1D2F4E9A00A944BC /* LaunchScreen.storyboard in Resources */,
 				0F0F64081D2F4E9A00A944BC /* Assets.xcassets in Resources */,
 				0F0F64061D2F4E9900A944BC /* Main.storyboard in Resources */,
-				EB1A7678225AF3370030F0DC /* CGXPickerViewBundle.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
