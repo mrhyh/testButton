@@ -44,18 +44,21 @@ typedef void(^CGXStringResultBlock)(id selectValue,id selectRow);
 
 @interface CGXPickerViewManager : NSObject
 
-@property (nonatomic , assign) CGFloat kPickerViewH;//选择器高度 默认200
-@property (nonatomic , assign) CGFloat kTopViewH;//按钮高度 默认 50
+@property (nonatomic, assign) CGFloat kPickerViewH;//选择器高度 默认200
+@property (nonatomic, assign) CGFloat kTopViewH;//按钮高度 默认 50
 
-@property (nonatomic , strong) UIColor *pickerTitleColor;//字体颜色  默认黑色
-@property (nonatomic , assign) CGFloat pickerTitleSize;//字体大小  默认15
+@property (nonatomic, strong) UIColor *pickerTitleColor;//字体颜色  默认黑色
+@property (nonatomic, assign) CGFloat pickerTitleSize;//字体大小  默认15
 
-@property (nonatomic , strong) UIColor *pickerTitleSelectColor;//字体颜色  默认黑色
-@property (nonatomic , assign) CGFloat pickerTitleSelectSize;//字体大小  默认15
+@property (nonatomic, strong) UIColor *pickerTitleSelectColor;//字体颜色  默认黑色
+@property (nonatomic, assign) CGFloat pickerTitleSelectSize;//字体大小  默认15
 
-@property (nonatomic , assign) CGFloat titleSize;//字体大小
-@property (nonatomic , assign) CGFloat rowHeight; //单元格高度 默认30
+@property (nonatomic, assign) CGFloat titleSize;//字体大小
+@property (nonatomic, assign) CGFloat rowHeight; //单元格高度 默认30
 
-@property (nonatomic , assign) BOOL isHaveLimit; //是否有 “不限”选项  默认没有
+@property (nonatomic, assign) BOOL isHaveLimit; //是否有 “不限”选项  默认没有
+
+@property (nonatomic, assign) NSInteger defaultRow;
+@property (nonatomic, assign) NSInteger defaultComponent;
 
 @end

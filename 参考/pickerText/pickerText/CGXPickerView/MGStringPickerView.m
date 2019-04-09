@@ -34,12 +34,8 @@
 
 @implementation MGStringPickerView
 
-- (CGXPickerViewManager *)manager
-{
-    if (!_manager ) {
-        _manager = [CGXPickerViewManager new];
-    }
-    return _manager;
+- (void)setManager:(CGXPickerViewManager *)manager {
+    _manager = manager;
 }
 
 - (instancetype)initWithFrame:(CGRect)frame dataSource:(NSArray *)dataSource
@@ -77,6 +73,7 @@
                 }
             }];
         } else {
+            
             [self.selectedItems enumerateObjectsUsingBlock:^(NSString *selectedItem, NSUInteger component, BOOL *stop) {
                 [_dataSource[component] enumerateObjectsUsingBlock:^(id rowItem, NSUInteger rowIdx, BOOL *stop) {
                     if ([selectedItem isEqualToString:rowItem]) {
@@ -85,6 +82,8 @@
                     }
                 }];
             }];
+            
+            [_pickerView selectRow:_manager.defaultRow inComponent:_manager.defaultComponent animated:NO];
         }
     }
     
@@ -169,58 +168,25 @@
         }
         if (self.selectedItems == nil || self.selectedItems.count != self.dataSource.count || !isSelectedItemsValid) {
             NSMutableArray *mutableArray = [NSMutableArray array];
-            for (NSArray* componentItem in _dataSource) {
-                [mutableArray addObject:componentItem.firstObject];
-            }
-            self.selectedItems = [NSMutableArray arrayWithArray:mutableArray];
-        }
-    }
-}
-
-#pragma mark - 字符串选择器
-- (UIPickerView *)pickerView {
-    if (!_pickerView) {
-        _pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.manager.kTopViewH + 0.5, SCREEN_WIDTH, self.manager.kPickerViewH)];
-        _pickerView.backgroundColor = [UIColor whiteColor];
-        _pickerView.dataSource = self;
-        _pickerView.delegate = self;
-        
-        __weak typeof(self) weakSelf = self;
-        if (self.isSingleColumn) {
-            [_dataSource enumerateObjectsUsingBlock:^(NSString *rowItem, NSUInteger rowIdx, BOOL *stop) {
-                if ([weakSelf.selectedItem isEqualToString:rowItem]) {
-                    [weakSelf.pickerView selectRow:rowIdx inComponent:0 animated:NO];
-                    *stop = YES;
+            
+            if (_dataSource.count >= 2) {
+                
+                if ([_dataSource[0] count] >= (_manager.defaultRow + 1)) {
+                    [mutableArray addObject:_dataSource[0][_manager.defaultRow]];
                 }
-            }];
-        } else {
-            [self.selectedItems enumerateObjectsUsingBlock:^(NSString *selectedItem, NSUInteger component, BOOL *stop) {
-                [_dataSource[component] enumerateObjectsUsingBlock:^(id rowItem, NSUInteger rowIdx, BOOL *stop) {
-                    if ([selectedItem isEqualToString:rowItem]) {
-                        [weakSelf.pickerView selectRow:rowIdx inComponent:component animated:NO];
-                        *stop = YES;
-                    }
-                }];
-            }];
+                
+                if ([_dataSource[0] count] >= (_manager.defaultComponent + 1)) {
+                    [mutableArray addObject:_dataSource[1][_manager.defaultComponent]];
+                }
+                
+                
+                self.selectedItems = [NSMutableArray arrayWithArray:mutableArray];
+            }
+            
+            
         }
     }
-    
-    if (_leftUnitLabel == nil) {
-        _leftUnitLabel = [[UILabel alloc] initWithFrame:CGRectMake(_pickerView.frame.size.width/4+50, _pickerView.frame.size.height/2 - 15, 50, 30)];
-        _leftUnitLabel.text = @"小时";
-        _leftUnitLabel.font = [UIFont systemFontOfSize:13];
-        [_pickerView addSubview:_leftUnitLabel];
-    }
-    if (_rightUnitLabel == nil) {
-        _rightUnitLabel = [[UILabel alloc] initWithFrame:CGRectMake(_pickerView.frame.size.width/4*3+50, _leftUnitLabel.frame.origin.y, _leftUnitLabel.frame.size.width, _leftUnitLabel.frame.size.height)];
-        _rightUnitLabel.text = @"分钟";
-        _rightUnitLabel.font = [UIFont systemFontOfSize:13];
-        [_pickerView addSubview:_rightUnitLabel];
-    }
-
-    return _pickerView;
 }
-
 
 #pragma mark - UIPickerViewDataSource
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
@@ -234,21 +200,37 @@
     if (self.isSingleColumn) {
         return _dataSource.count;
     } else {
-        return ((NSArray*)_dataSource[component]).count;
+        
+        if (component == 1) {
+            return ((NSArray*)_dataSource[component]).count * 20;
+        }else {
+            return ((NSArray*)_dataSource[component]).count;
+        }
     }
 }
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     if (self.isSingleColumn) {
         return _dataSource[row];
     } else {
-        return ((NSArray*)_dataSource[component])[row];
+        
+        
+        if (component == 1) {
+            return ((NSArray*)_dataSource[component])[row % 60];
+        }else {
+            return ((NSArray*)_dataSource[component])[row];
+        }
     }
 }
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     if (self.isSingleColumn) {
         self.selectedItem = _dataSource[row];
     } else {
-        self.selectedItems[component] = ((NSArray *)_dataSource[component])[row];
+        
+        if (component == 1) {
+            self.selectedItems[component] = ((NSArray *)_dataSource[component])[row % 60];
+        }else {
+            self.selectedItems[component] = ((NSArray *)_dataSource[component])[row];
+        }
     }
      [pickerView reloadAllComponents];
     // 设置是否自动回调
@@ -258,20 +240,22 @@
                 NSString  *str = [NSString stringWithFormat:@"%ld",[_dataSource indexOfObject:self.selectedItem]];
                     _resultBlock([self.selectedItem copy],[str copy]);
             } else {
-                NSMutableArray *selectRowAry = [NSMutableArray array];
+                NSString *leftStr, *rightStr = nil;
                 for (int i = 0; i<_dataSource.count; i++) {
-                    NSArray *arr = _dataSource[i];
-                    NSString *str = self.selectedItems[i];
-                    [selectRowAry addObject:[NSString stringWithFormat:@"%ld" , [arr indexOfObject:str]]];
+                    if (i==0) {
+                        leftStr = self.selectedItems[i];
+                    }else if (i==1) {
+                        rightStr = self.selectedItems[i];
+                    }
                 }
-                _resultBlock([self.selectedItems copy],[selectRowAry copy]);
+                _resultBlock(leftStr,rightStr);
             }
         }
     }
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view {
-    NSLog(@"实时选中row:%ld--%ld--%@" , row,component,self.selectedItem);
+    //NSLog(@"实时选中row:%ld--%ld--%@" , row,component,self.selectedItem);
     //设置分割线的颜色
     for(UIView *singleLine in pickerView.subviews)
     {
@@ -359,4 +343,13 @@
     }
     return self;
 }
+
+- (void)setDefaultRow:(NSInteger)defaultRow {
+    _defaultRow = defaultRow;
+}
+
+- (void)setDefaultComponent:(NSInteger)defaultComponent {
+    _defaultComponent = defaultComponent;
+}
+
 @end

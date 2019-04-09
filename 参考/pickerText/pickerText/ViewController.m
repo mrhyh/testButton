@@ -20,12 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.manager = [[CGXPickerViewManager alloc] init];
-    self.manager.pickerTitleSelectColor = [UIColor blackColor];
+    _manager = [[CGXPickerViewManager alloc] init];
+    _manager.pickerTitleSelectColor = [UIColor blackColor];
+    _manager.defaultRow = 2;
+    _manager.defaultComponent = 0;
     
     __weak typeof(self) weakSelf = self;
     NSMutableArray *dataSources1 = [[NSMutableArray alloc] init];
-    for (int i=0; i<=12; i++) {
+    for (int i=0; i<=23; i++) {
         [dataSources1 addObject:[NSString stringWithFormat:@"%d",i]];
     }
     NSMutableArray *dataSources2 = [[NSMutableArray alloc] init];
@@ -39,8 +41,8 @@
         return;
     }
     
-    MGStringPickerView *strPickerView = [[MGStringPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200) dataSource:dataSources defaultSelValue:defaultSelValueArr isAutoSelect:YES manager:_manager resultBlock:^(id selectValue, id selectRow) {
-        NSLog(@"选择1：%@ 选择2：%@",selectValue,selectRow);
+    MGStringPickerView *strPickerView = [[MGStringPickerView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH/3*2, 200) dataSource:dataSources defaultSelValue:defaultSelValueArr isAutoSelect:YES manager:_manager resultBlock:^(id selectValue, id selectRow) {
+        NSLog(@"左：%@ 右：%@",selectValue,selectRow);
     }];
     
     [self.view addSubview:strPickerView];
