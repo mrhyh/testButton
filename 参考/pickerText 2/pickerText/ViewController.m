@@ -19,9 +19,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    MGPickerViewManager *model = (MGPickerViewManager *)[NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"MGPickerViewManager_LastTime"]];
     
+    MGPickerViewManager *model = (MGPickerViewManager *)[NSKeyedUnarchiver unarchiveObjectWithData:[[NSUserDefaults standardUserDefaults] objectForKey:@"MGPickerViewManager_LastTime"]];
+//    MGPickerViewManager *model  = (MGPickerViewManager *)[NSKeyedUnarchiver unarchivedObjectOfClass:MGPickerViewManager.class fromData:[[NSUserDefaults standardUserDefaults] objectForKey:@"MGPickerViewManager_LastTime"] error:nil];
+
+
     _manager = [[MGPickerViewManager alloc] init];
     _manager.pickerTitleSelectColor = [UIColor blackColor];
     

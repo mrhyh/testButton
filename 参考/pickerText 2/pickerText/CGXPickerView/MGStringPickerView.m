@@ -61,7 +61,7 @@
         //_pickerView = [[UIPickerView alloc]initWithFrame:CGRectMake(0, self.manager.kTopViewH + 0.5, SCREEN_WIDTH, self.manager.kPickerViewH)];
         _pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
         _pickerView.backgroundColor = [UIColor whiteColor];
-        _pickerView.showsSelectionIndicator = NO;
+        //_pickerView.backgroundColor = [UIColor yellowColor];
         _pickerView.dataSource = self;
         _pickerView.delegate = self;
         
@@ -83,7 +83,7 @@
                     }
                 }];
             }];
-            
+    
             [_pickerView selectRow:_manager.defaultRow inComponent:_manager.defaultComponent animated:NO];
         }
     }
@@ -207,10 +207,7 @@
         }
     }
 }
-
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-//    ((UILabel *)[pickerView.subviews objectAtIndex:1]).hidden = YES;//隐藏分隔线
-//    ((UILabel *)[pickerView.subviews objectAtIndex:2]).hidden = YES;//隐藏分隔线
     if (self.isSingleColumn) {
         return _dataSource[row];
     } else {
@@ -221,26 +218,27 @@
         }
     }
 }
-
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSString *leftStr, *rightStr = nil;
     if (self.isSingleColumn) {
         self.selectedItem = _dataSource[row];
     } else {
+        
         if (component == 1) {
             self.selectedItems[component] = ((NSArray *)_dataSource[component])[row % 60];
         }else {
             self.selectedItems[component] = ((NSArray *)_dataSource[component])[row];
         }
     }
-     [pickerView reloadAllComponents];
+    [pickerView reloadAllComponents];
     // 设置是否自动回调
     if (self.isAutoSelect) {
         if(_resultBlock) {
             if (self.isSingleColumn) {
                 NSString  *str = [NSString stringWithFormat:@"%ld",[_dataSource indexOfObject:self.selectedItem]];
-                    _resultBlock([self.selectedItem copy],[str copy]);
+                _resultBlock([self.selectedItem copy],[str copy]);
             }else {
+                
                 for (int i = 0; i<_dataSource.count; i++) {
                     if (i==0) {
                         leftStr = self.selectedItems[i];
@@ -260,6 +258,7 @@
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(nullable UIView *)view {
     //NSLog(@"实时选中row:%ld--%ld--%@" , row,component,self.selectedItem);
+
     //设置分割线的颜色
     for(UIView *singleLine in pickerView.subviews) {
         if (singleLine.frame.size.height < 1) {
@@ -269,7 +268,7 @@
     //可以通过自定义label达到自定义pickerview展示数据的方式
     UILabel* pickerLabel = (UILabel*)view;
     if (!pickerLabel) {
-        float width = self.frame.size.width;
+        float width = self.frame.size.width;;
         if (self.isSingleColumn) {
             width = width;
         } else {
@@ -277,13 +276,11 @@
         }
         pickerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, width, self.manager.rowHeight)];
         pickerLabel.adjustsFontSizeToFitWidth = YES;
-        
         if (component == 0) {
             pickerLabel.textAlignment = NSTextAlignmentLeft;
         }else {
-        	pickerLabel.textAlignment = NSTextAlignmentRight;
+            pickerLabel.textAlignment = NSTextAlignmentRight;
         }
-        
         [pickerLabel setBackgroundColor:[UIColor whiteColor]];
         [pickerLabel setFont:[UIFont systemFontOfSize:self.manager.pickerTitleSize]];
         [pickerLabel setTextColor:self.manager.pickerTitleColor];
@@ -339,7 +336,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _kPickerViewH = 200;
+        _kPickerViewH = 140;
         _kTopViewH = 50;
         _pickerTitleSize  =15;
         _pickerTitleColor = [UIColor blackColor];

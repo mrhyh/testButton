@@ -3,7 +3,7 @@
 //  CGXPickerView
 //
 //  Created by ylgwhyh on 2019/4/8.
-//  Copyright © 2017年 ylgwhyh. All rights reserved.
+//  Copyright © 2019年 ylgwhyh. All rights reserved.
 //
 
 
@@ -25,11 +25,7 @@ blue:((CGFloat)(rgbValue & 0xFF)) / 255.0 alpha:(a)]
 
 @class MGPickerViewManager;
 
-/**
- *  @param selectValue     选择的行标题文字
- *  @param selectRow       选择的行标题下标
- */
-typedef void(^MGStringResultBlock)(id selectValue,id selectRow);
+typedef void(^MGStringResultBlock)(id selectHour,id selectMinute);
 
 @interface MGStringPickerView : UIView
 
@@ -37,12 +33,15 @@ typedef void(^MGStringResultBlock)(id selectValue,id selectRow);
 
 - (instancetype)initWithFrame:(CGRect)frame dataSource:(NSArray *)dataSource
               defaultSelValue:(id)defaultSelValue
-                isAutoSelect:(BOOL)isAutoSelect
+                 isAutoSelect:(BOOL)isAutoSelect
                       manager:(MGPickerViewManager *)manager
                   resultBlock:(MGStringResultBlock)resultBlock;
 @end
 
 @interface MGPickerViewManager : NSObject <NSCoding>
+
+- (id)initWithCoder:(NSCoder *)decoder;
+- (void)encodeWithCoder:(NSCoder *)enCoder;
 
 @property (nonatomic, assign) CGFloat kPickerViewH;//选择器高度 默认200
 @property (nonatomic, assign) CGFloat kTopViewH;//按钮高度 默认 50
@@ -56,7 +55,7 @@ typedef void(^MGStringResultBlock)(id selectValue,id selectRow);
 @property (nonatomic, assign) CGFloat titleSize;//字体大小
 @property (nonatomic, assign) CGFloat rowHeight; //单元格高度 默认30
 
-@property (nonatomic, assign) NSInteger defaultRow;
+@property (nonatomic, assign) NSInteger defaultRow; 
 @property (nonatomic, assign) NSInteger defaultComponent;
 
 @end
