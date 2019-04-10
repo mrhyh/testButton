@@ -65,6 +65,7 @@
     }];
     self.view.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:strPickerView];
+    self.view.backgroundColor = [UIColor greenColor];
 }
 
 @end

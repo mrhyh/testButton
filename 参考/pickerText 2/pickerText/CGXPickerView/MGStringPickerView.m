@@ -64,6 +64,7 @@
         //_pickerView.backgroundColor = [UIColor yellowColor];
         _pickerView.dataSource = self;
         _pickerView.delegate = self;
+        _pickerView.showsSelectionIndicator = NO;
         
         __weak typeof(self) weakSelf = self;
         if (self.isSingleColumn) {
@@ -263,6 +264,7 @@
     for(UIView *singleLine in pickerView.subviews) {
         if (singleLine.frame.size.height < 1) {
             singleLine.backgroundColor = [UIColor colorWithWhite:0.93 alpha:1];
+            singleLine.hidden = YES;
         }
     }
     //可以通过自定义label达到自定义pickerview展示数据的方式
@@ -282,6 +284,7 @@
             pickerLabel.textAlignment = NSTextAlignmentRight;
         }
         [pickerLabel setBackgroundColor:[UIColor whiteColor]];
+        [pickerLabel setBackgroundColor:[UIColor yellowColor]];
         [pickerLabel setFont:[UIFont systemFontOfSize:self.manager.pickerTitleSize]];
         [pickerLabel setTextColor:self.manager.pickerTitleColor];
     }
@@ -316,7 +319,7 @@
     if (self.isSingleColumn) {
         return self.frame.size.width;
     } else {
-        return self.frame.size.width/3;
+        return self.frame.size.width/2;
     }
 }
 

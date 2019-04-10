@@ -220,7 +220,7 @@
 				TargetAttributes = {
 					0F0F63F71D2F4E9900A944BC = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = G3Q2458A26;
+						DevelopmentTeam = VD58PNDPW6;
 					};
 					0F0F64101D2F4E9A00A944BC = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -237,6 +237,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -430,10 +431,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = G3Q2458A26;
+				DEVELOPMENT_TEAM = VD58PNDPW6;
 				INFOPLIST_FILE = pickerText/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = feijiu.pickerText;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -442,10 +443,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = G3Q2458A26;
+				DEVELOPMENT_TEAM = VD58PNDPW6;
 				INFOPLIST_FILE = pickerText/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = feijiu.pickerText;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ylgwhyh.test3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
