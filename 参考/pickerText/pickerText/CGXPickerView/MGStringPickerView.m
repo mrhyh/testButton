@@ -311,7 +311,7 @@
     if (self.isSingleColumn) {
         return SCREEN_WIDTH;
     } else {
-        float width = SCREEN_WIDTH / 3.0;
+        float width = SCREEN_WIDTH / 4.0;
         return width;
     }
 }

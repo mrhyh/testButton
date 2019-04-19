@@ -44,6 +44,8 @@ UIWindow *_window;
 
 @property (nonatomic, strong)UIButton *btnStart;
 @property (nonatomic, strong)UIButton *btnStop;
+@property (nonatomic, strong)UIButton *secondBarButton;
+
 @property (nonatomic, strong)NSTimer *progressTimer;
 @property (nonatomic, strong)UIProgressView *progressView;
 @property (nonatomic, strong)UIActivityIndicatorView *activity;
@@ -177,10 +179,36 @@ UIWindow *_window;
     }
 }
 
+//  颜色转换为背景图片
+- (UIImage *)imageWithColor:(UIColor *)color {
+    CGRect rect = CGRectMake(0.0f, 0.0f, 1.0f, 1.0f);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
+    _secondBarButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _secondBarButton.frame = CGRectMake(50, 150, 50, 50);
+    //[_secondBarButton setImage:[UIImage imageNamed:@"icon_revert_co2"] forState:UIControlStateNormal];
+    //_secondBarButton.showsTouchWhenHighlighted = YES;
+    [_secondBarButton setImage:[[UIImage imageNamed:@"icon_revert_co2"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal ];
+    [_secondBarButton setImage:[[UIImage imageNamed:@"icon_revert_co2"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted ];
+    //[_secondBarButton setImage:[[UIImage imageNamed:@"icon_gedan_add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
+    //[_secondBarButton setImage:[[UIImage imageNamed:@"icon_gedan_add"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateHighlighted];
+    //_secondBarButton.tintColor = [UIColor whiteColor];
+    [self.view addSubview:_secondBarButton];
+    
+    return;
+    
+    
     NSDictionary *tempDic =  [NSDictionary dictionaryWithObjectsAndKeys:
                               @"male", @"21",
                               @"20", @"age",
